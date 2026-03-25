@@ -8,15 +8,12 @@ export default function SproscaleLandingPage() {
   return (
     <div className="min-h-screen bg-stone-50 font-sans text-stone-900 selection:bg-stone-200">
       {/* Header */}
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-4">
-        <div className="bg-white/80 backdrop-blur-md border border-stone-200 rounded-full px-4 py-3 flex justify-between items-center shadow-sm">
-          <div className="flex items-center gap-3 pl-2">
-            <div className="w-8 h-8 bg-stone-900 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-stone-50 rounded-full"></div>
-            </div>
-            <span className="font-bold text-lg tracking-tight text-stone-900">SPROSCALE</span>
+      <header className="fixed top-0 left-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <span className="font-bold text-xl tracking-tight text-stone-900">SPROSCALE</span>
           </div>
-          <nav className="hidden md:flex items-center gap-8 pr-4">
+          <nav className="hidden md:flex items-center gap-8">
             <a href="#diensten" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Diensten</a>
             <a href="#reviews" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Reviews</a>
             <a href="#contact" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
@@ -41,9 +38,9 @@ export default function SproscaleLandingPage() {
               B2B Growth Agency
             </div>
             
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-stone-900 leading-[1.05] tracking-tight mb-8">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-medium text-stone-900 leading-[1.05] tracking-tight mb-8">
               Schaal uw bedrijf <br className="hidden md:block" />
-              <span className="text-stone-500">gekwalificeerd</span> op.
+              <span className="text-stone-500 italic">gekwalificeerd</span> op.
             </h1>
             
             <p className="text-lg md:text-xl text-stone-600 mb-10 max-w-2xl leading-relaxed font-light">
@@ -168,9 +165,15 @@ export default function SproscaleLandingPage() {
             transition={{ duration: 0.7 }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-stone-900 mb-6 tracking-tight">Onze Specialiteiten</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto font-light">Een integrale aanpak voor uw online succes. Wij bieden de expertise die nodig is om uw bedrijf naar het volgende niveau te tillen.</p>
+            <div className="text-left mb-16">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-[1px] bg-stone-900"></div>
+                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Onze Diensten — 01</span>
+              </div>
+              <h2 className="text-5xl md:text-7xl font-serif text-stone-900 mb-8 tracking-tight">
+                Onze <span className="text-stone-500 italic">Specialiteiten.</span>
+              </h2>
+              <p className="text-xl text-stone-600 max-w-3xl font-light leading-relaxed">Een integrale aanpak voor uw online succes. Wij bieden de expertise die nodig is om uw bedrijf naar het volgende niveau te tillen.</p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -180,7 +183,7 @@ export default function SproscaleLandingPage() {
                   <div className="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                     <Briefcase className="w-8 h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-stone-900 mb-4">Consultancy</h3>
+                  <h3 className="text-3xl font-serif text-stone-900 mb-4">Consultancy</h3>
                   <p className="text-stone-600 leading-relaxed mb-8 font-light">
                     Datagedreven advies en strategische planning om uw bedrijfsprocessen te optimaliseren en schaalbare groei te realiseren.
                   </p>
@@ -201,7 +204,7 @@ export default function SproscaleLandingPage() {
                   <div className="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                     <Target className="w-8 h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-stone-900 mb-4">Marketing</h3>
+                  <h3 className="text-3xl font-serif text-stone-900 mb-4">Marketing</h3>
                   <p className="text-stone-600 leading-relaxed mb-8 font-light">
                     Doelgerichte campagnes, SEO en leadgeneratie systemen die uw ideale B2B klanten aantrekken en converteren.
                   </p>
@@ -222,7 +225,7 @@ export default function SproscaleLandingPage() {
                   <div className="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                     <Monitor className="w-8 h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-stone-900 mb-4">Web Design & Development</h3>
+                  <h3 className="text-3xl font-serif text-stone-900 mb-4">Web Design & Development</h3>
                   <p className="text-stone-600 leading-relaxed mb-8 font-light">
                     High-performance, op maat gemaakte websites en applicaties die uw merk versterken en naadloos functioneren.
                   </p>
@@ -243,7 +246,7 @@ export default function SproscaleLandingPage() {
                   <div className="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                     <Bot className="w-8 h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-stone-900 mb-4">AI Automations</h3>
+                  <h3 className="text-3xl font-serif text-stone-900 mb-4">AI Automations</h3>
                   <p className="text-stone-600 leading-relaxed mb-8 font-light">
                     Slimme AI-integraties en automatiseringen die repetitieve taken overnemen, efficiëntie verhogen en uw team tijd besparen.
                   </p>
@@ -271,9 +274,15 @@ export default function SproscaleLandingPage() {
             transition={{ duration: 0.7 }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-stone-900 mb-6 tracking-tight">Bewezen Resultaat</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto font-light">Wat onze partners zeggen over de samenwerking met SPROSCALE.</p>
+            <div className="text-left mb-16">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-[1px] bg-stone-900"></div>
+                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Reviews — 02</span>
+              </div>
+              <h2 className="text-5xl md:text-7xl font-serif text-stone-900 mb-8 tracking-tight">
+                Bewezen <span className="text-stone-500 italic">Resultaat.</span>
+              </h2>
+              <p className="text-xl text-stone-600 max-w-3xl font-light leading-relaxed">Wat onze partners zeggen over de samenwerking met SPROSCALE.</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6">
@@ -322,9 +331,15 @@ export default function SproscaleLandingPage() {
           >
             <div className="bg-white rounded-3xl p-8 md:p-12 border border-stone-200 shadow-xl relative overflow-hidden">
               
-              <div className="text-center mb-10 mt-4">
-                <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4 tracking-tight">Klaar om te schalen?</h2>
-                <p className="text-stone-600 text-lg font-light">Laat uw gegevens achter en wij nemen binnen 24 uur contact op voor een vrijblijvend strategiegesprek.</p>
+              <div className="text-left mb-10 mt-4">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-[1px] bg-stone-900"></div>
+                  <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Contact — 03</span>
+                </div>
+                <h2 className="text-4xl md:text-6xl font-serif text-stone-900 mb-6 tracking-tight">
+                  Klaar om te <span className="text-stone-500 italic">schalen?</span>
+                </h2>
+                <p className="text-stone-600 text-xl font-light leading-relaxed">Laat uw gegevens achter en wij nemen binnen 24 uur contact op voor een vrijblijvend strategiegesprek.</p>
               </div>
               
               <form className="space-y-6">
@@ -372,9 +387,6 @@ export default function SproscaleLandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                <div className="w-3 h-3 bg-stone-900 rounded-full"></div>
-              </div>
               <span className="font-bold text-xl tracking-tight text-white">SPROSCALE</span>
             </div>
             
