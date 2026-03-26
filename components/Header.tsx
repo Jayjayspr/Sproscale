@@ -7,27 +7,32 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#')) {
       const targetId = href.replace('/#', '');
       const element = document.getElementById(targetId);
       
-      if (element && window.location.pathname === '/') {
+      if (element) {
         e.preventDefault();
-        element.scrollIntoView({ behavior: 'smooth' });
         setIsMenuOpen(false);
-      } else {
-        setIsMenuOpen(false);
+        
+        // Scroll to the element smoothly
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+          // Update the URL hash without jumping
+          window.history.pushState(null, '', href.replace('/', ''));
+        }, 50);
+        return;
       }
-    } else {
-      setIsMenuOpen(false);
     }
+    
+    setIsMenuOpen(false);
   };
 
   const navLinks = [
     { name: 'Diensten', href: '/#diensten' },
-    { name: 'Werkwijze', href: '/#werkwijze' },
-    { name: 'Reviews', href: '/#reviews' },
+    { name: 'Over ons', href: '/about' },
+    { name: 'FAQ', href: '/#faq' },
     { name: 'Contact', href: '/#contact' },
   ];
 
@@ -44,7 +49,7 @@ export default function Header() {
             <Link 
               key={link.name}
               href={link.href} 
-              onClick={(e) => handleSmoothScroll(e, link.href)}
+              onClick={(e) => handleLinkClick(e, link.href)}
               className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
             >
               {link.name}
@@ -76,7 +81,7 @@ export default function Header() {
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                  onClick={(e) => handleLinkClick(e, link.href)}
                   className="text-lg font-medium text-stone-800 hover:text-stone-500 transition-colors"
                 >
                   {link.name}

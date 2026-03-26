@@ -20,9 +20,9 @@ export default function SproscaleLandingPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-800 text-sm font-medium mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white border border-stone-200 text-stone-800 text-sm font-medium mb-8 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-stone-900 animate-pulse"></span>
-              B2B Growth Agency
+              B2B Groeipartner
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-stone-900 leading-[1.1] md:leading-[1.05] tracking-tight mb-6 md:mb-8">
@@ -35,11 +35,11 @@ export default function SproscaleLandingPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
-              <a href="#contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-stone-900 hover:bg-stone-800 hover:scale-105 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 group shadow-md text-lg">
-                Neem contact op
+              <a href="#contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-stone-900 hover:bg-stone-800 hover:scale-105 text-white font-medium px-6 py-3.5 sm:px-8 sm:py-4 rounded-md transition-all duration-300 group shadow-md text-base sm:text-lg">
+                Plan een kennismaking
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#diensten" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-stone-50 hover:scale-105 text-stone-900 border border-stone-200 font-medium px-8 py-4 rounded-full transition-all duration-300 shadow-sm text-lg">
+              <a href="#diensten" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-stone-50 hover:scale-105 text-stone-900 border border-stone-200 font-medium px-6 py-3.5 sm:px-8 sm:py-4 rounded-md transition-all duration-300 shadow-sm text-base sm:text-lg">
                 Bekijk diensten
               </a>
             </div>
@@ -217,7 +217,7 @@ export default function SproscaleLandingPage() {
         </section>
 
         {/* Reviews (Social Proof) */}
-        <section id="reviews" className="py-16 md:py-24 bg-stone-50">
+        <section id="over-ons" className="py-16 md:py-24 bg-stone-50">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -348,13 +348,13 @@ export default function SproscaleLandingPage() {
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <User className="w-4 h-4 text-stone-400"/> Naam
                     </label>
-                    <input type="text" className="w-full px-4 py-3.5 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
+                    <input type="text" className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <Mail className="w-4 h-4 text-stone-400"/> Zakelijk E-mail
                     </label>
-                    <input type="email" className="w-full px-4 py-3.5 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
+                    <input type="email" className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
                   </div>
                 </div>
                 
@@ -362,19 +362,19 @@ export default function SproscaleLandingPage() {
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <Building className="w-4 h-4 text-stone-400"/> Bedrijf
                   </label>
-                  <input type="text" className="w-full px-4 py-3.5 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
+                  <input type="text" className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
                 </div>
                 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-stone-400"/> Uw Groeiuitdaging
                   </label>
-                  <textarea rows={4} className="w-full px-4 py-3.5 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
+                  <textarea rows={4} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
                 </div>
                 
-                <button type="button" className="w-full bg-stone-900 hover:bg-stone-800 hover:scale-[1.02] text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group text-lg mt-8 shadow-md">
+                <button type="button" className="w-full bg-stone-900 hover:bg-stone-800 hover:scale-[1.02] text-white font-semibold py-3 sm:py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base mt-4 sm:mt-8 shadow-md">
                   Vraag Een Strategiegesprek Aan
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
             </div>
