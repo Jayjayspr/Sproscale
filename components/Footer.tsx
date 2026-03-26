@@ -11,8 +11,8 @@ export default function Footer() {
           
           <div className="flex flex-wrap justify-center gap-8 text-sm font-medium">
             <Link href="/#diensten" className="hover:text-white transition-colors">Diensten</Link>
-            <Link href="/#reviews" className="hover:text-white transition-colors">Over Ons</Link>
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/about" className="hover:text-white transition-colors">Over Ons</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">LinkedIn</Link>
           </div>
         </div>

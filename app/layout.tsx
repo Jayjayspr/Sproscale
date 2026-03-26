@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css'; // Global styles
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CookieBanner from '@/components/CookieBanner';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Header />
         {children}
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
