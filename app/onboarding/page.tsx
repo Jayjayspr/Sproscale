@@ -2,14 +2,14 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Building2, 
-  Target, 
-  Rocket, 
-  Check, 
-  ChevronRight, 
-  ChevronLeft, 
-  Copy, 
+import {
+  Building2,
+  Target,
+  Rocket,
+  Check,
+  ChevronRight,
+  ChevronLeft,
+  Copy,
   ShieldCheck,
   Zap,
   ExternalLink,
@@ -100,11 +100,11 @@ export default function OnboardingPage() {
       { id: 'bedrijf', name: 'Bedrijf', icon: Building2 },
       { id: 'services', name: 'Services', icon: Layers },
     ];
-    
+
     if (showMetaStep) {
       steps.push({ id: 'meta', name: 'Connecties', icon: Target });
     }
-    
+
     steps.push({ id: 'project', name: 'Project', icon: Rocket });
     return steps;
   }, [showMetaStep]);
@@ -131,11 +131,7 @@ export default function OnboardingPage() {
     try {
       // 1. Save to Supabase (using the newly created 'clients' table)
       const { error: supabaseError } = await supabase
-<<<<<<< HEAD
-        .from('clients')
-=======
         .from('clients') // Back to clients table
->>>>>>> 02659d9 (Final cleanup and domain fixes)
         .insert([{
           company_name: formData.company_name,
           email: formData.email,
@@ -148,10 +144,7 @@ export default function OnboardingPage() {
           linkedin_access: formData.linkedin_access,
           deadline: formData.deadline,
           remarks: formData.remarks,
-<<<<<<< HEAD
-=======
           // Mapping exactly to the SQL columns specified by the user
->>>>>>> 02659d9 (Final cleanup and domain fixes)
         }]);
 
       if (supabaseError) throw supabaseError;
@@ -214,26 +207,26 @@ export default function OnboardingPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-stone-500">Bedrijfsnaam</label>
-                      <input type="text" required value={formData.company_name} onChange={(e) => setFormData({...formData, company_name: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="Naam B.V." />
+                      <input type="text" required value={formData.company_name} onChange={(e) => setFormData({ ...formData, company_name: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="Naam B.V." />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-stone-500">KVK Nummer</label>
-                      <input type="text" required value={formData.kvk_number} onChange={(e) => setFormData({...formData, kvk_number: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="8 cijfers" />
+                      <input type="text" required value={formData.kvk_number} onChange={(e) => setFormData({ ...formData, kvk_number: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="8 cijfers" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-stone-500">BTW Nummer</label>
-                      <input type="text" required value={formData.btw_number} onChange={(e) => setFormData({...formData, btw_number: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="NL..." />
+                      <input type="text" required value={formData.btw_number} onChange={(e) => setFormData({ ...formData, btw_number: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="NL..." />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-stone-500">Zakelijk E-mail</label>
-                      <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="naam@bedrijf.nl" />
+                      <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light" placeholder="naam@bedrijf.nl" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-stone-500">Factuuradres</label>
-                    <textarea required value={formData.billing_address} onChange={(e) => setFormData({...formData, billing_address: e.target.value})} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light h-24 resize-none" placeholder="Adresgegevens..." />
+                    <textarea required value={formData.billing_address} onChange={(e) => setFormData({ ...formData, billing_address: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 font-light h-24 resize-none" placeholder="Adresgegevens..." />
                   </div>
                 </motion.div>
               )}
@@ -257,12 +250,11 @@ export default function OnboardingPage() {
                       <button
                         key={service.id}
                         type="button"
-                        onClick={() => setFormData({...formData, selected_service: service.id})}
-                        className={`p-6 rounded-2xl border text-left transition-all duration-300 flex flex-col gap-4 group ${
-                          formData.selected_service === service.id 
-                            ? 'bg-stone-900 border-stone-900 text-white shadow-xl scale-[1.02]' 
+                        onClick={() => setFormData({ ...formData, selected_service: service.id })}
+                        className={`p-6 rounded-2xl border text-left transition-all duration-300 flex flex-col gap-4 group ${formData.selected_service === service.id
+                            ? 'bg-stone-900 border-stone-900 text-white shadow-xl scale-[1.02]'
                             : 'bg-white border-stone-200 text-stone-600 hover:border-stone-400'
-                        }`}
+                          }`}
                       >
                         <div className={`p-3 rounded-xl w-fit transition-colors ${formData.selected_service === service.id ? 'bg-white/10' : 'bg-stone-100'}`}>
                           <service.icon className={`w-6 h-6 ${formData.selected_service === service.id ? 'text-white' : 'text-stone-600'}`} />
@@ -315,7 +307,7 @@ export default function OnboardingPage() {
                           <access.icon className="w-5 h-5 text-stone-900" />
                           <span className="text-sm font-medium">{access.label}</span>
                         </div>
-                        <input type="checkbox" checked={formData[access.id as keyof typeof formData] as boolean} onChange={(e) => setFormData({...formData, [access.id]: e.target.checked})} className="w-5 h-5 accent-stone-900" />
+                        <input type="checkbox" checked={formData[access.id as keyof typeof formData] as boolean} onChange={(e) => setFormData({ ...formData, [access.id]: e.target.checked })} className="w-5 h-5 accent-stone-900" />
                       </label>
                     ))}
                   </div>
@@ -333,35 +325,35 @@ export default function OnboardingPage() {
                   <h3 className="text-lg font-serif italic text-stone-800 border-l-2 border-stone-900 pl-4 mb-6">Laatste Stap: Project Details</h3>
                   <div className="space-y-4">
                     <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-stone-500 flex items-center gap-2">
-                      <Calendar className="w-3 h-3" /> Gewenste Deadline
-                    </label>
-                    <input
-                      type="date"
-                      required
-                      value={formData.deadline}
-                      onChange={(e) => setFormData({...formData, deadline: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 transition-all font-light"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-stone-500 flex items-center gap-2">
-                      <MessageSquare className="w-3 h-3" /> Eventuele Opmerkingen
-                    </label>
-                    <textarea
-                      value={formData.remarks}
-                      onChange={(e) => setFormData({...formData, remarks: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 transition-all font-light h-32 resize-none"
-                      placeholder="Heb je specifieke wensen of vragen?"
-                    />
-                  </div>
-                  <div className="p-4 rounded-xl bg-amber-50 border border-amber-100 flex gap-4">
-                    <Zap className="w-5 h-5 text-amber-600 shrink-0" />
-                    <div className="space-y-1">
-                      <p className="text-sm font-bold text-amber-900">Klaar voor lancering.</p>
-                      <p className="text-xs text-amber-800/80 leading-relaxed font-light">Na verzenden nemen we direct contact op voor de technische kick-off.</p>
+                      <label className="text-xs font-bold uppercase tracking-widest text-stone-500 flex items-center gap-2">
+                        <Calendar className="w-3 h-3" /> Gewenste Deadline
+                      </label>
+                      <input
+                        type="date"
+                        required
+                        value={formData.deadline}
+                        onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 transition-all font-light"
+                      />
                     </div>
-                  </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-stone-500 flex items-center gap-2">
+                        <MessageSquare className="w-3 h-3" /> Eventuele Opmerkingen
+                      </label>
+                      <textarea
+                        value={formData.remarks}
+                        onChange={(e) => setFormData({ ...formData, remarks: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-stone-50 transition-all font-light h-32 resize-none"
+                        placeholder="Heb je specifieke wensen of vragen?"
+                      />
+                    </div>
+                    <div className="p-4 rounded-xl bg-amber-50 border border-amber-100 flex gap-4">
+                      <Zap className="w-5 h-5 text-amber-600 shrink-0" />
+                      <div className="space-y-1">
+                        <p className="text-sm font-bold text-amber-900">Klaar voor lancering.</p>
+                        <p className="text-xs text-amber-800/80 leading-relaxed font-light">Na verzenden nemen we direct contact op voor de technische kick-off.</p>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               )}
