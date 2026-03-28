@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <Link href="/" className="font-bold text-xl tracking-tight text-white">SPROSCALE</Link>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-8 text-sm font-medium">
             <Link href="/#diensten" className="hover:text-white transition-colors">Diensten</Link>
             <Link href="/over-ons" className="hover:text-white transition-colors">Over Ons</Link>
@@ -16,9 +16,9 @@ export default function Footer() {
             <Link href="#" className="hover:text-white transition-colors">LinkedIn</Link>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>© {new Date().getFullYear()} SPROSCALE - All Rights Reserved</p>
+          <p>© {new Date().getFullYear()} SPROSCALE - Alle rechten voorbehouden</p>
 
         </div>
       </div>
