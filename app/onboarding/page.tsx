@@ -131,7 +131,11 @@ export default function OnboardingPage() {
     try {
       // 1. Save to Supabase (using the newly created 'clients' table)
       const { error: supabaseError } = await supabase
+<<<<<<< HEAD
+        .from('clients')
+=======
         .from('clients') // Back to clients table
+>>>>>>> 02659d9 (Final cleanup and domain fixes)
         .insert([{
           company_name: formData.company_name,
           email: formData.email,
@@ -144,7 +148,10 @@ export default function OnboardingPage() {
           linkedin_access: formData.linkedin_access,
           deadline: formData.deadline,
           remarks: formData.remarks,
+<<<<<<< HEAD
+=======
           // Mapping exactly to the SQL columns specified by the user
+>>>>>>> 02659d9 (Final cleanup and domain fixes)
         }]);
 
       if (supabaseError) throw supabaseError;
