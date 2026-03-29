@@ -58,9 +58,20 @@ export default function SproscaleLandingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-gradient-to-r from-zinc-200 via-stone-50 to-stone-200">
-        {/* Horizontal fade overlay for extra depth */}
-        <div className="absolute inset-0 bg-white/20 pointer-events-none"></div>
+      <section 
+        className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center"
+        style={{
+          backgroundColor: '#f5f5f4',
+          backgroundImage: `
+            radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, transparent 70%),
+            repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0, 0, 0, 0.03) 40px)
+          `,
+        }}
+      >
+        {/* Decorative horizontal lines overlay for consistency */}
+        <div className="absolute inset-0 pointer-events-none opacity-20" 
+             style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px)', backgroundSize: '100% 80px' }}>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
