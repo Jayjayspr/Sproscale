@@ -97,8 +97,10 @@ export default function AboutPage() {
                 <Image
                   src="/jay-sprock.png"
                   alt="Jay Sprock - SPROSCALE Vision"
-                  fill
-                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+                  width={400}
+                  height={400}
+                  priority={true}
+                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
                 />
               </div>
