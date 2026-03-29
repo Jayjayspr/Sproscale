@@ -44,7 +44,7 @@ export default function AboutPage() {
         <motion.div {...fadeInUp} className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-serif text-stone-900 mb-4">Onze <span className="text-stone-500 italic">Expertise.</span></h2>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 */}
           <motion.div {...fadeInUp} transition={{ delay: 0.1, duration: 0.7 }} className="bg-white rounded-3xl p-8 transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-2 group border border-stone-200 relative overflow-hidden">
@@ -92,11 +92,11 @@ export default function AboutPage() {
         <motion.div {...fadeInUp} className="bg-white rounded-3xl shadow-sm border border-stone-200 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-64 md:h-auto bg-stone-200">
-              <Image 
-                src="/jay-sprock.png" 
-                alt="Jay Sprock - SPROSCALE Vision" 
+              <Image
+                src="/jay-sprock.png"
+                alt="Jay Sprock - SPROSCALE Vision"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -124,8 +124,8 @@ export default function AboutPage() {
           <p className="text-stone-600 font-light mb-8 max-w-2xl mx-auto">
             Ontdek wat een technische, datagedreven aanpak voor uw bedrijf kan betekenen. Plan direct een vrijblijvend strategiegesprek in.
           </p>
-          <Link 
-            href="/#contact" 
+          <Link
+            href="/#contact"
             className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 hover:scale-105 text-white font-medium px-8 py-4 rounded-md transition-all duration-300 shadow-md text-lg group"
           >
             Plan een kennismaking
