@@ -25,15 +25,15 @@ export default function SproscaleLandingPage() {
     
     try {
       const { error } = await supabase.from('leads').insert([
-        { 
-          name: formData.naam, 
-          email: formData.email, 
-          message: `Bedrijf: ${formData.bedrijf} - Uitdaging: ${formData.uitdaging}` 
+        {
+          name: formData.naam,
+          email: formData.email,
+          message: `Bedrijf: ${formData.bedrijf} - Uitdaging: ${formData.uitdaging}`
         }
       ]);
 
       if (error) throw error;
-      
+
       // Send email notification via Resend
       await fetch('/api/contact', {
         method: 'POST',
@@ -45,7 +45,7 @@ export default function SproscaleLandingPage() {
           message: formData.uitdaging
         }),
       }).catch(err => console.error('Email error:', err));
-      
+
       setIsFormSubmitted(true);
     } catch (error) {
       console.error('Fout bij opslaan:', error);
@@ -58,19 +58,46 @@ export default function SproscaleLandingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center"
-        style={{
-          backgroundColor: '#f5f5f4',
-          backgroundImage: `
-            radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, transparent 70%),
-            repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0, 0, 0, 0.03) 40px)
-          `,
-        }}
-      >
-        {/* Decorative horizontal lines overlay for consistency */}
-        <div className="absolute inset-0 pointer-events-none opacity-20" 
-             style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px)', backgroundSize: '100% 80px' }}>
+      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-stone-50">
+        {/* Animated Mesh Gradient / Waves Background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] bg-stone-200/40 rounded-full blur-[120px]"
+          />
+          <motion.div
+            animate={{
+              x: [0, -80, 0],
+              y: [0, 60, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute -bottom-[10%] -right-[5%] w-[60%] h-[60%] bg-stone-100/60 rounded-full blur-[100px]"
+          />
+          <motion.div
+            animate={{
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute inset-0 bg-white/40"
+          />
         </div>
 
         <motion.div
@@ -349,7 +376,7 @@ export default function SproscaleLandingPage() {
           <div className="border border-stone-800 rounded-sm divide-y divide-stone-800 bg-transparent">
             {[
               { q: "Wat als ik al een website heb?", a: "Dan optimaliseren we deze of bouwen we een nieuwe, afhankelijk van de huidige prestaties en uw doelen." },
-              { q: "Hoe snel reageert de AI op nieuwe leads?", a: "Onze AI-systemen reageren doorgaans binnen 5 minuten, 24/7, om de kans op conversie te maximaliseren." },
+              { q: "Hoe snel reageert de AI op nieuwe leads?", a: "Onze AI-systemen reageren doorgaans binnen 5 minuten, 24/7, om de kans op conversie te maximiseren." },
               { q: "Zijn er maandelijkse kosten?", a: "Ja, we werken met transparante maandelijkse retainers voor doorlopende optimalisatie, hosting en AI-gebruik." },
               { q: "Voor wie is SPROSCALE bedoeld?", a: "Voor ambitieuze B2B en MKB bedrijven die klaar zijn om serieus te schalen en bereid zijn te investeren in kwaliteit." }
             ].map((faq, index) => (
@@ -408,13 +435,13 @@ export default function SproscaleLandingPage() {
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <User className="w-4 h-4 text-stone-400" /> Naam
                     </label>
-                    <input type="text" required value={formData.naam} onChange={e => setFormData({...formData, naam: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
+                    <input type="text" required value={formData.naam} onChange={e => setFormData({ ...formData, naam: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <Mail className="w-4 h-4 text-stone-400" /> Zakelijk E-mail
                     </label>
-                    <input type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
+                    <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
                   </div>
                 </div>
 
@@ -422,14 +449,14 @@ export default function SproscaleLandingPage() {
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <Building className="w-4 h-4 text-stone-400" /> Bedrijf
                   </label>
-                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({...formData, bedrijf: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
+                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({ ...formData, bedrijf: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-stone-400" /> Uw Groeiuitdaging
                   </label>
-                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({...formData, uitdaging: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
+                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({ ...formData, uitdaging: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
                 </div>
 
                 <button type="submit" disabled={isFormLoading} className="w-full bg-stone-900 hover:bg-stone-800 disabled:bg-stone-500 hover:scale-[1.02] disabled:scale-100 text-white font-semibold py-3 sm:py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base mt-4 sm:mt-8 shadow-md">
@@ -447,7 +474,7 @@ export default function SproscaleLandingPage() {
                 </button>
               </form>
             ) : (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="py-12 md:py-20 flex flex-col items-center justify-center text-center space-y-6 bg-stone-50 rounded-2xl border border-stone-200"
