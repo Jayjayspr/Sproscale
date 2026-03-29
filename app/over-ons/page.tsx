@@ -95,17 +95,17 @@ export default function AboutPage() {
             <div className="p-8 pb-0 md:p-0 flex items-start md:items-stretch h-full">
               <div className="relative w-[45%] aspect-square md:w-full md:aspect-auto md:h-full overflow-hidden rounded-full md:rounded-none shadow-sm md:shadow-none -translate-y-2 md:translate-y-0 bg-stone-200">
                 <Image
-                  src="/jay-sprock.png"
+                  src="/jay-sprock.webp"
                   alt="Jay Sprock - SPROSCALE Vision"
                   width={400}
                   height={400}
                   priority={true}
-                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+                  className="rounded-full aspect-square object-cover shadow-md transform -translate-y-2 w-32 h-32 md:w-full md:h-full md:rounded-none md:shadow-none md:transform-none"
                   referrerPolicy="no-referrer"
                 />
               </div>
             </div>
-            
+
             {/* Content Area */}
             <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-6 mt-4 md:mt-0">Visie op Automatisering</h2>
