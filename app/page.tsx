@@ -58,46 +58,51 @@ export default function SproscaleLandingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-stone-50">
-        {/* Animated Mesh Gradient / Waves Background */}
+      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-white">
+        {/* Living High-Contrast Mesh Gradient / Waves Background */}
         <div className="absolute inset-0 pointer-events-none">
+          {/* Light Zinc Core Blobs */}
           <motion.div
             animate={{
-              x: [0, 100, 0],
-              y: [0, -50, 0],
+              x: [0, 150, 0],
+              y: [0, -100, 0],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-[10%] -left-[10%] w-[80%] h-[80%] bg-zinc-100/40 rounded-full blur-[120px]"
+          />
+          <motion.div
+            animate={{
+              x: [0, -100, 0],
+              y: [0, 80, 0],
               scale: [1, 1.2, 1],
             }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
+            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[70%] bg-zinc-200/50 rounded-full blur-[100px]"
+          />
+          
+          {/* Dark Zinc 'Living' Waves (Low Opacity, High Blur) */}
+          <motion.div
+            animate={{
+              x: [0, 200, 0],
+              y: [0, 150, 0],
+              opacity: [0.08, 0.12, 0.08],
             }}
-            className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] bg-stone-200/40 rounded-full blur-[120px]"
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[15%] left-[5%] w-[50%] h-[50%] bg-zinc-800 rounded-full blur-[150px]"
           />
           <motion.div
             animate={{
-              x: [0, -80, 0],
-              y: [0, 60, 0],
-              scale: [1, 1.1, 1],
+              x: [0, -150, 0],
+              y: [0, -200, 0],
+              opacity: [0.05, 0.1, 0.05],
             }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute -bottom-[10%] -right-[5%] w-[60%] h-[60%] bg-stone-100/60 rounded-full blur-[100px]"
+            transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-[10%] left-[20%] w-[40%] h-[40%] bg-zinc-700 rounded-full blur-[130px]"
           />
-          <motion.div
-            animate={{
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute inset-0 bg-white/40"
-          />
+
+          {/* Depth Fade Overlay */}
+          <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div>
         </div>
 
         <motion.div
@@ -294,7 +299,7 @@ export default function SproscaleLandingPage() {
               <div className="border-t border-stone-800 pt-8">
                 <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">Optimalisatie & Groei</h3>
                 <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
-                  Na de lancering sturen we op keiharde data. We schalen wat werkt, tweaken de AI en zorgen voor een continue stroom aan leads.
+                  Na de lancering sturen we op keiharde data. We schalen wat werkt, tweaken de AI en zorgen for een continue stroom aan leads.
                 </p>
               </div>
             </div>
