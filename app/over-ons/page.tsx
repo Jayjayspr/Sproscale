@@ -90,27 +90,34 @@ export default function AboutPage() {
       {/* Founder/Team Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <motion.div {...fadeInUp} className="bg-white rounded-3xl shadow-sm border border-stone-200 overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="relative h-64 md:h-auto bg-stone-200">
-              <Image
-                src="/jay-sprock.webp"
-                alt="Jay Sprock - SPROSCALE Vision"
-                fill
-                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
-                referrerPolicy="no-referrer"
-              />
+          <div className="flex flex-col md:grid md:grid-cols-2">
+            {/* Image Container with Antigravity styling */}
+            <div className="p-8 pb-0 md:p-0 flex items-start md:items-stretch h-full">
+              <div className="relative w-[45%] aspect-square md:w-full md:aspect-auto md:h-full overflow-hidden rounded-full md:rounded-none shadow-sm md:shadow-none -translate-y-2 md:translate-y-0 bg-stone-200">
+                <Image
+                  src="/jay-sprock.png"
+                  alt="Jay Sprock - SPROSCALE Vision"
+                  fill
+                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
+            
+            {/* Content Area */}
             <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-6">Visie op Automatisering</h2>
-              <p className="text-stone-600 font-light leading-relaxed mb-6">
-                "Vakbedrijven hebben goud in handen: echte expertise en vakmanschap. Toch zien we dat ze te veel tijd en marge verliezen aan handmatig werk, verouderde systemen en inefficiënte acquisitie."
-              </p>
-              <p className="text-stone-600 font-light leading-relaxed mb-8">
-                "Mijn visie met SPROSCALE is simpel maar doeltreffend: we automatiseren het volledige proces van klik tot klant. Door de nieuwste webtechnologieën en AI te combineren, creëren we een schaalbare machine. Zodat u zich weer kunt focussen op waar u het beste in bent: uw vak."
-              </p>
-              <div>
-                <p className="font-bold text-stone-900">Oprichter SPROSCALE</p>
-                <p className="text-sm text-stone-500">Lead Architect & Strateeg</p>
+              <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-6 mt-4 md:mt-0">Visie op Automatisering</h2>
+              <div className="space-y-6">
+                <p className="text-stone-600 font-light leading-relaxed">
+                  "Vakbedrijven hebben goud in handen: echte expertise en vakmanschap. Toch zien we dat ze te veel tijd en marge verliezen aan handmatig werk, verouderde systemen en inefficiënte acquisitie."
+                </p>
+                <p className="text-stone-600 font-light leading-relaxed">
+                  "Mijn visie met SPROSCALE is simpel maar doeltreffend: we automatiseren het volledige proces van klik tot klant. Door de nieuwste webtechnologieën en AI te combineren, creëren we een schaalbare machine. Zodat u zich weer kunt focussen op waar u het beste in bent: uw vak."
+                </p>
+              </div>
+              <div className="mt-8 pt-8 border-t border-stone-100">
+                <p className="font-bold text-stone-900 mb-1">Oprichter SPROSCALE</p>
+                <p className="text-sm text-stone-500 font-medium tracking-wide">Lead Architect & Strateeg</p>
               </div>
             </div>
           </div>
