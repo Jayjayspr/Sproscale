@@ -15,8 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'SPROSCALE | Meer B2B Leads & Voorspelbare Groei',
-  description: 'Sproscale helpt B2B-bedrijven en het MKB met hoogwaardige acquisitie-systemen en websites die converteren. Schaal uw leadgeneratie vandaag nog.',
+  title: 'Sproscale | AI Automatisering, Web Development & Marketing voor Groei',
+  description: 'Sproscale combineert AI automatisering met hoogwaardig Web Development en resultaatgerichte Marketing. Wij bouwen de systemen die jouw bedrijf laten schalen en processen versnellen.',
+  keywords: ['AI Automatisering', 'Web Development', 'Marketing', 'Sproscale', 'Bedrijfsefficiëntie', 'Automatisering voor MKB'],
   icons: {
     icon: '/sproscale-logo-transparent.png',
   },
