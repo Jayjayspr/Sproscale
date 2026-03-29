@@ -58,9 +58,52 @@ export default function SproscaleLandingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-gradient-to-r from-zinc-200 via-stone-50 to-stone-200">
-        {/* Horizontal fade overlay for extra depth */}
-        <div className="absolute inset-0 bg-white/20 pointer-events-none"></div>
+      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-white">
+        {/* Living High-Contrast Mesh Gradient / Waves Background */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Light Zinc Core Blobs */}
+          <motion.div
+            animate={{
+              x: [0, 150, 0],
+              y: [0, -100, 0],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-[10%] -left-[10%] w-[80%] h-[80%] bg-zinc-100/40 rounded-full blur-[120px]"
+          />
+          <motion.div
+            animate={{
+              x: [0, -100, 0],
+              y: [0, 80, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[70%] bg-zinc-200/50 rounded-full blur-[100px]"
+          />
+          
+          {/* Dark Zinc 'Living' Waves (Low Opacity, High Blur) */}
+          <motion.div
+            animate={{
+              x: [0, 200, 0],
+              y: [0, 150, 0],
+              opacity: [0.08, 0.12, 0.08],
+            }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[15%] left-[5%] w-[50%] h-[50%] bg-zinc-800 rounded-full blur-[150px]"
+          />
+          <motion.div
+            animate={{
+              x: [0, -150, 0],
+              y: [0, -200, 0],
+              opacity: [0.05, 0.1, 0.05],
+            }}
+            transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-[10%] left-[20%] w-[40%] h-[40%] bg-zinc-700 rounded-full blur-[130px]"
+          />
+
+          {/* Depth Fade Overlay */}
+          <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -256,7 +299,7 @@ export default function SproscaleLandingPage() {
               <div className="border-t border-stone-800 pt-8">
                 <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">Optimalisatie & Groei</h3>
                 <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
-                  Na de lancering sturen we op keiharde data. We schalen wat werkt, tweaken de AI en zorgen voor een continue stroom aan leads.
+                  Na de lancering sturen we op keiharde data. We schalen wat werkt, tweaken de AI en zorgen for een continue stroom aan leads.
                 </p>
               </div>
             </div>
@@ -338,7 +381,7 @@ export default function SproscaleLandingPage() {
           <div className="border border-stone-800 rounded-sm divide-y divide-stone-800 bg-transparent">
             {[
               { q: "Wat als ik al een website heb?", a: "Dan optimaliseren we deze of bouwen we een nieuwe, afhankelijk van de huidige prestaties en uw doelen." },
-              { q: "Hoe snel reageert de AI op nieuwe leads?", a: "Onze AI-systemen reageren doorgaans binnen 5 minuten, 24/7, om de kans op conversie te maximaliseren." },
+              { q: "Hoe snel reageert de AI op nieuwe leads?", a: "Onze AI-systemen reageren doorgaans binnen 5 minuten, 24/7, om de kans op conversie te maximiseren." },
               { q: "Zijn er maandelijkse kosten?", a: "Ja, we werken met transparante maandelijkse retainers voor doorlopende optimalisatie, hosting en AI-gebruik." },
               { q: "Voor wie is SPROSCALE bedoeld?", a: "Voor ambitieuze B2B en MKB bedrijven die klaar zijn om serieus te schalen en bereid zijn te investeren in kwaliteit." }
             ].map((faq, index) => (

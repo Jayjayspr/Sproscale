@@ -96,7 +96,7 @@ export default function AboutPage() {
                 src="/jay-sprock.webp"
                 alt="Jay Sprock - SPROSCALE Vision"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                 referrerPolicy="no-referrer"
               />
             </div>
