@@ -92,15 +92,15 @@ export default function AboutPage() {
         <motion.div {...fadeInUp} className="bg-white rounded-3xl shadow-sm border border-stone-200 overflow-hidden">
           <div className="flex flex-col md:grid md:grid-cols-2">
             {/* Image Container with Antigravity styling */}
-            <div className="p-8 pb-0 md:p-0 flex items-start md:items-stretch h-full">
-              <div className="relative w-[45%] aspect-square md:w-full md:aspect-auto md:h-full overflow-hidden rounded-full md:rounded-none shadow-sm md:shadow-none -translate-y-2 md:translate-y-0 bg-stone-200">
+            <div className="p-8 pb-0 md:p-12 lg:p-16 flex items-start h-full">
+              <div className="relative">
                 <Image
                   src="/jay-sprock.webp"
-                  alt="Jay Sprock - SPROSCALE Vision"
+                  alt="Jay Sprock - Expert in AI Automatisering, Marketing en Web Development"
                   width={400}
                   height={400}
                   priority={true}
-                  className="rounded-full aspect-square object-cover shadow-md transform -translate-y-2 w-32 h-32 md:w-full md:h-full md:rounded-none md:shadow-none md:transform-none"
+                  className="rounded-full aspect-square object-cover shadow-md transform -translate-y-2 w-32 h-32 md:w-48 md:h-48"
                   referrerPolicy="no-referrer"
                 />
               </div>
