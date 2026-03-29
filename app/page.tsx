@@ -58,53 +58,7 @@ export default function SproscaleLandingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-white">
-        {/* Living High-Contrast Mesh Gradient / Waves Background */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Light Zinc Core Blobs */}
-          <motion.div
-            animate={{
-              x: [0, 150, 0],
-              y: [0, -100, 0],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-[10%] -left-[10%] w-[80%] h-[80%] bg-zinc-100/40 rounded-full blur-[120px]"
-          />
-          <motion.div
-            animate={{
-              x: [0, -100, 0],
-              y: [0, 80, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-            className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[70%] bg-zinc-200/50 rounded-full blur-[100px]"
-          />
-          
-          {/* Dark Zinc 'Living' Waves (Low Opacity, High Blur) */}
-          <motion.div
-            animate={{
-              x: [0, 200, 0],
-              y: [0, 150, 0],
-              opacity: [0.08, 0.12, 0.08],
-            }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[15%] left-[5%] w-[50%] h-[50%] bg-zinc-800 rounded-full blur-[150px]"
-          />
-          <motion.div
-            animate={{
-              x: [0, -150, 0],
-              y: [0, -200, 0],
-              opacity: [0.05, 0.1, 0.05],
-            }}
-            transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-[10%] left-[20%] w-[40%] h-[40%] bg-zinc-700 rounded-full blur-[130px]"
-          />
-
-          {/* Depth Fade Overlay */}
-          <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div>
-        </div>
-
+      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-zinc-50">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
