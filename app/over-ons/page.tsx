@@ -93,7 +93,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-64 md:h-auto bg-stone-200">
               <Image 
-                src="/jay-sprock.webp" 
+                src="/jay-sprock.png" 
                 alt="Jay Sprock - SPROSCALE Vision" 
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
