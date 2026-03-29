@@ -22,18 +22,18 @@ export default function SproscaleLandingPage() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsFormLoading(true);
-    
+
     try {
       const { error } = await supabase.from('leads').insert([
-        { 
-          name: formData.naam, 
-          email: formData.email, 
-          message: `Bedrijf: ${formData.bedrijf} - Uitdaging: ${formData.uitdaging}` 
+        {
+          name: formData.naam,
+          email: formData.email,
+          message: `Bedrijf: ${formData.bedrijf} - Uitdaging: ${formData.uitdaging}`
         }
       ]);
 
       if (error) throw error;
-      
+
       // Send email notification via Resend
       await fetch('/api/contact', {
         method: 'POST',
@@ -45,7 +45,7 @@ export default function SproscaleLandingPage() {
           message: formData.uitdaging
         }),
       }).catch(err => console.error('Email error:', err));
-      
+
       setIsFormSubmitted(true);
     } catch (error) {
       console.error('Fout bij opslaan:', error);
@@ -397,13 +397,13 @@ export default function SproscaleLandingPage() {
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <User className="w-4 h-4 text-stone-400" /> Naam
                     </label>
-                    <input type="text" required value={formData.naam} onChange={e => setFormData({...formData, naam: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
+                    <input type="text" required value={formData.naam} onChange={e => setFormData({ ...formData, naam: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <Mail className="w-4 h-4 text-stone-400" /> Zakelijk E-mail
                     </label>
-                    <input type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
+                    <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
                   </div>
                 </div>
 
@@ -411,14 +411,14 @@ export default function SproscaleLandingPage() {
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <Building className="w-4 h-4 text-stone-400" /> Bedrijf
                   </label>
-                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({...formData, bedrijf: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
+                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({ ...formData, bedrijf: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-stone-400" /> Uw Groeiuitdaging
                   </label>
-                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({...formData, uitdaging: e.target.value})} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
+                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({ ...formData, uitdaging: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
                 </div>
 
                 <button type="submit" disabled={isFormLoading} className="w-full bg-stone-900 hover:bg-stone-800 disabled:bg-stone-500 hover:scale-[1.02] disabled:scale-100 text-white font-semibold py-3 sm:py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base mt-4 sm:mt-8 shadow-md">
@@ -436,7 +436,7 @@ export default function SproscaleLandingPage() {
                 </button>
               </form>
             ) : (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="py-12 md:py-20 flex flex-col items-center justify-center text-center space-y-6 bg-stone-50 rounded-2xl border border-stone-200"
