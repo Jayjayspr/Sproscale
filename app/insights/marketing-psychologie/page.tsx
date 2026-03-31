@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight, Quote, Users, Target, Gift } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -40,10 +41,15 @@ export default function MarketingPsychologyArticle() {
           </p>
         </header>
 
-        {/* Featured Icon Area */}
-        <div className="w-full aspect-[21/9] bg-stone-50 rounded-[2rem] mb-16 border border-stone-100 flex items-center justify-center relative overflow-hidden group">
-          <Target className="w-20 h-20 text-stone-100 transition-transform duration-1000 group-hover:scale-110" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-stone-50/50 to-transparent"></div>
+        {/* Featured Image Area */}
+        <div className="w-full aspect-[21/9] rounded-[2rem] mb-16 border border-stone-100 relative overflow-hidden group shadow-xl bg-stone-100">
+          <Image
+            src="/images/insights/marketing-psychologie-conversie.webp"
+            alt="De balans tussen data en emotie in conversie"
+            fill
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+            priority
+          />
         </div>
 
         {/* Content Section */}

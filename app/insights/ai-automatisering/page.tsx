@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight, Quote } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,6 +13,15 @@ export default function AIAutomationInsight() {
   return (
     <main className="min-h-screen bg-stone-50 pt-32 pb-24 font-sans text-stone-900">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Back Button */}
+        <Link
+          href="/insights"
+          className="inline-flex items-center gap-2 text-stone-400 hover:text-stone-900 transition-colors mb-12 text-sm font-medium group"
+        >
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+          Terug naar Insights
+        </Link>
+        
         {/* Header */}
         <header className="mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-600 text-xs font-bold uppercase tracking-widest mb-8">
@@ -24,6 +34,17 @@ export default function AIAutomationInsight() {
             Stel je voor: een medewerker die nooit slaapt, geen fouten maakt en exact weet wat je klanten nodig hebben. Dat is de belofte van AI-automatisering.
           </p>
         </header>
+
+        {/* Featured Image Area */}
+        <div className="w-full aspect-[21/9] rounded-[2rem] mb-16 border border-stone-100 relative overflow-hidden group shadow-xl bg-stone-100">
+          <Image
+            src="/images/insights/ai-automatisering-growth.webp"
+            alt="Abstracte visualisatie van AI-gedreven groei"
+            fill
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+            priority
+          />
+        </div>
 
         {/* Content */}
         <div className="prose prose-stone prose-lg max-w-none">
