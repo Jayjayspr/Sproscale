@@ -2,24 +2,37 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] text-stone-400 py-16 border-t border-stone-800">
+    <footer className="bg-[#111111] text-stone-400 py-20 border-t border-stone-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="font-bold text-xl tracking-tight text-white">SPROSCALE</Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          {/* Column 1: Navigatie */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-white font-bold text-sm uppercase tracking-[0.2em] mb-2 px-[2px]">Navigatie</h4>
+            <nav className="flex flex-col gap-4">
+              <Link href="/" className="text-stone-400 hover:text-white transition-colors font-light text-base">Home</Link>
+              <Link href="/over-ons" className="text-stone-400 hover:text-white transition-colors font-light text-base">Over ons</Link>
+              <Link href="/insights" className="text-stone-400 hover:text-white transition-colors font-light text-base">Insights</Link>
+              <Link href="/#diensten" className="text-stone-400 hover:text-white transition-colors font-light text-base">Diensten</Link>
+            </nav>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 text-sm font-medium">
-            <Link href="/#diensten" className="hover:text-white transition-colors">Diensten</Link>
-            <Link href="/over-ons" className="hover:text-white transition-colors">Over Ons</Link>
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">LinkedIn</Link>
+          {/* Column 2: Juridisch & Sociaal */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-white font-bold text-sm uppercase tracking-[0.2em] mb-2 px-[2px]">Juridisch & Sociaal</h4>
+            <nav className="flex flex-col gap-4">
+              <Link href="/privacy" className="text-stone-400 hover:text-white transition-colors font-light text-base">Privacy Policy</Link>
+              <Link href="#" className="text-stone-400 hover:text-white transition-colors font-light text-base">LinkedIn</Link>
+            </nav>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>© {new Date().getFullYear()} SPROSCALE - Alle rechten voorbehouden</p>
-
+        <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-3">
+             <Link href="/" className="font-bold text-xl tracking-tighter text-white">SPROSCALE</Link>
+          </div>
+          <p className="text-xs font-medium uppercase tracking-[0.1em] text-stone-600">
+            © {new Date().getFullYear()} SPROSCALE - Alle rechten voorbehouden
+          </p>
         </div>
       </div>
     </footer>
