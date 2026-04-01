@@ -334,10 +334,11 @@ export default function SproscaleLandingPage() {
 
           <div className="border border-stone-800 rounded-sm divide-y divide-stone-800 bg-transparent">
             {[
-              { q: "Wat als ik al een website heb?", a: "Dan optimaliseren we deze of bouwen we een nieuwe, afhankelijk van de huidige prestaties en uw doelen." },
-              { q: "Hoe snel reageert de AI op nieuwe leads?", a: "Onze AI-systemen reageren doorgaans binnen 5 minuten, 24/7, om de kans op conversie te maximiseren." },
-              { q: "Zijn er maandelijkse kosten?", a: "Ja, we werken met transparante maandelijkse retainers voor doorlopende optimalisatie, hosting en AI-gebruik." },
-              { q: "Voor wie is SPROSCALE bedoeld?", a: "Voor ambitieuze B2B en MKB bedrijven die klaar zijn om serieus te schalen en bereid zijn te investeren in kwaliteit." }
+              { q: "Hoe snel kunnen we resultaat verwachten?", a: "Afhankelijk van de gekozen strategie zien we vaak de eerste verschuivingen in data binnen 4 tot 6 weken. Voor volledige schaalbaarheid en stabiele lead-flows rekenen we doorgaans op een traject van 3 maanden." },
+              { q: "Wat is de gemiddelde investering voor een traject?", a: "Onze trajecten zijn maatwerk en variëren per bedrijfsbehoefte. We werken met een instapmodel voor MKB tot uitgebreide enterprise-oplossingen. Tijdens een strategiegesprek geven we een exacte indicatie." },
+              { q: "Blijven de systemen ons eigendom?", a: "Zeker. Alle websites, AI-tools en marketingaccounts die we voor u opzetten, blijven volledig eigendom van uw organistie. Wij zijn slechts de architecten en beheerders." },
+              { q: "Hebben jullie ervaring in mijn specifieke sector?", a: "Hoewel we in diverse markten actief zijn, is onze methodiek sector-onafhankelijk. We focussen op de psychologie van de koper en de techniek, wat universeel werkt voor B2B groei." },
+              { q: "Leveren jullie ook standalone AI-diensten?", a: "Ja, wij bouwen ook specifieke AI-automatiseringen of chatbots voor bedrijven die hun huidige website willen behouden maar wel hun processen willen versnellen." }
             ].map((faq, index) => (
               <div key={index} className="group">
                 <button
