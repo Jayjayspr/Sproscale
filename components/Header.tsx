@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -31,7 +32,18 @@ export default function Header() {
     <header className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 h-20 flex items-center ${isScrolled ? 'bg-stone-50/90 backdrop-blur-md border-b border-stone-200 shadow-sm' : 'bg-transparent border-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <Link href="/" className="font-bold text-xl tracking-tighter text-stone-950 hover:text-stone-600 transition-colors uppercase">SPROSCALE</Link>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative w-6 h-6 transition-transform duration-300 group-hover:scale-110">
+              <Image 
+                src="/sproscale-emblem.png" 
+                alt="Sproscale Emblem" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="font-bold text-xl tracking-tighter text-stone-950 uppercase">SPROSCALE</span>
+          </Link>
         </div>
         
         {/* Desktop Nav */}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -28,7 +29,17 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-             <Link href="/" className="font-bold text-xl tracking-tighter text-white">SPROSCALE</Link>
+             <Link href="/" className="flex items-center gap-2 group">
+                <div className="relative w-6 h-6 transition-all duration-300 group-hover:scale-110">
+                  <Image 
+                    src="/sproscale-emblem-white.png" 
+                    alt="Sproscale Emblem" 
+                    fill 
+                    className="object-contain"
+                  />
+                </div>
+                <span className="font-bold text-xl tracking-tighter text-white uppercase">SPROSCALE</span>
+             </Link>
           </div>
           <p className="text-xs font-medium uppercase tracking-[0.1em] text-stone-600">
             © {new Date().getFullYear()} SPROSCALE - Alle rechten voorbehouden
