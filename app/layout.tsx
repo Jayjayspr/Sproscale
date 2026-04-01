@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: 'Sproscale combineert AI automatisering met hoogwaardig Web Development en resultaatgerichte Marketing. Wij bouwen de systemen die jouw bedrijf laten schalen en processen versnellen.',
   keywords: ['AI Automatisering', 'Web Development', 'Marketing', 'Sproscale', 'Bedrijfsefficiëntie', 'Automatisering voor MKB'],
   icons: {
-    icon: '/sproscale-logo-transparent.png',
+    icon: '/sproscale-emblem.png',
   },
 };
 
