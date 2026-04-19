@@ -22,6 +22,7 @@ export default function Footer() {
             <h4 className="text-white font-bold text-sm uppercase tracking-[0.2em] mb-2 px-[2px]">Juridisch & Sociaal</h4>
             <nav className="flex flex-col gap-4">
               <Link href="/privacy" className="text-stone-400 hover:text-white transition-colors font-light text-base">Privacy Policy</Link>
+              <Link href="/algemene-voorwaarden" className="text-stone-400 hover:text-white transition-colors font-light text-base">Algemene Voorwaarden</Link>
               <Link href="#" className="text-stone-400 hover:text-white transition-colors font-light text-base">LinkedIn</Link>
             </nav>
           </div>
