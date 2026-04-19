@@ -38,7 +38,7 @@ const SPROSCALE_CONTEXT: { keywords: string[]; answer: string }[] = [
   {
     keywords: ['prijs', 'kosten', 'wat kost', 'offerte', 'tarief', 'investering'],
     answer:
-      'Onze prijzen zijn op aanvraag en altijd afgestemd op jouw situatie en gewenste ROI. Een strategiegesprek is volledig gratis en vrijblijvend. Vul het contactformulier in op de pagina en we plannen snel iets in.',
+      'Onze starttarieven:\n\n• Website — vanaf €999\n• Meta Ads — vanaf €499/maand\n• AI Chatbot — vanaf €249\n\nWil je een offerte op maat? Vul het contactformulier in op de pagina en we komen snel bij je terug.',
   },
   {
     keywords: ['contact', 'afspraak', 'gesprek', 'bereiken', 'bellen', 'mailen', 'strategie'],

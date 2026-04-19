@@ -113,16 +113,16 @@ export default function SproscaleLandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {/* Card 1: Consultancy */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-2 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                   <Briefcase className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-3 md:mb-4">Consultancy</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-6 md:mb-8 font-light">
+                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">Consultancy</h3>
+                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   Datagedreven advies en strategische planning om uw bedrijfsprocessen te optimaliseren en schaalbare groei te realiseren.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8">
                   {['Strategische Planning', 'Procesoptimalisatie', 'Data Analyse'].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-stone-700">
                       <CheckCircle2 className="w-5 h-5 text-stone-400" />
@@ -130,20 +130,26 @@ export default function SproscaleLandingPage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-auto flex items-center justify-between">
+                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Prijs op aanvraag</span>
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                    Aanvragen <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Card 2: Marketing */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-2 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                   <Target className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-3 md:mb-4">Marketing</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-6 md:mb-8 font-light">
+                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">Marketing</h3>
+                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   Doelgerichte campagnes, SEO en leadgeneratie systemen die uw ideale B2B klanten aantrekken en converteren.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8">
                   {['Growth Marketing', 'B2B Leadgeneratie', 'Meta & Google Ads'].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-stone-700">
                       <CheckCircle2 className="w-5 h-5 text-stone-400" />
@@ -151,20 +157,26 @@ export default function SproscaleLandingPage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-auto flex items-center justify-between">
+                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 499 /mnd</span>
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                    Aanvragen <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Card 3: Web Design & Development */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-2 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                   <Monitor className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-3 md:mb-4">Web Design & Development</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-6 md:mb-8 font-light">
+                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">Web Design & Development</h3>
+                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   High-performance, op maat gemaakte websites en applicaties die uw merk versterken en naadloos functioneren.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8">
                   {['Next.js & React', 'Conversie-gericht Design', 'Razendsnelle Laadtijden'].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-stone-700">
                       <CheckCircle2 className="w-5 h-5 text-stone-400" />
@@ -172,20 +184,26 @@ export default function SproscaleLandingPage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-auto flex items-center justify-between">
+                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 999</span>
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                    Aanvragen <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Card 4: AI Automations */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-2 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
                   <Bot className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-3 md:mb-4">AI Automations</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-6 md:mb-8 font-light">
+                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">AI Automations</h3>
+                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   Slimme AI-integraties en automatiseringen die repetitieve taken overnemen, efficiëntie verhogen en uw team tijd besparen.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8">
                   {['Workflow Automatisering', 'AI Chatbots & Assistenten', 'CRM Integraties'].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-stone-700">
                       <CheckCircle2 className="w-5 h-5 text-stone-400" />
@@ -193,6 +211,12 @@ export default function SproscaleLandingPage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-auto flex items-center justify-between">
+                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 249</span>
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                    Aanvragen <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
 
