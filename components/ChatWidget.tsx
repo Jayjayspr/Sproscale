@@ -155,7 +155,7 @@ async function sendMessage(messages: Message[]): Promise<string> {
   const lastUserMessage = messages.filter((m) => m.role === 'user').at(-1)?.content ?? '';
   const normalized = lastUserMessage.toLowerCase();
 
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const match = SPROSCALE_CONTEXT.find((entry) =>
     entry.keywords.some((kw) => normalized.includes(kw))
