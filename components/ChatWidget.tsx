@@ -180,7 +180,9 @@ export default function ChatWidget() {
   useEffect(() => {
     if (isOpen) {
       bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-      inputRef.current?.focus();
+      if (window.matchMedia('(hover: hover)').matches) {
+        inputRef.current?.focus();
+      }
     }
   }, [isOpen, messages]);
 
