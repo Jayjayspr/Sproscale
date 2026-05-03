@@ -24,6 +24,24 @@ const insights = [
     date: "31 Maart 2026",
     image: "/images/insights/marketing-psychologie-conversie.webp",
     alt: "De balans tussen data en emotie in conversie"
+  },
+  {
+    id: 3,
+    title: "De onzichtbare drempel: Waarom jouw chatbot klanten wegjaagt",
+    excerpt: "Een AI-chatbot die het toetsenbord laat opspringen voordat de gebruiker ook maar één woord heeft gelezen, is geen tool — het is een obstakel. Leer hoe mobile-first design het verschil maakt.",
+    href: "/insights/mobiele-chatbot-ux",
+    date: "3 Mei 2026",
+    image: "/images/insights/mobiele-chatbot-ux.webp.png",
+    alt: "Mobiele chatbot UX illustratie"
+  },
+  {
+    id: 4,
+    title: "Stoppen met Targeten: Waarom Meta's AI in 2026 beter verkoopt dan jouw beste Marketeer",
+    excerpt: "Handmatige interesse-targeting is achterhaald. In 2026 wint wie de AI van Meta voedt met de juiste data en creaties — niet wie de meeste knoppen instelt.",
+    href: "/insights/meta-ai-targeting",
+    date: "3 Mei 2026",
+    image: "/images/insights/meta-ai-targeting.webp.png.png",
+    alt: "Meta Advantage+ AI targeting visualisatie"
   }
 ];
 

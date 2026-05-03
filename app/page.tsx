@@ -59,6 +59,34 @@ export default function SproscaleLandingPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-zinc-50">
+
+        {/* Animated wave background */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0,160 C240,220 480,80 720,160 C960,240 1200,100 1440,160 L1440,320 L0,320 Z"
+              fill="rgba(168,162,158,0.10)"
+              style={{ animation: 'waveMove 8s ease-in-out infinite' }}
+            />
+            <path
+              d="M0,200 C200,140 440,260 720,200 C1000,140 1240,260 1440,200 L1440,320 L0,320 Z"
+              fill="rgba(168,162,158,0.07)"
+              style={{ animation: 'waveMove 11s ease-in-out infinite reverse' }}
+            />
+            <path
+              d="M0,240 C300,180 600,290 900,240 C1100,200 1300,270 1440,240 L1440,320 L0,320 Z"
+              fill="rgba(168,162,158,0.05)"
+              style={{ animation: 'waveMove 14s ease-in-out infinite' }}
+            />
+          </svg>
+          <style>{`
+            @keyframes waveMove {
+              0%, 100% { transform: translateX(0); }
+              50% { transform: translateX(-40px); }
+            }
+          `}</style>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
