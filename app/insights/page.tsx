@@ -35,6 +35,15 @@ const insights = [
     alt: "Mobiele chatbot UX illustratie"
   },
   {
+    id: 5,
+    title: "Waarom jouw WordPress site in 2026 klanten kost (en wat Vercel-snelheid oplevert)",
+    excerpt: "53% van mobiele bezoekers verlaat een pagina die langer dan 3 seconden laadt. Jouw concurrent laadt in 0,8 seconden. Ontdek wat dat concreet kost aan gemiste leads.",
+    href: "/insights/wordpress-vs-vercel",
+    date: "4 Mei 2026",
+    image: "/images/insights/wordpress-vs-vercel.png",
+    alt: "Website snelheid visualisatie WordPress vs Vercel"
+  },
+  {
     id: 4,
     title: "Stoppen met Targeten: Waarom Meta's AI in 2026 beter verkoopt dan jouw beste Marketeer",
     excerpt: "Handmatige interesse-targeting is achterhaald. In 2026 wint wie de AI van Meta voedt met de juiste data en creaties — niet wie de meeste knoppen instelt.",
