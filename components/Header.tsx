@@ -2,12 +2,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  // Homepage hero is a black background at scroll position 0 — every other
+  // page (and the homepage once scrolled) has a light background, so this
+  // flag is provably false everywhere else and leaves them untouched.
+  const isHomeUnscrolled = pathname === '/' && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +48,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="font-bold text-xl tracking-tighter text-stone-950 uppercase">SPROSCALE</span>
+            <span className={`font-bold text-xl tracking-tighter uppercase transition-colors ${isHomeUnscrolled ? 'text-white' : 'text-stone-950'}`}>SPROSCALE</span>
           </Link>
         </div>
         
@@ -53,7 +59,7 @@ export default function Header() {
               key={link.name}
               href={link.href} 
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-xs font-semibold tracking-wider uppercase text-stone-950 hover:text-stone-600 transition-colors"
+              className={`text-xs font-semibold tracking-wider uppercase transition-colors ${isHomeUnscrolled ? 'text-white hover:text-stone-300' : 'text-stone-950 hover:text-stone-600'}`}
             >
               {link.name}
             </Link>
@@ -61,8 +67,8 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden p-2 text-stone-950"
+        <button
+          className={`md:hidden p-2 transition-colors ${isHomeUnscrolled ? 'text-white' : 'text-stone-950'}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >

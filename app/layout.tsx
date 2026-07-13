@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display, Geist } from 'next/font/google';
 import './globals.css';
 import ClientWrapper from '../components/ClientWrapper';
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -12,6 +12,11 @@ const inter = Inter({
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-serif',
+});
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
 });
 
 export const metadata: Metadata = {
@@ -56,7 +61,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" className={`scroll-smooth scroll-pt-20 ${inter.variable} ${playfair.variable}`}>
+    <html lang="nl" className={`scroll-smooth scroll-pt-20 ${inter.variable} ${playfair.variable} ${geist.variable}`}>
       <body
         className="font-sans antialiased bg-stone-50 text-stone-900 selection:bg-stone-200"
         suppressHydrationWarning

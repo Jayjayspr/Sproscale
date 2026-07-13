@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ArrowRight, ArrowDown, CheckCircle2, TrendingUp, Mail, User, Building, MessageSquare, Briefcase, Target, Monitor, Bot, ChevronDown, Loader2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Briefcase, Target, Monitor, Bot, ChevronDown, Loader2, Database, ShieldCheck, Zap } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../lib/supabase';
+import HeroSection from '../components/hero/HeroSection';
 
 export default function SproscaleLandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -57,70 +58,10 @@ export default function SproscaleLandingPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-32 overflow-hidden relative flex flex-col items-center text-center bg-zinc-50">
-
-        {/* Animated wave background */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M0,160 C240,220 480,80 720,160 C960,240 1200,100 1440,160 L1440,320 L0,320 Z"
-              fill="rgba(168,162,158,0.10)"
-              style={{ animation: 'waveMove 8s ease-in-out infinite' }}
-            />
-            <path
-              d="M0,200 C200,140 440,260 720,200 C1000,140 1240,260 1440,200 L1440,320 L0,320 Z"
-              fill="rgba(168,162,158,0.07)"
-              style={{ animation: 'waveMove 11s ease-in-out infinite reverse' }}
-            />
-            <path
-              d="M0,240 C300,180 600,290 900,240 C1100,200 1300,270 1440,240 L1440,320 L0,320 Z"
-              fill="rgba(168,162,158,0.05)"
-              style={{ animation: 'waveMove 14s ease-in-out infinite' }}
-            />
-          </svg>
-          <style>{`
-            @keyframes waveMove {
-              0%, 100% { transform: translateX(0); }
-              50% { transform: translateX(-40px); }
-            }
-          `}</style>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white border border-stone-200 text-stone-800 text-sm font-medium mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-stone-900 animate-pulse"></span>
-            Intelligent Opschalen
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-stone-900 leading-[1.1] md:leading-[1.05] tracking-tight mb-6 md:mb-8">
-            Schaal uw bedrijf <br className="hidden md:block" />
-            <span className="text-stone-500 italic">gekwalificeerd</span> op.
-          </h1>
-
-          <p className="text-base md:text-xl text-stone-600 mb-8 md:mb-10 max-w-2xl leading-relaxed font-light px-4 md:px-0">
-            Wij combineren strategische consultancy, high-end webdesign, marketing en AI-automations om uw bedrijf duurzaam te laten groeien.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
-            <Link href="/afspraak" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-stone-900 hover:bg-stone-800 hover:scale-105 text-white font-medium px-6 py-3.5 sm:px-8 sm:py-4 rounded-md transition-all duration-300 group shadow-md text-base sm:text-lg">
-              Plan een kennismaking
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <a href="#diensten" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-stone-50 hover:scale-105 text-stone-900 border border-stone-200 font-medium px-6 py-3.5 sm:px-8 sm:py-4 rounded-md transition-all duration-300 shadow-sm text-base sm:text-lg">
-              Bekijk diensten
-            </a>
-          </div>
-        </motion.div>
-      </section>
+      <HeroSection />
 
       {/* Our Specialty (Four Pillars) */}
-      <section id="diensten" className="pt-32 pb-16 md:pt-40 md:pb-24 bg-stone-100 border-y border-stone-200">
+      <section id="diensten" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-white">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,13 +69,13 @@ export default function SproscaleLandingPage() {
           transition={{ duration: 0.7 }}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          <div className="text-left mb-16">
+          <div className="text-left mb-16 md:mb-20">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-[1px] bg-stone-900"></div>
               <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Onze Diensten</span>
             </div>
-            <h2 className="text-4xl md:text-7xl font-serif text-stone-900 mb-6 md:mb-8 tracking-tight">
-              Onze <span className="text-stone-500 italic">Specialiteiten.</span>
+            <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight">
+              Onze Specialiteiten.
             </h2>
             <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">Een integrale aanpak voor uw online succes. Wij bieden de expertise die nodig is om uw bedrijf naar het volgende niveau te tillen.</p>
           </div>
@@ -143,10 +84,10 @@ export default function SproscaleLandingPage() {
             {/* Card 1: Consultancy */}
             <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                   <Briefcase className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">Consultancy</h3>
+                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">Consultancy</h3>
                 <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   Datagedreven advies en strategische planning om uw bedrijfsprocessen te optimaliseren en schaalbare groei te realiseren.
                 </p>
@@ -160,7 +101,7 @@ export default function SproscaleLandingPage() {
                 </ul>
                 <div className="mt-auto flex items-center justify-between">
                   <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Prijs op aanvraag</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
                     Aanvragen <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -170,10 +111,10 @@ export default function SproscaleLandingPage() {
             {/* Card 2: Marketing */}
             <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                   <Target className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">Marketing</h3>
+                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">Marketing</h3>
                 <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   Doelgerichte campagnes, SEO en leadgeneratie systemen die uw ideale B2B klanten aantrekken en converteren.
                 </p>
@@ -187,7 +128,7 @@ export default function SproscaleLandingPage() {
                 </ul>
                 <div className="mt-auto flex items-center justify-between">
                   <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 499 /mnd</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
                     Aanvragen <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -197,10 +138,10 @@ export default function SproscaleLandingPage() {
             {/* Card 3: Web Design & Development */}
             <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                   <Monitor className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">Web Design & Development</h3>
+                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">Web Design & Development</h3>
                 <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   High-performance, op maat gemaakte websites en applicaties die uw merk versterken en naadloos functioneren.
                 </p>
@@ -214,7 +155,7 @@ export default function SproscaleLandingPage() {
                 </ul>
                 <div className="mt-auto flex items-center justify-between">
                   <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 999</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
                     Aanvragen <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -224,10 +165,10 @@ export default function SproscaleLandingPage() {
             {/* Card 4: AI Automations */}
             <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-stone-900 transition-colors duration-500">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                   <Bot className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-stone-900 mb-4">AI Automations</h3>
+                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">AI Automations</h3>
                 <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                   Slimme AI-integraties en automatiseringen die repetitieve taken overnemen, efficiëntie verhogen en uw team tijd besparen.
                 </p>
@@ -241,7 +182,7 @@ export default function SproscaleLandingPage() {
                 </ul>
                 <div className="mt-auto flex items-center justify-between">
                   <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 249</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-stone-900 hover:text-white transition-all duration-300">
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
                     Aanvragen <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -252,8 +193,50 @@ export default function SproscaleLandingPage() {
         </motion.div>
       </section>
 
+      {/* Supabase Integratie */}
+      <section id="supabase" className="py-20 md:py-32 bg-stone-50">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <div className="bg-white rounded-3xl border border-stone-200 shadow-xl p-6 md:p-16">
+            <div className="text-left mb-12 md:mb-16 max-w-3xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-[1px] bg-stone-900"></div>
+                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Supabase Integratie</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-6 tracking-tight">
+                Krachtige data-infrastructuur, standaard inbegrepen.
+              </h2>
+              <p className="text-base md:text-xl text-stone-600 font-light leading-relaxed">
+                Elke oplossing die wij bouwen draait op een moderne, schaalbare backend met Supabase — zodat uw data altijd actueel, veilig en direct beschikbaar is.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+              {[
+                { icon: Database, title: 'Realtime Data Synchronisatie', desc: 'Wijzigingen zijn direct zichtbaar in uw dashboards en applicaties, zonder vertraging.' },
+                { icon: ShieldCheck, title: 'Veilige, Schaalbare Backend', desc: 'Row-level security en encryptie zorgen dat uw bedrijfsgegevens te allen tijde beschermd zijn.' },
+                { icon: Zap, title: 'Naadloze Integratie', desc: "Koppelt moeiteloos met uw bestaande systemen, CRM's en workflows." },
+              ].map((feature, i) => (
+                <div key={i}>
+                  <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center mb-5">
+                    <feature.icon className="w-6 h-6 text-stone-900" />
+                  </div>
+                  <h3 className="font-display text-lg font-medium text-stone-900 mb-2">{feature.title}</h3>
+                  <p className="text-sm text-stone-600 font-light leading-relaxed">{feature.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Hoe het werkt (Process) / Over ons */}
-      <section id="over-ons" className="pt-32 pb-16 md:pt-40 md:pb-32 bg-[#111111] text-stone-300">
+      <section id="over-ons" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-ink text-stone-300">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -267,9 +250,8 @@ export default function SproscaleLandingPage() {
                 <div className="w-12 h-[1px] bg-stone-600"></div>
                 <span className="text-xs font-bold tracking-[0.2em] text-stone-400 uppercase">Hoe het werkt</span>
               </div>
-              <h2 className="text-4xl md:text-7xl font-serif text-white leading-tight tracking-tight">
-                Van strategie <br className="hidden md:block" />
-                tot <span className="text-stone-400 italic">implementatie.</span>
+              <h2 className="font-display text-4xl md:text-6xl font-medium text-white leading-tight tracking-tight">
+                Van strategie tot implementatie.
               </h2>
             </div>
             <div className="lg:pt-32">
@@ -314,7 +296,7 @@ export default function SproscaleLandingPage() {
       </section>
 
       {/* Reviews (Social Proof) */}
-      <section id="over-ons" className="py-16 md:py-24 bg-stone-50">
+      <section id="over-ons" className="py-20 md:py-32 bg-stone-50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -327,8 +309,8 @@ export default function SproscaleLandingPage() {
               <div className="w-12 h-[1px] bg-stone-900"></div>
               <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Reviews</span>
             </div>
-            <h2 className="text-4xl md:text-7xl font-serif text-stone-900 mb-6 md:mb-8 tracking-tight">
-              Bewezen <span className="text-stone-500 italic">Resultaat.</span>
+            <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight">
+              Bewezen Resultaat.
             </h2>
             <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">Wat onze partners zeggen over de samenwerking met SPROSCALE.</p>
           </div>
@@ -366,7 +348,7 @@ export default function SproscaleLandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="pt-32 pb-16 md:pt-40 md:pb-32 bg-[#111111]">
+      <section id="faq" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-ink">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -379,8 +361,8 @@ export default function SproscaleLandingPage() {
               <div className="w-8 h-[1px] bg-stone-600"></div>
               <span className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase">Vragen</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif text-white tracking-tight">
-              Veelgestelde <span className="text-stone-400 italic">Vragen.</span>
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white tracking-tight">
+              Veelgestelde Vragen.
             </h2>
           </div>
 
@@ -397,7 +379,7 @@ export default function SproscaleLandingPage() {
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between p-6 md:p-8 text-left transition-colors hover:bg-white/5"
                 >
-                  <span className="font-serif italic text-stone-300 text-lg md:text-xl">{faq.q}</span>
+                  <span className="font-display text-stone-200 text-lg md:text-xl">{faq.q}</span>
                   <div className="w-8 h-8 border border-stone-700 flex items-center justify-center rounded-sm text-stone-400 group-hover:bg-stone-800 transition-colors shrink-0 ml-4">
                     <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
                   </div>
@@ -416,7 +398,7 @@ export default function SproscaleLandingPage() {
       </section>
 
       {/* Contact (Lead Capture) */}
-      <section id="contact" className="pt-32 pb-16 md:pt-40 md:pb-24 bg-stone-100 relative overflow-hidden scroll-mt-0">
+      <section id="contact" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-stone-50 relative overflow-hidden scroll-mt-0">
         {/* Subtle background glow */}
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-stone-200/50 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -434,8 +416,8 @@ export default function SproscaleLandingPage() {
                 <div className="w-12 h-[1px] bg-stone-900"></div>
                 <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Contact</span>
               </div>
-              <h2 className="text-3xl md:text-6xl font-serif text-stone-900 mb-4 md:mb-6 tracking-tight">
-                Klaar om te <span className="text-stone-500 italic">schalen?</span>
+              <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-4 md:mb-6 tracking-tight">
+                Klaar om te schalen?
               </h2>
               <p className="text-stone-600 text-base md:text-xl font-light leading-relaxed">Laat uw gegevens achter en wij nemen binnen 24 uur contact op voor een vrijblijvend strategiegesprek.</p>
             </div>
@@ -447,13 +429,13 @@ export default function SproscaleLandingPage() {
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <User className="w-4 h-4 text-stone-400" /> Naam
                     </label>
-                    <input type="text" required value={formData.naam} onChange={e => setFormData({ ...formData, naam: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
+                    <input type="text" required value={formData.naam} onChange={e => setFormData({ ...formData, naam: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                       <Mail className="w-4 h-4 text-stone-400" /> Zakelijk E-mail
                     </label>
-                    <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
+                    <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
                   </div>
                 </div>
 
@@ -461,17 +443,17 @@ export default function SproscaleLandingPage() {
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <Building className="w-4 h-4 text-stone-400" /> Bedrijf
                   </label>
-                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({ ...formData, bedrijf: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
+                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({ ...formData, bedrijf: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-stone-400" /> Uw Groeiuitdaging
                   </label>
-                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({ ...formData, uitdaging: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
+                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({ ...formData, uitdaging: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
                 </div>
 
-                <button type="submit" disabled={isFormLoading} className="w-full bg-stone-900 hover:bg-stone-800 disabled:bg-stone-500 hover:scale-[1.02] disabled:scale-100 text-white font-semibold py-3 sm:py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base mt-4 sm:mt-8 shadow-md">
+                <button type="submit" disabled={isFormLoading} className="w-full bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 disabled:opacity-50 disabled:hover:brightness-100 text-white font-semibold py-3 sm:py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base mt-4 sm:mt-8 shadow-md">
                   {isFormLoading ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
@@ -491,13 +473,13 @@ export default function SproscaleLandingPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="py-12 md:py-20 flex flex-col items-center justify-center text-center space-y-6 bg-stone-50 rounded-2xl border border-stone-200"
               >
-                <div className="w-16 h-16 bg-stone-900 text-white rounded-full flex items-center justify-center mb-6 shadow-lg">
+                <div className="w-16 h-16 bg-linear-to-r from-glow-from to-glow-to text-white rounded-full flex items-center justify-center mb-6 shadow-lg">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-serif text-stone-900 tracking-tight">
-                  <span className="italic text-stone-500">Bedankt!</span>
+                <h3 className="font-display text-3xl md:text-4xl font-medium text-stone-900 tracking-tight">
+                  Bedankt!
                 </h3>
-                <p className="text-lg md:text-xl text-stone-600 max-w-lg font-serif italic py-4">
+                <p className="text-lg md:text-xl text-stone-600 max-w-lg font-light py-4">
                   Wij hebben uw aanvraag ontvangen en nemen binnen 24 uur contact op.
                 </p>
               </motion.div>
