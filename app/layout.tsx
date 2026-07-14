@@ -71,16 +71,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify([
             {
               '@context': 'https://schema.org',
-              '@type': 'Organization',
+              '@type': ['Organization', 'LocalBusiness'],
               '@id': 'https://sproscale.com/#organization',
               name: 'Sproscale',
               url: 'https://sproscale.com',
               logo: { '@type': 'ImageObject', url: 'https://sproscale.com/sproscale-emblem.png' },
+              image: 'https://sproscale.com/og-image.png',
               description: 'AI Automatisering, Web Development en Marketing voor groeiende MKB-bedrijven in Nederland.',
               address: { '@type': 'PostalAddress', streetAddress: 'Strijp-S', addressLocality: 'Eindhoven', addressRegion: 'Noord-Brabant', postalCode: '5617', addressCountry: 'NL' },
+              geo: { '@type': 'GeoCoordinates', latitude: 51.4416, longitude: 5.4530 },
+              priceRange: '€€',
               contactPoint: { '@type': 'ContactPoint', telephone: '+31-6-58761348', email: 'info@sproscale.com', contactType: 'customer service', availableLanguage: 'Dutch' },
               sameAs: ['https://www.linkedin.com/company/sproscale', 'https://www.instagram.com/sproscale'],
-              areaServed: { '@type': 'Country', name: 'Netherlands' },
+              areaServed: [
+                { '@type': 'Country', name: 'Netherlands' },
+                { '@type': 'State', name: 'Noord-Brabant' },
+              ],
               hasOfferCatalog: {
                 '@type': 'OfferCatalog',
                 name: 'Sproscale Diensten',

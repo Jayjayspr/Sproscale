@@ -1,0 +1,27 @@
+# Sproscale
+
+> Sproscale is een Nederlands bureau (gevestigd op Strijp-S, Eindhoven, Noord-Brabant) dat AI-automatisering, high-end webdevelopment en resultaatgerichte marketing combineert om MKB-bedrijven te laten schalen.
+
+Sproscale richt zich op bedrijven die hun acquisitie, website en interne processen willen versnellen met een combinatie van strategisch advies, technische bouw en AI-systemen. Alle opgeleverde websites, AI-tools en marketingaccounts blijven volledig eigendom van de klant.
+
+## Diensten
+
+- **Website Bouwen** — high-end Next.js websites, vanaf €999. Conversie-gericht design, razendsnelle laadtijden.
+- **Meta & Google Ads** — leadgeneratie via betaalde advertenties, vanaf €499/maand.
+- **AI Chatbot & Automatisering** — custom AI-chatbots en workflow-automatisering, vanaf €249.
+- **Consultancy** — strategisch advies voor schaalbare groei, prijs op aanvraag.
+
+## Belangrijke pagina's
+
+- [Homepage](https://sproscale.com/): overzicht van alle diensten, klantresultaten en contactformulier.
+- [Over ons](https://sproscale.com/over-ons): achtergrond en werkwijze van Sproscale.
+- [Plan een kennismaking](https://sproscale.com/afspraak): vrijblijvend strategiegesprek inplannen.
+- [Contact](https://sproscale.com/contact): direct contact opnemen.
+- [Insights](https://sproscale.com/insights): artikelen over AI-automatisering, marketingpsychologie, chatbot-UX en webdevelopment.
+
+## Contact
+
+- E-mail: info@sproscale.com
+- Locatie: Strijp-S, Eindhoven, Noord-Brabant, Nederland
+- LinkedIn: https://www.linkedin.com/company/sproscale
+- Instagram: https://www.instagram.com/sproscale

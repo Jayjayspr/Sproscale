@@ -8,6 +8,24 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '../lib/supabase';
 import HeroSection from '../components/hero/HeroSection';
 
+const faqs = [
+  { q: "Hoe snel kunnen we resultaat verwachten?", a: "Afhankelijk van de gekozen strategie zien we vaak de eerste verschuivingen in data binnen 4 tot 6 weken. Voor volledige schaalbaarheid en stabiele lead-flows rekenen we doorgaans op een traject van 3 maanden." },
+  { q: "Wat is de gemiddelde investering voor een traject?", a: "Onze trajecten zijn maatwerk en variëren per bedrijfsbehoefte. We werken met een instapmodel voor MKB tot uitgebreide enterprise-oplossingen. Tijdens een strategiegesprek geven we een exacte indicatie." },
+  { q: "Blijven de systemen ons eigendom?", a: "Zeker. Alle websites, AI-tools en marketingaccounts die we voor u opzetten, blijven volledig eigendom van uw organistie. Wij zijn slechts de architecten en beheerders." },
+  { q: "Hebben jullie ervaring in mijn specifieke sector?", a: "Hoewel we in diverse markten actief zijn, is onze methodiek sector-onafhankelijk. We focussen op de psychologie van de koper en de techniek, wat universeel werkt voor B2B groei." },
+  { q: "Leveren jullie ook standalone AI-diensten?", a: "Ja, wij bouwen ook specifieke AI-automatiseringen of chatbots voor bedrijven die hun huidige website willen behouden maar wel hun processen willen versnellen." },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+};
+
 export default function SproscaleLandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isFormLoading, setIsFormLoading] = useState(false);
@@ -366,14 +384,13 @@ export default function SproscaleLandingPage() {
             </h2>
           </div>
 
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+
           <div className="border border-stone-800 rounded-sm divide-y divide-stone-800 bg-transparent">
-            {[
-              { q: "Hoe snel kunnen we resultaat verwachten?", a: "Afhankelijk van de gekozen strategie zien we vaak de eerste verschuivingen in data binnen 4 tot 6 weken. Voor volledige schaalbaarheid en stabiele lead-flows rekenen we doorgaans op een traject van 3 maanden." },
-              { q: "Wat is de gemiddelde investering voor een traject?", a: "Onze trajecten zijn maatwerk en variëren per bedrijfsbehoefte. We werken met een instapmodel voor MKB tot uitgebreide enterprise-oplossingen. Tijdens een strategiegesprek geven we een exacte indicatie." },
-              { q: "Blijven de systemen ons eigendom?", a: "Zeker. Alle websites, AI-tools en marketingaccounts die we voor u opzetten, blijven volledig eigendom van uw organistie. Wij zijn slechts de architecten en beheerders." },
-              { q: "Hebben jullie ervaring in mijn specifieke sector?", a: "Hoewel we in diverse markten actief zijn, is onze methodiek sector-onafhankelijk. We focussen op de psychologie van de koper en de techniek, wat universeel werkt voor B2B groei." },
-              { q: "Leveren jullie ook standalone AI-diensten?", a: "Ja, wij bouwen ook specifieke AI-automatiseringen of chatbots voor bedrijven die hun huidige website willen behouden maar wel hun processen willen versnellen." }
-            ].map((faq, index) => (
+            {faqs.map((faq, index) => (
               <div key={index} className="group">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
