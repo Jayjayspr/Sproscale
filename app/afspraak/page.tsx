@@ -4,8 +4,11 @@ import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../../lib/i18n/LanguageContext';
 
 export default function AfspraakPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     const existingScript = document.getElementById('calendly-script');
     if (existingScript) existingScript.remove();
@@ -32,13 +35,13 @@ export default function AfspraakPage() {
       >
         <Link href="/" className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors mb-8 font-medium">
           <ArrowLeft className="w-4 h-4" />
-          Terug naar home
+          {t('common.backToHome')}
         </Link>
 
         <div className="bg-white rounded-[2rem] p-6 md:p-12 border border-stone-200 shadow-xl relative overflow-hidden transition-all duration-500 min-h-[750px] flex flex-col items-center">
           <div className="text-center mb-6 w-full">
             <h1 className="text-3xl md:text-5xl font-serif text-stone-900 tracking-tight">
-              Kies uw moment.
+              {t('afspraak.heading')}
             </h1>
           </div>
 

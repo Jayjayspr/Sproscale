@@ -4,10 +4,13 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '../lib/i18n/LanguageContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,10 +25,10 @@ export default function Header() {
   };
 
   const navLinks = [
-    { name: 'Diensten', href: '/#diensten' },
-    { name: 'Over ons', href: '/over-ons' },
-    { name: 'FAQ', href: '/#faq' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('nav.diensten'), href: '/#diensten' },
+    { name: t('nav.overOns'), href: '/over-ons' },
+    { name: t('nav.faq'), href: '/#faq' },
+    { name: t('nav.contact'), href: '/contact' },
   ];
 
   return (
@@ -34,10 +37,10 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative w-6 h-6 transition-transform duration-300 group-hover:scale-110">
-              <Image 
-                src="/sproscale-emblem.png" 
-                alt="Sproscale Emblem" 
-                fill 
+              <Image
+                src="/sproscale-emblem.png"
+                alt={t('footer.logoAlt')}
+                fill
                 className="object-contain"
                 priority
               />
@@ -49,25 +52,29 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <Link 
+            <Link
               key={link.name}
-              href={link.href} 
+              href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
               className="text-xs font-semibold tracking-wider uppercase text-stone-950 hover:text-stone-600 transition-colors"
             >
               {link.name}
             </Link>
           ))}
+          <LanguageSelector />
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden p-2 text-stone-950"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile: taal + menu toggle */}
+        <div className="flex md:hidden items-center gap-1">
+          <LanguageSelector />
+          <button
+            className="p-2 text-stone-950"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={t('nav.toggleMenu')}
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Overlay */}

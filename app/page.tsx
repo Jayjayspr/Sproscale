@@ -1,32 +1,70 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Briefcase, Target, Monitor, Bot, ChevronDown, Loader2, Database, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Briefcase, Target, Monitor, Bot, ChevronDown, Loader2, Database, ShieldCheck, Zap, Wallet, Clock, Lock } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../lib/supabase';
 import HeroSection from '../components/hero/HeroSection';
+import { useLanguage } from '../lib/i18n/LanguageContext';
 
-const faqs = [
-  { q: "Hoe snel kunnen we resultaat verwachten?", a: "Afhankelijk van de gekozen strategie zien we vaak de eerste verschuivingen in data binnen 4 tot 6 weken. Voor volledige schaalbaarheid en stabiele lead-flows rekenen we doorgaans op een traject van 3 maanden." },
-  { q: "Wat is de gemiddelde investering voor een traject?", a: "Onze trajecten zijn maatwerk en variëren per bedrijfsbehoefte. We werken met een instapmodel voor MKB tot uitgebreide enterprise-oplossingen. Tijdens een strategiegesprek geven we een exacte indicatie." },
-  { q: "Blijven de systemen ons eigendom?", a: "Zeker. Alle websites, AI-tools en marketingaccounts die we voor u opzetten, blijven volledig eigendom van uw organistie. Wij zijn slechts de architecten en beheerders." },
-  { q: "Hebben jullie ervaring in mijn specifieke sector?", a: "Hoewel we in diverse markten actief zijn, is onze methodiek sector-onafhankelijk. We focussen op de psychologie van de koper en de techniek, wat universeel werkt voor B2B groei." },
-  { q: "Leveren jullie ook standalone AI-diensten?", a: "Ja, wij bouwen ook specifieke AI-automatiseringen of chatbots voor bedrijven die hun huidige website willen behouden maar wel hun processen willen versnellen." },
+const techStack = ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Resend', 'Vercel'];
+
+const painPointConfig = [
+  { id: 'followUp', n: '01' },
+  { id: 'lowInquiries', n: '02' },
+  { id: 'noTimeForGrowth', n: '03' },
 ];
 
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.q,
-    acceptedAnswer: { '@type': 'Answer', text: faq.a },
-  })),
-};
+const serviceConfig = [
+  { id: 'consultancy', icon: Briefcase },
+  { id: 'marketing', icon: Target },
+  { id: 'webDesign', icon: Monitor },
+  { id: 'aiAutomations', icon: Bot },
+];
+
+const supabaseFeatureConfig = [
+  { id: 'realtimeSync', icon: Database },
+  { id: 'secureBackend', icon: ShieldCheck },
+  { id: 'seamlessIntegration', icon: Zap },
+];
+
+const processConfig = [
+  { id: 'analysis' },
+  { id: 'buildIntegration' },
+  { id: 'optimization' },
+];
+
+const reviewConfig = [
+  { id: 'techflow', name: 'Pieter van der Berg', company: 'TechFlow Solutions' },
+  { id: 'innovate', name: 'Sarah de Vries', company: 'Innovate B2B' },
+  { id: 'datasync', name: 'Johan Klaassen', company: 'DataSync' },
+];
+
+// Patroon A: alleen de niet-vertaalbare delen (icon, volgorde, stabiele id) blijven
+// hier staan. Titel/beschrijving komen via t(`guarantees.items.${id}.title`).
+const guaranteeConfig = [
+  { id: 'vastePrijs', icon: Wallet },
+  { id: 'live6Weken', icon: Clock },
+  { id: 'eigendom', icon: Lock },
+];
+
+type FaqItem = { q: string; a: string };
 
 export default function SproscaleLandingPage() {
+  const { t, tRaw } = useLanguage();
+  const faqs = tRaw<FaqItem[]>('faq.items');
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  };
+
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isFormLoading, setIsFormLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -68,7 +106,7 @@ export default function SproscaleLandingPage() {
       setIsFormSubmitted(true);
     } catch (error) {
       console.error('Fout bij opslaan:', error);
-      alert('Er ging iets mis bij het verzenden. Probeer het later opnieuw.');
+      alert(t('contactForm.errorAlert'));
     } finally {
       setIsFormLoading(false);
     }
@@ -77,6 +115,56 @@ export default function SproscaleLandingPage() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+
+      {/* Tech stack showcase */}
+      <section className="py-8 md:py-10 bg-white border-b border-stone-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
+          <span className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase">{t('techStack.heading')}</span>
+        </div>
+        <div
+          className="relative w-full overflow-hidden flex justify-center"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+          }}
+        >
+          <div className="flex w-max items-center gap-16 whitespace-nowrap animate-marquee">
+            {[...techStack, ...techStack].map((tech, i) => (
+              <span key={i} className="text-sm font-medium text-stone-500">{tech}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Herken je dit? (pain points) */}
+      <section className="py-20 md:py-28 bg-stone-50">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <div className="text-left mb-12 md:mb-16 max-w-2xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-[1px] bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('painPoints.eyebrow')}</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 tracking-tight">
+              {t('painPoints.heading')}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            {painPointConfig.map((point) => (
+              <div key={point.id} className="border-t border-stone-300 pt-6">
+                <span className="text-xs font-bold tracking-[0.15em] text-stone-400">{point.n}</span>
+                <p className="mt-4 text-lg md:text-xl text-stone-800 font-light leading-snug">{t(`painPoints.items.${point.id}`)}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
       {/* Our Specialty (Four Pillars) */}
       <section id="diensten" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-white">
@@ -90,123 +178,42 @@ export default function SproscaleLandingPage() {
           <div className="text-left mb-16 md:mb-20">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Onze Diensten</span>
+              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('services.eyebrow')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight">
-              Onze Specialiteiten.
+              {t('services.heading')}
             </h2>
-            <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">Een integrale aanpak voor uw online succes. Wij bieden de expertise die nodig is om uw bedrijf naar het volgende niveau te tillen.</p>
+            <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">{t('services.subheading')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {/* Card 1: Consultancy */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
-                  <Briefcase className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
-                </div>
-                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">Consultancy</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
-                  Datagedreven advies en strategische planning om uw bedrijfsprocessen te optimaliseren en schaalbare groei te realiseren.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {['Strategische Planning', 'Procesoptimalisatie', 'Data Analyse'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-stone-700">
-                      <CheckCircle2 className="w-5 h-5 text-stone-400" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Prijs op aanvraag</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
-                    Aanvragen <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Marketing */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
-                  <Target className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
-                </div>
-                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">Marketing</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
-                  Doelgerichte campagnes, SEO en leadgeneratie systemen die uw ideale B2B klanten aantrekken en converteren.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {['Growth Marketing', 'B2B Leadgeneratie', 'Meta & Google Ads'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-stone-700">
-                      <CheckCircle2 className="w-5 h-5 text-stone-400" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 499 /mnd</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
-                    Aanvragen <ArrowRight className="w-4 h-4" />
-                  </Link>
+            {serviceConfig.map((service) => (
+              <div key={service.id} className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
+                    <service.icon className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
+                  </div>
+                  <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">{t(`services.items.${service.id}.title`)}</h3>
+                  <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
+                    {t(`services.items.${service.id}.desc`)}
+                  </p>
+                  <ul className="space-y-4 mb-8">
+                    {tRaw<string[]>(`services.items.${service.id}.bullets`).map((item, i) => (
+                      <li key={i} className="flex items-center gap-3 text-stone-700">
+                        <CheckCircle2 className="w-5 h-5 text-stone-400" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto flex items-center justify-between">
+                    <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">{t(`services.items.${service.id}.price`)}</span>
+                    <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
+                      {t('services.ctaLabel')} <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Card 3: Web Design & Development */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
-                  <Monitor className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
-                </div>
-                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">Web Design & Development</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
-                  High-performance, op maat gemaakte websites en applicaties die uw merk versterken en naadloos functioneren.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {['Next.js & React', 'Conversie-gericht Design', 'Razendsnelle Laadtijden'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-stone-700">
-                      <CheckCircle2 className="w-5 h-5 text-stone-400" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 999</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
-                    Aanvragen <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4: AI Automations */}
-            <div className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
-                  <Bot className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
-                </div>
-                <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">AI Automations</h3>
-                <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
-                  Slimme AI-integraties en automatiseringen die repetitieve taken overnemen, efficiëntie verhogen en uw team tijd besparen.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  {['Workflow Automatisering', 'AI Chatbots & Assistenten', 'CRM Integraties'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-stone-700">
-                      <CheckCircle2 className="w-5 h-5 text-stone-400" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">Vanaf € 249</span>
-                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
-                    Aanvragen <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
         </motion.div>
       </section>
@@ -224,28 +231,24 @@ export default function SproscaleLandingPage() {
             <div className="text-left mb-12 md:mb-16 max-w-3xl">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-[1px] bg-stone-900"></div>
-                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Supabase Integratie</span>
+                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('supabase.eyebrow')}</span>
               </div>
               <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-6 tracking-tight">
-                Krachtige data-infrastructuur, standaard inbegrepen.
+                {t('supabase.heading')}
               </h2>
               <p className="text-base md:text-xl text-stone-600 font-light leading-relaxed">
-                Elke oplossing die wij bouwen draait op een moderne, schaalbare backend met Supabase — zodat uw data altijd actueel, veilig en direct beschikbaar is.
+                {t('supabase.subheading')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-              {[
-                { icon: Database, title: 'Realtime Data Synchronisatie', desc: 'Wijzigingen zijn direct zichtbaar in uw dashboards en applicaties, zonder vertraging.' },
-                { icon: ShieldCheck, title: 'Veilige, Schaalbare Backend', desc: 'Row-level security en encryptie zorgen dat uw bedrijfsgegevens te allen tijde beschermd zijn.' },
-                { icon: Zap, title: 'Naadloze Integratie', desc: "Koppelt moeiteloos met uw bestaande systemen, CRM's en workflows." },
-              ].map((feature, i) => (
-                <div key={i}>
+              {supabaseFeatureConfig.map((feature) => (
+                <div key={feature.id}>
                   <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center mb-5">
                     <feature.icon className="w-6 h-6 text-stone-900" />
                   </div>
-                  <h3 className="font-display text-lg font-medium text-stone-900 mb-2">{feature.title}</h3>
-                  <p className="text-sm text-stone-600 font-light leading-relaxed">{feature.desc}</p>
+                  <h3 className="font-display text-lg font-medium text-stone-900 mb-2">{t(`supabase.items.${feature.id}.title`)}</h3>
+                  <p className="text-sm text-stone-600 font-light leading-relaxed">{t(`supabase.items.${feature.id}.desc`)}</p>
                 </div>
               ))}
             </div>
@@ -266,49 +269,30 @@ export default function SproscaleLandingPage() {
             <div className="text-left">
               <div className="flex items-center gap-4 mb-6 md:mb-8">
                 <div className="w-12 h-[1px] bg-stone-600"></div>
-                <span className="text-xs font-bold tracking-[0.2em] text-stone-400 uppercase">Hoe het werkt</span>
+                <span className="text-xs font-bold tracking-[0.2em] text-stone-400 uppercase">{t('process.eyebrow')}</span>
               </div>
               <h2 className="font-display text-4xl md:text-6xl font-medium text-white leading-tight tracking-tight">
-                Van strategie tot implementatie.
+                {t('process.heading')}
               </h2>
             </div>
             <div className="lg:pt-32">
               <p className="text-base md:text-lg text-stone-300 font-light leading-relaxed max-w-sm">
-                Een no-nonsense aanpak waarbij we jouw de technische executie volledig uit handen nemen.
+                {t('process.subheading')}
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            {/* Step 1 */}
-            <div className="relative">
-              <div className="border-t border-stone-800 pt-8">
-                <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">Analyse & Strategie</h3>
-                <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
-                  We brengen in kaart waar de bottlenecks in je huidige proces zitten en welke systemen (ads, web, AI) de grootste impact maken.
-                </p>
+            {processConfig.map((step) => (
+              <div key={step.id} className="relative">
+                <div className="border-t border-stone-800 pt-8">
+                  <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">{t(`process.items.${step.id}.title`)}</h3>
+                  <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
+                    {t(`process.items.${step.id}.desc`)}
+                  </p>
+                </div>
               </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="relative">
-              <div className="border-t border-stone-800 pt-8">
-                <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">Bouw & Integratie</h3>
-                <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
-                  We ontwikkelen de website, configureren de AI-systemen en zetten de campagnes op. Alles getest en naadloos verbonden.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="relative">
-              <div className="border-t border-stone-800 pt-8">
-                <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">Optimalisatie & Groei</h3>
-                <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
-                  Na de lancering sturen we op keiharde data. We schalen wat werkt, tweaken de AI en zorgen for een continue stroom aan leads.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -325,21 +309,17 @@ export default function SproscaleLandingPage() {
           <div className="text-left mb-12 md:mb-16">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Reviews</span>
+              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('reviews.eyebrow')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight">
-              Bewezen Resultaat.
+              {t('reviews.heading')}
             </h2>
-            <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">Wat onze partners zeggen over de samenwerking met SPROSCALE.</p>
+            <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">{t('reviews.subheading')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {[
-              { name: "Pieter van der Berg", role: "CEO", company: "TechFlow Solutions", quote: "Sinds de lancering van ons nieuwe platform zien we 30% meer gekwalificeerde aanvragen in slechts 3 maanden." },
-              { name: "Sarah de Vries", role: "Marketing Director", company: "Innovate B2B", quote: "De leadgeneratie systemen van SPROSCALE hebben onze sales cycle met weken verkort. Top kwaliteit leads." },
-              { name: "Johan Klaassen", role: "Founder", company: "DataSync", quote: "Eindelijk een bureau dat snapt dat een website moet verkopen. De technische optimalisatie is ongekend." }
-            ].map((review, i) => (
-              <div key={i} className="bg-white rounded-3xl p-6 md:p-8 border border-stone-200 flex flex-col h-full transition-all duration-500 hover:shadow-xl hover:scale-[1.03] hover:-translate-y-2">
+            {reviewConfig.map((review) => (
+              <div key={review.id} className="bg-white rounded-3xl p-6 md:p-8 border border-stone-200 flex flex-col h-full transition-all duration-500 hover:shadow-xl hover:scale-[1.03] hover:-translate-y-2">
                 <div className="flex-grow">
                   <div className="flex text-stone-800 mb-6 gap-1">
                     {[...Array(5)].map((_, j) => (
@@ -348,7 +328,7 @@ export default function SproscaleLandingPage() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-stone-600 text-lg leading-relaxed mb-8 font-light">"{review.quote}"</p>
+                  <p className="text-stone-600 text-lg leading-relaxed mb-8 font-light">"{t(`reviews.items.${review.id}.quote`)}"</p>
                 </div>
                 <div className="flex items-center gap-4 pt-6 border-t border-stone-100">
                   <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center text-stone-900 font-bold text-lg">
@@ -356,9 +336,42 @@ export default function SproscaleLandingPage() {
                   </div>
                   <div>
                     <p className="font-bold text-stone-900">{review.name}</p>
-                    <p className="text-stone-500 text-sm">{review.role}, {review.company}</p>
+                    <p className="text-stone-500 text-sm">{t(`reviews.items.${review.id}.role`)}, {review.company}</p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Garanties (risk reversal) */}
+      <section className="py-20 md:py-28 bg-white">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <div className="text-left mb-12 md:mb-16 max-w-2xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-[1px] bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('guarantees.eyebrow')}</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 tracking-tight">
+              {t('guarantees.heading')}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {guaranteeConfig.map((g) => (
+              <div key={g.id} className="bg-stone-50 rounded-3xl p-6 md:p-8 border border-stone-200">
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm">
+                  <g.icon className="w-6 h-6 text-stone-900" />
+                </div>
+                <h3 className="font-display text-lg font-medium text-stone-900 mb-2">{t(`guarantees.items.${g.id}.title`)}</h3>
+                <p className="text-sm text-stone-600 font-light leading-relaxed">{t(`guarantees.items.${g.id}.desc`)}</p>
               </div>
             ))}
           </div>
@@ -377,10 +390,10 @@ export default function SproscaleLandingPage() {
           <div className="text-center mb-12 md:mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-8 h-[1px] bg-stone-600"></div>
-              <span className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase">Vragen</span>
+              <span className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase">{t('faq.eyebrow')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-medium text-white tracking-tight">
-              Veelgestelde Vragen.
+              {t('faq.heading')}
             </h2>
           </div>
 
@@ -431,12 +444,12 @@ export default function SproscaleLandingPage() {
             <div className="text-left mb-8 md:mb-10 mt-2 md:mt-4">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-[1px] bg-stone-900"></div>
-                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Contact</span>
+                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('nav.contact')}</span>
               </div>
               <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-4 md:mb-6 tracking-tight">
-                Klaar om te schalen?
+                {t('contactForm.heading')}
               </h2>
-              <p className="text-stone-600 text-base md:text-xl font-light leading-relaxed">Laat uw gegevens achter en wij nemen binnen 24 uur contact op voor een vrijblijvend strategiegesprek.</p>
+              <p className="text-stone-600 text-base md:text-xl font-light leading-relaxed">{t('contactForm.subheading')}</p>
             </div>
 
             {!isFormSubmitted ? (
@@ -444,41 +457,41 @@ export default function SproscaleLandingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                      <User className="w-4 h-4 text-stone-400" /> Naam
+                      <User className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.name')}
                     </label>
-                    <input type="text" required value={formData.naam} onChange={e => setFormData({ ...formData, naam: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Uw volledige naam" />
+                    <input type="text" required value={formData.naam} onChange={e => setFormData({ ...formData, naam: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder={t('contactForm.placeholders.name')} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-stone-400" /> Zakelijk E-mail
+                      <Mail className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.email')}
                     </label>
-                    <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="naam@bedrijf.nl" />
+                    <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder={t('contactForm.placeholders.email')} />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                    <Building className="w-4 h-4 text-stone-400" /> Bedrijf
+                    <Building className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.company')}
                   </label>
-                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({ ...formData, bedrijf: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder="Bedrijfsnaam" />
+                  <input type="text" required value={formData.bedrijf} onChange={e => setFormData({ ...formData, bedrijf: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400" placeholder={t('contactForm.placeholders.company')} />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                    <MessageSquare className="w-4 h-4 text-stone-400" /> Uw Groeiuitdaging
+                    <MessageSquare className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.challenge')}
                   </label>
-                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({ ...formData, uitdaging: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder="Waar loopt u momenteel tegenaan in uw acquisitie?"></textarea>
+                  <textarea rows={4} required value={formData.uitdaging} onChange={e => setFormData({ ...formData, uitdaging: e.target.value })} className="w-full px-4 py-3.5 rounded-md border border-stone-200 focus:ring-2 focus:ring-glow-to focus:border-transparent outline-none transition-all bg-stone-50 text-stone-900 placeholder:text-stone-400 resize-none" placeholder={t('contactForm.placeholders.challenge')}></textarea>
                 </div>
 
                 <button type="submit" disabled={isFormLoading} className="w-full bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 disabled:opacity-50 disabled:hover:brightness-100 text-white font-semibold py-3 sm:py-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base mt-4 sm:mt-8 shadow-md">
                   {isFormLoading ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      Verzenden...
+                      {t('contactForm.sending')}
                     </>
                   ) : (
                     <>
-                      Vraag Een Strategiegesprek Aan
+                      {t('contactForm.submit')}
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
@@ -494,10 +507,10 @@ export default function SproscaleLandingPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="font-display text-3xl md:text-4xl font-medium text-stone-900 tracking-tight">
-                  Bedankt!
+                  {t('contactForm.thanksHeading')}
                 </h3>
                 <p className="text-lg md:text-xl text-stone-600 max-w-lg font-light py-4">
-                  Wij hebben uw aanvraag ontvangen en nemen binnen 24 uur contact op.
+                  {t('contactForm.thanksBody')}
                 </p>
               </motion.div>
             )}

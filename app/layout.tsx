@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display, Geist } from 'next/font/google';
 import './globals.css';
 import ClientWrapper from '../components/ClientWrapper';
+import { LanguageProvider } from '../lib/i18n/LanguageContext';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({
@@ -110,9 +111,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           ])}}
         />
-        <ClientWrapper>
-          {children}
-        </ClientWrapper>
+        <LanguageProvider>
+          <ClientWrapper>
+            {children}
+          </ClientWrapper>
+        </LanguageProvider>
         <SpeedInsights />
       </body>
     </html>

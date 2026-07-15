@@ -107,3 +107,18 @@
   .mesh-blob { animation: none !important; }
   .mesh-parallax { transform: none !important; }
 }
+
+/* Tech-stack marquee: the track renders its content twice, so translating
+   exactly -50% loops seamlessly back to an identical starting frame. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none !important; }
+}

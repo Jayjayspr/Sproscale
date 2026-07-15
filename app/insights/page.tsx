@@ -5,56 +5,19 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '../../lib/i18n/LanguageContext';
 
-const insights = [
-  {
-    id: 1,
-    title: "Waarom AI-automatisering de 'Unfair Advantage' is voor Groeiende Bedrijven in 2026",
-    excerpt: "Stel je voor: een medewerker die nooit slaapt, geen fouten maakt en exact weet wat je klanten nodig hebben. Ontdek hoe AI de ruggengraat van je business wordt.",
-    href: "/insights/ai-automatisering",
-    date: "30 Maart 2026",
-    image: "/images/insights/ai-automatisering-growth.webp",
-    alt: "Abstracte visualisatie van AI-gedreven groei"
-  },
-  {
-    id: 2,
-    title: "De Psychologie van Conversie: Waarom je Marketing in 2026 faalt zonder Emotie",
-    excerpt: "Veel bedrijven maken de fout om alleen op functies en specs te focussen. Leer hoe je psychologische principes combineert met automatisering voor maximale groei.",
-    href: "/insights/marketing-psychologie",
-    date: "31 Maart 2026",
-    image: "/images/insights/marketing-psychologie-conversie.webp",
-    alt: "De balans tussen data en emotie in conversie"
-  },
-  {
-    id: 3,
-    title: "De onzichtbare drempel: Waarom jouw chatbot klanten wegjaagt",
-    excerpt: "Een AI-chatbot die het toetsenbord laat opspringen voordat de gebruiker ook maar één woord heeft gelezen, is geen tool — het is een obstakel. Leer hoe mobile-first design het verschil maakt.",
-    href: "/insights/mobiele-chatbot-ux",
-    date: "3 Mei 2026",
-    image: "/images/insights/mobiele-chatbot-ux.webp.png",
-    alt: "Mobiele chatbot UX illustratie"
-  },
-  {
-    id: 5,
-    title: "Waarom jouw WordPress site in 2026 klanten kost (en wat Vercel-snelheid oplevert)",
-    excerpt: "53% van mobiele bezoekers verlaat een pagina die langer dan 3 seconden laadt. Jouw concurrent laadt in 0,8 seconden. Ontdek wat dat concreet kost aan gemiste leads.",
-    href: "/insights/wordpress-vs-vercel",
-    date: "4 Mei 2026",
-    image: "/images/insights/wordpress-vs-vercel.png",
-    alt: "Website snelheid visualisatie WordPress vs Vercel"
-  },
-  {
-    id: 4,
-    title: "Stoppen met Targeten: Waarom Meta's AI in 2026 beter verkoopt dan jouw beste Marketeer",
-    excerpt: "Handmatige interesse-targeting is achterhaald. In 2026 wint wie de AI van Meta voedt met de juiste data en creaties — niet wie de meeste knoppen instelt.",
-    href: "/insights/meta-ai-targeting",
-    date: "3 Mei 2026",
-    image: "/images/insights/meta-ai-targeting.webp.png.png",
-    alt: "Meta Advantage+ AI targeting visualisatie"
-  }
+const insightsConfig = [
+  { slug: 'aiAutomatisering', href: '/insights/ai-automatisering', image: '/images/insights/ai-automatisering-growth.webp' },
+  { slug: 'marketingPsychologie', href: '/insights/marketing-psychologie', image: '/images/insights/marketing-psychologie-conversie.webp' },
+  { slug: 'mobieleChatbotUx', href: '/insights/mobiele-chatbot-ux', image: '/images/insights/mobiele-chatbot-ux.webp.png' },
+  { slug: 'wordpressVsVercel', href: '/insights/wordpress-vs-vercel', image: '/images/insights/wordpress-vs-vercel.png' },
+  { slug: 'metaAiTargeting', href: '/insights/meta-ai-targeting', image: '/images/insights/meta-ai-targeting.webp.png.png' },
 ];
 
 export default function InsightsPage() {
+  const { t } = useLanguage();
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -69,13 +32,13 @@ export default function InsightsPage() {
         <motion.div {...fadeInUp} className="max-w-3xl">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-[1px] bg-stone-900"></div>
-            <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Kennisbank</span>
+            <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('insightsIndex.eyebrow')}</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.05] tracking-tight text-stone-900 mb-8">
-            Insights <span className="text-stone-400 italic">& Deep Dives.</span>
+            {t('insightsIndex.headingPre')} <span className="text-stone-400 italic">{t('insightsIndex.headingHighlight')}</span>
           </h1>
           <p className="text-xl text-stone-600 font-light leading-relaxed max-w-2xl">
-            Wij delen onze visie op de digitale transformatie. Ontdek hoe u techniek en AI kunt inzetten om een onverslaanbare groeimachine te bouwen.
+            {t('insightsIndex.subheading')}
           </p>
         </motion.div>
       </section>
@@ -83,16 +46,16 @@ export default function InsightsPage() {
       {/* Grid Layout */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {insights.map((article) => (
+          {insightsConfig.map((article) => (
             <motion.div
-              key={article.id}
+              key={article.slug}
               {...fadeInUp}
               className="group bg-white rounded-3xl p-8 border border-stone-200 shadow-sm transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 flex flex-col h-full"
             >
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl mb-6 bg-stone-100">
                 <Image
                   src={article.image}
-                  alt={article.alt}
+                  alt={t(`insightsIndex.articles.${article.slug}.alt`)}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-w-7xl): 50vw, 33vw"
@@ -100,18 +63,18 @@ export default function InsightsPage() {
               </div>
 
               <div className="flex-grow">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-4 block">{article.date}</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-4 block">{t(`insightsIndex.articles.${article.slug}.date`)}</span>
                 <h3 className="text-2xl font-serif text-stone-900 mb-4 leading-tight group-hover:text-stone-600 transition-colors">
-                  {article.title}
+                  {t(`insightsIndex.articles.${article.slug}.title`)}
                 </h3>
                 <p className="text-stone-600 font-light leading-relaxed mb-8 text-sm md:text-base">
-                  {article.excerpt}
+                  {t(`insightsIndex.articles.${article.slug}.excerpt`)}
                 </p>
               </div>
 
               <div className="pt-6 border-t border-stone-100 flex items-center mt-auto">
                 <Link href={article.href} className="inline-flex items-center gap-2 text-stone-900 font-bold text-sm group/link">
-                  Lees meer
+                  {t('insightsIndex.readMore')}
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                 </Link>
               </div>

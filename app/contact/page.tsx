@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, MapPin, Phone, User, Building, MessageSquare, Loader2, CheckCircle2 } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import { useLanguage } from '../../lib/i18n/LanguageContext';
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [isFormLoading, setIsFormLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -46,7 +48,7 @@ export default function ContactPage() {
       setFormData({ naam: '', email: '', bedrijf: '', uitdaging: '' });
     } catch (error: any) {
       console.error('Fout bij opslaan:', error.message);
-      alert('Er ging iets mis: ' + error.message);
+      alert(t('contactPage.errorPrefix') + error.message);
     } finally {
       setIsFormLoading(false);
     }
@@ -65,14 +67,14 @@ export default function ContactPage() {
           <div>
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">Contact — 04</span>
+              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('contactPage.eyebrow')}</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-serif text-stone-900 mb-8 tracking-tight leading-[1.1]">
-              Laten we <br />
-              <span className="text-stone-500 italic">praten.</span>
+              {t('contactPage.headingLine1')} <br />
+              <span className="text-stone-500 italic">{t('contactPage.headingHighlight')}</span>
             </h1>
             <p className="text-xl text-stone-600 font-light leading-relaxed mb-12 max-w-md">
-              Klaar om uw bedrijf gekwalificeerd op te schalen? Neem contact met ons op voor een vrijblijvend strategiegesprek.
+              {t('contactPage.subheading')}
             </p>
 
             <div className="space-y-8">
@@ -81,7 +83,7 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-stone-900" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-1">E-mail</h3>
+                  <h3 className="font-bold text-stone-900 mb-1">{t('contactPage.info.email')}</h3>
                   <p className="text-stone-600 font-light">info@sproscale.com</p>
                 </div>
               </div>
@@ -90,7 +92,7 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5 text-stone-900" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-1">Telefoon</h3>
+                  <h3 className="font-bold text-stone-900 mb-1">{t('contactPage.info.phone')}</h3>
                   <p className="text-stone-600 font-light">+31 6 58761348</p>
                 </div>
               </div>
@@ -99,7 +101,7 @@ export default function ContactPage() {
                   <MapPin className="w-5 h-5 text-stone-900" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-stone-900 mb-1">Kantoor</h3>
+                  <h3 className="font-bold text-stone-900 mb-1">{t('contactPage.info.office')}</h3>
                   <p className="text-stone-600 font-light">Strijp-S, Eindhoven</p>
                 </div>
               </div>
@@ -117,23 +119,23 @@ export default function ContactPage() {
                 <div className="w-20 h-20 bg-stone-900 rounded-full flex items-center justify-center mb-6">
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-3xl font-serif text-stone-900 mb-4">Bericht Verzonden!</h3>
-                <p className="text-stone-600 mb-8 max-w-xs mx-auto">Bedankt voor uw aanvraag. We nemen binnen 24 uur contact met u op.</p>
+                <h3 className="text-3xl font-serif text-stone-900 mb-4">{t('contactPage.thanksHeading')}</h3>
+                <p className="text-stone-600 mb-8 max-w-xs mx-auto">{t('contactPage.thanksBody')}</p>
                 <button
                   onClick={() => setIsFormSubmitted(false)}
                   className="text-stone-900 font-bold border-b border-stone-900 pb-1 hover:text-stone-600 hover:border-stone-600 transition-colors"
                 >
-                  Nog een bericht sturen
+                  {t('contactPage.sendAnother')}
                 </button>
               </motion.div>
             ) : (
               <>
-                <h3 className="text-3xl font-serif text-stone-900 mb-8">Stuur een bericht</h3>
+                <h3 className="text-3xl font-serif text-stone-900 mb-8">{t('contactPage.formHeading')}</h3>
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                        <User className="w-4 h-4 text-stone-400" /> Naam
+                        <User className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.name')}
                       </label>
                       <input
                         type="text"
@@ -141,12 +143,12 @@ export default function ContactPage() {
                         value={formData.naam}
                         onChange={(e) => setFormData({ ...formData, naam: e.target.value })}
                         className="w-full px-4 py-3.5 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 focus:ring-0 transition-all text-stone-900 placeholder:text-stone-400"
-                        placeholder="Uw volledige naam"
+                        placeholder={t('contactForm.placeholders.name')}
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-stone-400" /> Zakelijk E-mail
+                        <Mail className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.email')}
                       </label>
                       <input
                         type="email"
@@ -154,14 +156,14 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-4 py-3.5 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 focus:ring-0 transition-all text-stone-900 placeholder:text-stone-400"
-                        placeholder="naam@bedrijf.nl"
+                        placeholder={t('contactForm.placeholders.email')}
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                      <Building className="w-4 h-4 text-stone-400" /> Bedrijf
+                      <Building className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.company')}
                     </label>
                     <input
                       type="text"
@@ -169,13 +171,13 @@ export default function ContactPage() {
                       value={formData.bedrijf}
                       onChange={(e) => setFormData({ ...formData, bedrijf: e.target.value })}
                       className="w-full px-4 py-3.5 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 focus:ring-0 transition-all text-stone-900 placeholder:text-stone-400"
-                      placeholder="Bedrijfsnaam"
+                      placeholder={t('contactForm.placeholders.company')}
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">
-                      <MessageSquare className="w-4 h-4 text-stone-400" /> Uw Groeiuitdaging
+                      <MessageSquare className="w-4 h-4 text-stone-400" /> {t('contactForm.labels.challenge')}
                     </label>
                     <textarea
                       rows={5}
@@ -183,7 +185,7 @@ export default function ContactPage() {
                       value={formData.uitdaging}
                       onChange={(e) => setFormData({ ...formData, uitdaging: e.target.value })}
                       className="w-full px-4 py-3.5 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 focus:ring-0 transition-all text-stone-900 placeholder:text-stone-400 resize-none"
-                      placeholder="Waar loopt u momenteel tegenaan?"
+                      placeholder={t('contactPage.challengePlaceholder')}
                     ></textarea>
                   </div>
 
@@ -196,7 +198,7 @@ export default function ContactPage() {
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
                       <>
-                        Verstuur Bericht
+                        {t('contactPage.submit')}
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </>
                     )}
