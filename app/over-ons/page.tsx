@@ -79,7 +79,7 @@ export default function AboutPage() {
             <div className="p-8 pb-0 md:p-12 lg:p-16 flex items-start h-full">
               <div className="relative">
                 <Image
-                  src="/jay-sprock.webp"
+                  src="/jaysprock.jpg"
                   alt={t('overOnsPage.founderImageAlt')}
                   width={400}
                   height={400}

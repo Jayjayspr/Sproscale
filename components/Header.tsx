@@ -62,6 +62,12 @@ export default function Header() {
             </Link>
           ))}
           <LanguageSelector />
+          <Link
+            href="/afspraak"
+            className="inline-flex items-center gap-2 bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 hover:scale-105 text-white text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full transition-all duration-300 shadow-md shadow-glow-from/20"
+          >
+            {t('hero.ctaPrimary')}
+          </Link>
         </nav>
 
         {/* Mobile: taal + menu toggle */}
@@ -88,15 +94,22 @@ export default function Header() {
           >
             <div className="flex flex-col px-4 py-8 gap-6 text-center">
               {navLinks.map((link) => (
-                <Link 
+                <Link
                   key={link.name}
-                  href={link.href} 
+                  href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className="text-sm font-semibold tracking-wider uppercase text-stone-950 hover:text-stone-600 transition-colors"
                 >
                   {link.name}
                 </Link>
               ))}
+              <Link
+                href="/afspraak"
+                onClick={(e) => handleLinkClick(e, '/afspraak')}
+                className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 text-white text-sm font-semibold tracking-wider uppercase px-6 py-3 rounded-full transition-all duration-300 shadow-md mx-auto"
+              >
+                {t('hero.ctaPrimary')}
+              </Link>
             </div>
           </motion.div>
         )}
