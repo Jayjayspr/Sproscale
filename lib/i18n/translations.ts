@@ -754,29 +754,35 @@ export const translations = {
       subheading: 'Een integrale aanpak voor uw online succes. Wij bieden de expertise die nodig is om uw bedrijf naar het volgende niveau te tillen.',
       ctaLabel: 'Aanvragen',
       items: {
-        consultancy: {
-          title: 'Consultancy',
-          desc: 'Datagedreven advies en strategische planning om uw bedrijfsprocessen te optimaliseren en schaalbare groei te realiseren.',
-          bullets: ['Strategische Planning', 'Procesoptimalisatie', 'Data Analyse'],
-          price: 'Prijs op aanvraag',
-        },
-        marketing: {
-          title: 'Marketing',
-          desc: 'Doelgerichte campagnes, SEO en leadgeneratie systemen die uw ideale B2B klanten aantrekken en converteren.',
-          bullets: ['Growth Marketing', 'B2B Leadgeneratie', 'Meta & Google Ads'],
-          price: 'Vanaf € 499 /mnd',
-        },
-        webDesign: {
-          title: 'Web Design & Development',
-          desc: 'High-performance, op maat gemaakte websites en applicaties die uw merk versterken en naadloos functioneren.',
+        websiteBouwen: {
+          title: 'Website Bouwen',
+          desc: 'High-performance, op maat gemaakte websites die uw merk versterken en naadloos functioneren.',
           bullets: ['Next.js & React', 'Conversie-gericht Design', 'Razendsnelle Laadtijden'],
           price: 'Vanaf € 999',
+        },
+        seoOptimalisatie: {
+          title: 'SEO Optimalisatie',
+          desc: 'Beter vindbaar in lokale zoekresultaten met een volledig geoptimaliseerd Google Bedrijfsprofiel en gerichte content.',
+          bullets: ['Google Bedrijfsprofiel', 'Lokale Content', 'Recensiebeheer'],
+          price: 'Vanaf € 399 /mnd',
+        },
+        googleMetaAds: {
+          title: 'Google & Meta Ads',
+          desc: 'Doelgerichte advertentiecampagnes die uw ideale B2B klanten aantrekken en converteren.',
+          bullets: ['Growth Marketing', 'B2B Leadgeneratie', 'Conversietracking'],
+          price: 'Vanaf € 499 /mnd',
         },
         aiAutomations: {
           title: 'AI Automations',
           desc: 'Slimme AI-integraties en automatiseringen die repetitieve taken overnemen, efficiëntie verhogen en uw team tijd besparen.',
           bullets: ['Workflow Automatisering', 'AI Chatbots & Assistenten', 'CRM Integraties'],
           price: 'Vanaf € 249',
+        },
+        reviewBeheer: {
+          title: 'Review Beheer',
+          desc: 'Meer en betere reviews, automatisch verzameld, om vertrouwen op te bouwen bij nieuwe klanten.',
+          bullets: ['Automatische Aanvraag', 'Reactiebegeleiding', 'Overzichtelijke Rapportage'],
+          price: 'Vanaf € 149 /mnd',
         },
       },
     },
@@ -1585,29 +1591,35 @@ export const translations = {
       subheading: 'An integrated approach to your online success. We offer the expertise needed to take your business to the next level.',
       ctaLabel: 'Get started',
       items: {
-        consultancy: {
-          title: 'Consultancy',
-          desc: 'Data-driven advice and strategic planning to optimize your business processes and achieve scalable growth.',
-          bullets: ['Strategic Planning', 'Process Optimization', 'Data Analysis'],
-          price: 'Price on request',
-        },
-        marketing: {
-          title: 'Marketing',
-          desc: 'Targeted campaigns, SEO and lead generation systems that attract and convert your ideal B2B customers.',
-          bullets: ['Growth Marketing', 'B2B Lead Generation', 'Meta & Google Ads'],
-          price: 'From €499/mo',
-        },
-        webDesign: {
-          title: 'Web Design & Development',
-          desc: 'High-performance, custom-built websites and applications that strengthen your brand and run seamlessly.',
+        websiteBouwen: {
+          title: 'Website Development',
+          desc: 'High-performance, custom-built websites that strengthen your brand and run seamlessly.',
           bullets: ['Next.js & React', 'Conversion-focused Design', 'Blazing-fast Load Times'],
           price: 'From €999',
+        },
+        seoOptimalisatie: {
+          title: 'SEO Optimization',
+          desc: 'Better visibility in local search results with a fully optimized Google Business Profile and targeted content.',
+          bullets: ['Google Business Profile', 'Local Content', 'Review Management'],
+          price: 'From €399/mo',
+        },
+        googleMetaAds: {
+          title: 'Google & Meta Ads',
+          desc: 'Targeted ad campaigns that attract and convert your ideal B2B customers.',
+          bullets: ['Growth Marketing', 'B2B Lead Generation', 'Conversion Tracking'],
+          price: 'From €499/mo',
         },
         aiAutomations: {
           title: 'AI Automations',
           desc: 'Smart AI integrations and automations that take over repetitive tasks, boost efficiency and save your team time.',
           bullets: ['Workflow Automation', 'AI Chatbots & Assistants', 'CRM Integrations'],
           price: 'From €249',
+        },
+        reviewBeheer: {
+          title: 'Review Management',
+          desc: 'More and better reviews, collected automatically, to build trust with new customers.',
+          bullets: ['Automatic Requests', 'Response Guidance', 'Clear Reporting'],
+          price: 'From €149/mo',
         },
       },
     },

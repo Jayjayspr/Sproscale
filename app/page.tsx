@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Briefcase, Target, Monitor, Bot, ChevronDown, Loader2, Database, ShieldCheck, Zap, Wallet, Clock, Lock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Globe, Search, Megaphone, Bot, Star, ChevronDown, Loader2, Database, ShieldCheck, Zap, Wallet, Clock, Lock } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -17,11 +17,14 @@ const painPointConfig = [
   { id: 'noTimeForGrowth', n: '03' },
 ];
 
+// Zelfde 5 diensten en volgorde als het mega-menu (lib/navigation.ts) —
+// bewust identiek gehouden zodat header en homepage niet uit elkaar lopen.
 const serviceConfig = [
-  { id: 'consultancy', icon: Briefcase, hubSlug: null },
-  { id: 'marketing', icon: Target, hubSlug: 'google-meta-ads' },
-  { id: 'webDesign', icon: Monitor, hubSlug: 'website-bouwen' },
+  { id: 'websiteBouwen', icon: Globe, hubSlug: 'website-bouwen' },
+  { id: 'seoOptimalisatie', icon: Search, hubSlug: 'seo-optimalisatie' },
+  { id: 'googleMetaAds', icon: Megaphone, hubSlug: 'google-meta-ads' },
   { id: 'aiAutomations', icon: Bot, hubSlug: 'ai-automations' },
+  { id: 'reviewBeheer', icon: Star, hubSlug: 'review-beheer' },
 ];
 
 const supabaseFeatureConfig = [
@@ -195,22 +198,18 @@ export default function SproscaleLandingPage() {
             <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">{t('services.subheading')}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {serviceConfig.map((service) => (
               <div key={service.id} className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                     <service.icon className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  {service.hubSlug ? (
-                    <Link href={`/diensten/${service.hubSlug}`} className="group/title inline-block w-fit mb-4">
-                      <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 group-hover/title:text-stone-600 transition-colors">
-                        {t(`services.items.${service.id}.title`)}
-                      </h3>
-                    </Link>
-                  ) : (
-                    <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">{t(`services.items.${service.id}.title`)}</h3>
-                  )}
+                  <Link href={`/diensten/${service.hubSlug}`} className="group/title inline-block w-fit mb-4">
+                    <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 group-hover/title:text-stone-600 transition-colors">
+                      {t(`services.items.${service.id}.title`)}
+                    </h3>
+                  </Link>
                   <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                     {t(`services.items.${service.id}.desc`)}
                   </p>
