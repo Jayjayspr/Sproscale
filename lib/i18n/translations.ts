@@ -108,6 +108,18 @@ export const translations = {
       subheading: 'Wij delen onze visie op de digitale transformatie. Ontdek hoe u techniek en AI kunt inzetten om een onverslaanbare groeimachine te bouwen.',
       readMore: 'Lees meer',
       articles: {
+        dataGedrevenOndernemen: {
+          title: 'Data-gedreven Ondernemen in 2026: Hoe Je Stopt met Gokken op Marketing',
+          excerpt: 'Je advertentiebudget verhogen op onderbuikgevoel? In 2026 is dat het duurste wat je kunt doen. Ontdek hoe GA4 laat zien wat écht werkt.',
+          date: '17 Juli 2026',
+          alt: 'Illustratie van datagedreven marketingbeslissingen en GA4-inzichten',
+        },
+        lokaleSeoHoveniers: {
+          title: 'Lokale SEO voor Hoveniers: Zo Vinden Klanten Je Eindelijk Terug',
+          excerpt: 'Een prachtige tuin aanleggen is niet genoeg als niemand je website vindt. Ontdek hoe lokale SEO voor hoveniers zorgt voor structureel meer aanvragen uit je eigen regio.',
+          date: '15 Juli 2026',
+          alt: 'Illustratie van lokale vindbaarheid en SEO voor hoveniersbedrijven',
+        },
         aiAutomatisering: {
           title: "Waarom AI-automatisering de 'Unfair Advantage' is voor Groeiende Bedrijven in 2026",
           excerpt: 'Stel je voor: een medewerker die nooit slaapt, geen fouten maakt en exact weet wat je klanten nodig hebben. Ontdek hoe AI de ruggengraat van je business wordt.',
@@ -141,6 +153,85 @@ export const translations = {
       },
     },
     insightsArticles: {
+      dataGedrevenOndernemen: {
+        badgeLabel: 'Insights • Data & Marketing',
+        meta: '17 Juli 2026 · 7 min leestijd',
+        lead: 'Je verhoogt het advertentiebudget omdat "het gevoel goed zit". Maar een onderbuikgevoel is geen strategie — het is een gok met een factuur eraan vast.',
+        introPre: 'Herkenbaar? Je zit in een marketingoverleg en de vraag komt: verhogen we het advertentiebudget? Iemand zegt: "ja, doe maar, het voelt goed deze maand." Geen cijfers, geen onderbouwing — alleen een gevoel. De vraag die niemand durft te stellen is simpel: ',
+        introHighlight: 'weet je écht wat werkt, of denk je het alleen?',
+        introPost: ' Bij Sproscale zien we dit patroon dagelijks bij groeiende MKB-bedrijven — en het kost ze elke maand duizenden euro\'s.',
+        sections: {
+          probleem: {
+            heading: 'Waarom gokken op marketing in 2026 duurder is dan ooit',
+            p1: 'Er was een tijd dat een gok op marketing je een paar honderd euro kostte. Die tijd is voorbij. De gemiddelde kosten-per-klik op Google en Meta stijgen jaar na jaar, terwijl het aantal bedrijven dat om dezelfde aandacht vecht alleen maar groeit. Elke advertentie-euro die je zonder onderbouwing uitgeeft, is een euro die een concurrent met betere data wél gericht weet in te zetten.',
+            p2: 'Het gevolg: bedrijven die op onderbuikgevoel varen, betalen structureel meer per lead dan bedrijven die weten welk kanaal, welke advertentie en welke doelgroep daadwerkelijk klanten oplevert. Niet omdat hun product slechter is, maar omdat ze blind schieten in een markt die steeds duurder wordt.',
+          },
+          oplossing: {
+            heading: 'De oplossing: laat GA4 de klantreis vertellen',
+            p1: 'Google Analytics 4 is geen rapportagetool die je één keer per kwartaal opent. Het is de kaart van de daadwerkelijke reis die een klant aflegt — van de eerste advertentie tot de uiteindelijke aankoop. Geen aannames, maar exact welk kanaal, welke pagina en welk moment de doorslag gaf.',
+            subheading: {
+              heading: 'Conversie-paden en klantwaarde, niet vage statistieken',
+              text: 'Waar de meeste ondernemers blijven hangen bij "aantal bezoekers", draait het écht om twee dingen: het conversie-pad — welke stappen leiden naar een aanvraag of aankoop — en klantwaarde: wat een klant je over de hele levensduur oplevert. Zodra je dat scherp hebt, wordt duidelijk welke marketinguitgave zich terugbetaalt en welke enkel budget opsoupeert.',
+            },
+          },
+        },
+        features: {
+          conversiepaden: { title: 'Conversie-paden', text: 'Zie exact welke stappen bezoekers zetten vóór ze klant worden.' },
+          klantwaarde: { title: 'Klantwaarde', text: 'Ontdek welke kanalen klanten opleveren die blijven kopen, niet alleen klikken.' },
+          attributie: { title: 'Attributie', text: 'Weet welk advertentiekanaal écht de conversie veroorzaakte.' },
+        },
+        quote: 'Een marketingbudget zonder data is geen strategie — het is een gok met een factuur eraan vast.',
+        stepsHeading: 'Actieplan: 3 stappen om grip te krijgen op je data',
+        stepsIntro: 'Je hoeft niet in één keer een compleet dashboard te bouwen. Begin met deze drie stappen.',
+        steps: {
+          doelenInstellen: { label: 'Stel je doelen en events correct in.', text: 'Zonder correct ingerichte conversie-events in GA4 verzamel je maandenlang lege data. Elke aanvraag, download of belknop moet gemeten worden — anders stuur je op ruis.' },
+          dataKoppelen: { label: 'Koppel je advertentiedata aan je website-gedrag.', text: 'Verbind Google Ads en Meta met GA4, zodat je niet alleen ziet wíe klikt, maar ook wat die persoon daarna op je site doet — tot en met de aankoop.' },
+          cijfersBekijken: { label: 'Kijk naar de cijfers vóór je je budget verhoogt.', text: 'Verhoog nooit een advertentiebudget omdat het "goed voelt". Verhoog het omdat de data laat zien welk kanaal daadwerkelijk winst oplevert.' },
+        },
+        closingHeading: 'Data is geen luxe, maar een noodzaak',
+        closingText: 'Data-analyse was ooit voorbehouden aan bedrijven met een eigen marketingafdeling. In 2026 is het een basisvoorwaarde voor élk groeiend MKB-bedrijf. Wie blijft gokken, betaalt de rekening van bedrijven die wél weten wat werkt.',
+        cta: { heading: 'Klaar om te stoppen met gokken?', body: 'Wij duiken in jouw GA4-data en laten zien waar je marketingbudget nu daadwerkelijk weglekt — vrijblijvend en zonder verkooppraatje.', button: 'Vraag een vindbaarheidscheck aan' },
+      },
+      lokaleSeoHoveniers: {
+        badgeLabel: 'Insights • SEO & Vindbaarheid',
+        meta: '15 Juli 2026 · 6 min leestijd',
+        lead: 'Je hebt een prachtige tuin aangelegd, maar de telefoon blijft stil. Zonder lokale SEO voor hoveniers vindt niemand je terug — hoe goed je vakmanschap ook is.',
+        introPre: 'Terwijl potentiële klanten dagelijks zoeken naar een hovenier bij hen in de buurt, scrollen ze voorbij aan bedrijven die online niet in beeld komen. Bij Sproscale zien we dit patroon voortdurend terug bij vakbedrijven: uitstekend werk, onzichtbare website. Met gerichte ',
+        introHighlight: 'tuinaanleg vindbaarheid',
+        introPost: ' haal je alsnog structureel meer klanten voor hoveniers binnen — zonder dat je vakmanschap hoeft te veranderen.',
+        sections: {
+          watIsLokaleSeo: {
+            heading: 'Wat is lokale SEO voor hoveniers precies?',
+            p1: 'Lokale SEO draait om één ding: ervoor zorgen dat jouw bedrijf verschijnt wanneer iemand in jouw regio zoekt naar een dienst die jij aanbiedt. Waar algemene SEO zich richt op landelijke zoekwoorden, focust lokale SEO zich op zoekopdrachten met een duidelijke locatie-intentie, zoals "tuinaanleg [plaatsnaam]" of "tuinontwerper inhuren in de buurt".',
+            p2: 'De belangrijkste bouwsteen hierbij is je Google Bedrijfsprofiel. Dit gratis profiel bepaalt of jouw bedrijf verschijnt in de "local pack" — het rijtje van drie bedrijven met kaart, sterrenbeoordeling en openingstijden bovenaan de zoekresultaten. Wie hier niet in staat, wordt over het hoofd gezien, hoe goed het werk ook is.',
+          },
+          waaromCruciaal: {
+            heading: 'Waarom SEO cruciaal is voor jouw hoveniersbedrijf',
+            p1: 'Het verschil tussen lokale en algemene zoekopdrachten zit in de koopintentie. Wanneer iemand zoekt op "hovenier Eindhoven", is diegene niet aan het dromen — die persoon staat op het punt een beslissing te nemen. Zoekopdrachten met een plaatsnaam hebben een veel hogere conversie dan generieke termen: geen toevallige bezoekers, maar mensen met een tuin, een budget en een tijdlijn.',
+            subheading: {
+              heading: 'De zoektocht naar een tuinontwerper inhuren',
+              text: 'Neem als voorbeeld iemand die een tuinontwerper wil inhuren. Deze klant vergelijkt vaak drie tot vijf bedrijven binnen enkele minuten, puur op basis van wat Google laat zien: recensies, foto\'s en de eerste indruk van je website. Sta je daar niet tussen, dan bestaat die concurrentiestrijd voor jou simpelweg niet — je wordt niet eens uitgenodigd om mee te dingen.',
+            },
+          },
+        },
+        features: {
+          googleProfiel: { title: 'Google Bedrijfsprofiel', text: 'Volledig ingevuld profiel met categorie, diensten en werkgebied verschijnt bovenaan lokale zoekresultaten.' },
+          recensies: { title: 'Recensies', text: 'Tien of meer recente, positieve reviews zorgen voor structureel hogere posities én meer vertrouwen.' },
+          projectfotos: { title: "Projectfoto's", text: 'Beeldmateriaal van afgeronde tuinen overtuigt sneller dan tekst en geeft context aan zoekmachines.' },
+        },
+        quote: 'Vakmanschap alleen is niet meer genoeg om op te vallen. De hoveniers die groeien, nemen hun online vindbaarheid net zo serieus als hun schop.',
+        stepsHeading: 'Concrete stappen om je vindbaarheid te vergroten',
+        stepsIntro: 'Lokale SEO hoeft niet ingewikkeld te zijn. Met deze vier stappen leg je een stevige basis.',
+        steps: {
+          googleBedrijfsprofiel: { label: 'Optimaliseer je Google Bedrijfsprofiel volledig.', text: 'Vul elk onderdeel in en voeg wekelijks een update toe — Google beloont actieve profielen met een hogere positie.' },
+          recensiesVerzamelen: { label: 'Verzamel actief recensies.', text: 'Vraag na elk afgerond project om een Google-recensie en reageer altijd, ook op kritische reviews.' },
+          projectfotosInzetten: { label: 'Laat je projectfoto\'s het werk doen.', text: 'Upload foto\'s met beschrijvende bijschriften, zoals "tuinaanleg strakke border Eindhoven", naar profiel én website.' },
+          lokaleLandingspaginas: { label: 'Bouw lokale landingspagina\'s.', text: 'Maak per werkgebied een aparte pagina met unieke tekst — dit vergroot je zichtbaarheid en trekt gerichter verkeer aan.' },
+        },
+        closingHeading: 'Wacht niet tot de concurrent je voor is',
+        closingText: 'De hoveniers die de komende jaren groeien, zijn degenen die naast hun schop ook hun online vindbaarheid serieus nemen. Lokale SEO is geen eenmalige actie, maar een investering die zich terugbetaalt in aanvragen, offertes en voltooide projecten.',
+        cta: { heading: 'Klaar om structureel meer klanten te vinden?', body: 'Wij doen een vrijblijvende vindbaarheidscheck van je Google Bedrijfsprofiel en website.', button: 'Vraag een gratis check aan' },
+      },
       aiAutomatisering: {
         badge: 'Insights • AI & Automatisering',
         lead: 'Stel je voor: een medewerker die nooit slaapt, geen fouten maakt en exact weet wat je klanten nodig hebben. Dat is de belofte van AI-automatisering.',
@@ -351,7 +442,7 @@ export const translations = {
       },
       s5: {
         heading: '5. Contact',
-        body: 'Heeft u vragen over ons privacy- of cookiebeleid, of wilt u gebruikmaken van uw rechten? Neem dan contact met ons op via de contactgegevens op onze website of stuur een e-mail naar info@sproscale.nl.',
+        body: 'Heeft u vragen over ons privacy- of cookiebeleid, of wilt u gebruikmaken van uw rechten? Neem dan contact met ons op via de contactgegevens op onze website of stuur een e-mail naar info@sproscale.com.',
       },
     },
     termsPage: {
@@ -411,7 +502,7 @@ export const translations = {
       },
       s11: {
         heading: '11. Contact',
-        body: 'Heeft u vragen over deze algemene voorwaarden? Neem dan contact op via de contactgegevens op onze website of stuur een e-mail naar info@sproscale.nl.',
+        body: 'Heeft u vragen over deze algemene voorwaarden? Neem dan contact op via de contactgegevens op onze website of stuur een e-mail naar info@sproscale.com.',
       },
     },
     techStack: {
@@ -617,6 +708,18 @@ export const translations = {
       subheading: 'We share our perspective on digital transformation. Discover how to use technology and AI to build an unbeatable growth machine.',
       readMore: 'Read more',
       articles: {
+        dataGedrevenOndernemen: {
+          title: 'Data-Driven Business in 2026: How to Stop Guessing on Marketing',
+          excerpt: "Raising your ad budget on gut feeling? In 2026, that's the most expensive thing you can do. Discover how GA4 shows you what actually works.",
+          date: 'July 17, 2026',
+          alt: 'Illustration of data-driven marketing decisions and GA4 insights',
+        },
+        lokaleSeoHoveniers: {
+          title: 'Local SEO for Landscapers: How Customers Finally Find You',
+          excerpt: "Building a beautiful garden isn't enough if nobody finds your website. Discover how local SEO gets landscaping businesses structurally more inquiries from their own region.",
+          date: 'July 15, 2026',
+          alt: 'Illustration of local visibility and SEO for landscaping businesses',
+        },
         aiAutomatisering: {
           title: "Why AI Automation Is the 'Unfair Advantage' for Growing Businesses in 2026",
           excerpt: 'Imagine an employee who never sleeps, never makes mistakes, and knows exactly what your customers need. Discover how AI becomes the backbone of your business.',
@@ -650,6 +753,85 @@ export const translations = {
       },
     },
     insightsArticles: {
+      dataGedrevenOndernemen: {
+        badgeLabel: 'Insights • Data & Marketing',
+        meta: 'July 17, 2026 · 7 min read',
+        lead: 'You raise the ad budget because "it feels right this month". But gut feeling is not a strategy — it\'s a gamble with an invoice attached.',
+        introPre: 'Sound familiar? You\'re in a marketing meeting and the question comes up: do we raise the ad budget? Someone says, "sure, go ahead, it feels good this month." No numbers, no reasoning — just a feeling. The question nobody dares to ask is simple: ',
+        introHighlight: 'do you actually know what works, or do you just think you do?',
+        introPost: ' At Sproscale, we see this pattern every day with growing SMEs — and it costs them thousands of euros every month.',
+        sections: {
+          probleem: {
+            heading: 'Why guessing on marketing is more expensive than ever in 2026',
+            p1: "There was a time when a marketing gamble cost you a few hundred euros. That time is over. Average cost-per-click on Google and Meta keeps rising year after year, while the number of businesses fighting for the same attention only grows. Every ad euro you spend without reasoning is a euro a competitor with better data is deploying with precision.",
+            p2: "The result: businesses that run on gut feeling structurally pay more per lead than businesses that know which channel, which ad, and which audience actually delivers customers. Not because their product is worse — but because they're shooting blind in a market that keeps getting more expensive.",
+          },
+          oplossing: {
+            heading: 'The solution: let GA4 tell the customer journey',
+            p1: "Google Analytics 4 isn't a reporting tool you open once a quarter. It's the map of the actual journey a customer takes — from the first ad to the final purchase. No assumptions, just the exact channel, page, and moment that made the difference.",
+            subheading: {
+              heading: 'Conversion paths and customer value, not vague statistics',
+              text: 'While most business owners get stuck on "number of visitors", it really comes down to two things: the conversion path — which steps lead to an inquiry or purchase — and customer value: what a customer is worth to you over their entire lifetime. Once that\'s clear, it becomes obvious which marketing spend pays for itself and which just burns budget.',
+            },
+          },
+        },
+        features: {
+          conversiepaden: { title: 'Conversion Paths', text: 'See exactly which steps visitors take before they become a customer.' },
+          klantwaarde: { title: 'Customer Value', text: 'Discover which channels bring customers who keep buying, not just clicking.' },
+          attributie: { title: 'Attribution', text: 'Know which ad channel actually caused the conversion.' },
+        },
+        quote: "A marketing budget without data isn't a strategy — it's a gamble with an invoice attached.",
+        stepsHeading: 'Action plan: 3 steps to get a grip on your data',
+        stepsIntro: "You don't need to build a complete dashboard overnight. Start with these three steps.",
+        steps: {
+          doelenInstellen: { label: 'Set up your goals and events correctly.', text: "Without properly configured conversion events in GA4, you collect empty data for months. Every inquiry, download, or call button needs to be measured — otherwise you're steering on noise." },
+          dataKoppelen: { label: 'Link your ad data to your website behavior.', text: "Connect Google Ads and Meta with GA4, so you see not just who clicks, but what that person does on your site afterward — all the way to the purchase." },
+          cijfersBekijken: { label: 'Look at the numbers before you raise your budget.', text: 'Never raise an ad budget because it "feels right". Raise it because the data shows which channel actually delivers profit.' },
+        },
+        closingHeading: "Data isn't a luxury, it's a necessity",
+        closingText: "Data analysis used to be reserved for companies with their own marketing department. In 2026, it's a basic requirement for every growing SME. Those who keep guessing pay the bill of businesses that actually know what works.",
+        cta: { heading: 'Ready to stop guessing?', body: "We'll dive into your GA4 data and show you exactly where your marketing budget is leaking — no strings attached, no sales pitch.", button: 'Request a free visibility check' },
+      },
+      lokaleSeoHoveniers: {
+        badgeLabel: 'Insights • SEO & Visibility',
+        meta: 'July 15, 2026 · 6 min read',
+        lead: "You've built a beautiful garden, but the phone stays silent. Without local SEO, landscaping businesses stay invisible — no matter how good the craftsmanship is.",
+        introPre: 'While potential customers search daily for a landscaper near them, they scroll past businesses that never show up online. At Sproscale, we see this pattern constantly with trade businesses: excellent work, an invisible website. With targeted ',
+        introHighlight: 'local search visibility',
+        introPost: ' you can still bring in structurally more customers — without changing a thing about your craftsmanship.',
+        sections: {
+          watIsLokaleSeo: {
+            heading: 'What is local SEO for landscaping businesses?',
+            p1: 'Local SEO comes down to one thing: making sure your business shows up when someone in your area searches for a service you offer. Where general SEO targets nationwide keywords, local SEO targets searches with clear location intent, like "garden design [city]" or "hire a landscape designer nearby".',
+            p2: "The most important building block here is your Google Business Profile. This free profile determines whether your business appears in the \"local pack\" — the row of three businesses with a map, star rating, and opening hours at the top of search results. Businesses missing from it get overlooked, no matter how good the work is.",
+          },
+          waaromCruciaal: {
+            heading: 'Why SEO is critical for your landscaping business',
+            p1: 'The difference between local and general searches comes down to purchase intent. When someone searches "landscaper Eindhoven", they are not just browsing — they are close to making a decision. Searches with a city name convert far better than generic terms: not casual visitors, but people with a garden, a budget, and a timeline.',
+            subheading: {
+              heading: 'The search for a landscape designer to hire',
+              text: "Take someone looking to hire a landscape designer. This customer often compares three to five businesses within minutes, based purely on what Google shows: reviews, photos, and the first impression of your website. If you're not in that comparison, the competition never happens for you — you're not even invited to the table.",
+            },
+          },
+        },
+        features: {
+          googleProfiel: { title: 'Google Business Profile', text: 'A fully completed profile with category, services, and service area shows up at the top of local search results.' },
+          recensies: { title: 'Reviews', text: 'Ten or more recent, positive reviews lead to structurally higher rankings and more trust.' },
+          projectfotos: { title: 'Project Photos', text: 'Images of completed gardens convince faster than text and give search engines extra context.' },
+        },
+        quote: "Craftsmanship alone is no longer enough to stand out. The landscapers who grow take their online visibility as seriously as their shovel.",
+        stepsHeading: 'Concrete steps to grow your visibility',
+        stepsIntro: 'Local SEO does not have to be complicated. These four steps build a solid foundation.',
+        steps: {
+          googleBedrijfsprofiel: { label: 'Fully optimize your Google Business Profile.', text: 'Fill in every section and post a weekly update — Google rewards active profiles with a higher ranking.' },
+          recensiesVerzamelen: { label: 'Actively collect reviews.', text: 'Ask for a Google review after every completed project, and always respond, even to critical ones.' },
+          projectfotosInzetten: { label: 'Let your project photos do the work.', text: 'Upload photos with descriptive captions, like "clean border garden design Eindhoven", to your profile and website.' },
+          lokaleLandingspaginas: { label: 'Build local landing pages.', text: 'Create a separate page per service area with unique copy — this boosts visibility and attracts more targeted traffic.' },
+        },
+        closingHeading: "Don't wait for the competition to beat you to it",
+        closingText: 'The landscapers who grow in the coming years are the ones who take their online visibility as seriously as their tools. Local SEO is not a one-off action, but an investment that pays back in inquiries, quotes, and completed projects.',
+        cta: { heading: 'Ready to find structurally more customers?', body: 'We do a free visibility check of your Google Business Profile and website.', button: 'Request a free check' },
+      },
       aiAutomatisering: {
         badge: 'Insights • AI & Automation',
         lead: 'Imagine an employee who never sleeps, never makes mistakes, and knows exactly what your customers need. That is the promise of AI automation.',
@@ -860,7 +1042,7 @@ export const translations = {
       },
       s5: {
         heading: '5. Contact',
-        body: 'Do you have questions about our privacy or cookie policy, or would you like to exercise your rights? Please contact us via the contact details on our website or send an email to info@sproscale.nl.',
+        body: 'Do you have questions about our privacy or cookie policy, or would you like to exercise your rights? Please contact us via the contact details on our website or send an email to info@sproscale.com.',
       },
     },
     termsPage: {
@@ -920,7 +1102,7 @@ export const translations = {
       },
       s11: {
         heading: '11. Contact',
-        body: 'Do you have questions about these terms and conditions? Please contact us via the contact details on our website or send an email to info@sproscale.nl.',
+        body: 'Do you have questions about these terms and conditions? Please contact us via the contact details on our website or send an email to info@sproscale.com.',
       },
     },
     techStack: {

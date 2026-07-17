@@ -8,6 +8,8 @@ import Image from 'next/image';
 import { useLanguage } from '../../lib/i18n/LanguageContext';
 
 const insightsConfig = [
+  { slug: 'dataGedrevenOndernemen', href: '/insights/data-gedreven-ondernemen-2026', image: '/images/insights/data-gedreven-ondernemen-2026.svg', unoptimized: true },
+  { slug: 'lokaleSeoHoveniers', href: '/insights/lokale-seo-voor-hoveniers', image: '/images/insights/lokale-seo-hoveniers.svg', unoptimized: true },
   { slug: 'aiAutomatisering', href: '/insights/ai-automatisering', image: '/images/insights/ai-automatisering-growth.webp' },
   { slug: 'marketingPsychologie', href: '/insights/marketing-psychologie', image: '/images/insights/marketing-psychologie-conversie.webp' },
   { slug: 'mobieleChatbotUx', href: '/insights/mobiele-chatbot-ux', image: '/images/insights/mobiele-chatbot-ux.webp.png' },
@@ -59,6 +61,7 @@ export default function InsightsPage() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-w-7xl): 50vw, 33vw"
+                  unoptimized={article.unoptimized}
                 />
               </div>
 

@@ -102,7 +102,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-stone-900 mb-1">{t('contactPage.info.office')}</h3>
-                  <p className="text-stone-600 font-light">Strijp-S, Eindhoven</p>
+                  <p className="text-stone-600 font-light">Geldrop, Noord-Brabant</p>
                 </div>
               </div>
             </div>
