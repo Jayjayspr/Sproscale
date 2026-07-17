@@ -1,12 +1,8 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Sproscale
 
-# Run and deploy your AI Studio app
+Sproscale is een Nederlands bureau, gevestigd in Geldrop, dat AI-automatisering, high-end webdevelopment en resultaatgerichte marketing combineert om groeiende MKB-bedrijven te laten schalen. Dit repository bevat de volledige marketingsite (met volledige NL/EN i18n, een Insights-kennisbank en een leadformulier) plus een intern beheergedeelte voor het opvolgen van leads.
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/31c21e38-bcfa-4c8e-860c-852d4a05a008
+**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · Supabase (auth + database) · Resend (e-mail) · Gemini (AI)
 
 ## Run Locally
 
