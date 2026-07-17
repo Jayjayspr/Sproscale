@@ -18,10 +18,10 @@ const painPointConfig = [
 ];
 
 const serviceConfig = [
-  { id: 'consultancy', icon: Briefcase },
-  { id: 'marketing', icon: Target },
-  { id: 'webDesign', icon: Monitor },
-  { id: 'aiAutomations', icon: Bot },
+  { id: 'consultancy', icon: Briefcase, hubSlug: null },
+  { id: 'marketing', icon: Target, hubSlug: 'google-meta-ads' },
+  { id: 'webDesign', icon: Monitor, hubSlug: 'website-bouwen' },
+  { id: 'aiAutomations', icon: Bot, hubSlug: 'ai-automations' },
 ];
 
 const supabaseFeatureConfig = [
@@ -202,7 +202,15 @@ export default function SproscaleLandingPage() {
                   <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                     <service.icon className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">{t(`services.items.${service.id}.title`)}</h3>
+                  {service.hubSlug ? (
+                    <Link href={`/diensten/${service.hubSlug}`} className="group/title inline-block w-fit mb-4">
+                      <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 group-hover/title:text-stone-600 transition-colors">
+                        {t(`services.items.${service.id}.title`)}
+                      </h3>
+                    </Link>
+                  ) : (
+                    <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 mb-4">{t(`services.items.${service.id}.title`)}</h3>
+                  )}
                   <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
                     {t(`services.items.${service.id}.desc`)}
                   </p>
