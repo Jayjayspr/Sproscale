@@ -1,11 +1,18 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenAI } from '@google/genai';
-import { supabaseAdmin } from '../../../../../lib/supabaseAdmin';
+import { getSupabaseAdmin } from '../../../../../lib/supabaseAdmin';
 import { verifyAdminRequest } from '../../../../../lib/verifyAdminRequest';
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const user = await verifyAdminRequest(request);
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  let supabaseAdmin;
+  try {
+    supabaseAdmin = getSupabaseAdmin();
+  } catch (err) {
+    return NextResponse.json({ error: err instanceof Error ? err.message : 'Serverconfiguratie ontbreekt' }, { status: 500 });
+  }
 
   const { id } = await params;
 

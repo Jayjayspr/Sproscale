@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '../../../lib/supabaseAdmin';
+import { getSupabaseAdmin } from '../../../lib/supabaseAdmin';
 import { verifyAdminRequest } from '../../../lib/verifyAdminRequest';
 
 const PIPELINE_STATUSES = [
@@ -22,6 +22,13 @@ function isTestLead(lead: { name?: string | null; email?: string | null }) {
 export async function GET(request: Request) {
   const user = await verifyAdminRequest(request);
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  let supabaseAdmin;
+  try {
+    supabaseAdmin = getSupabaseAdmin();
+  } catch (err) {
+    return NextResponse.json({ error: err instanceof Error ? err.message : 'Serverconfiguratie ontbreekt' }, { status: 500 });
+  }
 
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
@@ -52,6 +59,13 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const user = await verifyAdminRequest(request);
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  let supabaseAdmin;
+  try {
+    supabaseAdmin = getSupabaseAdmin();
+  } catch (err) {
+    return NextResponse.json({ error: err instanceof Error ? err.message : 'Serverconfiguratie ontbreekt' }, { status: 500 });
+  }
 
   const body = await request.json();
   const { name, email, company, message, pipeline_status, ai_notes } = body;
@@ -84,6 +98,13 @@ export async function POST(request: Request) {
 export async function PATCH(request: Request) {
   const user = await verifyAdminRequest(request);
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  let supabaseAdmin;
+  try {
+    supabaseAdmin = getSupabaseAdmin();
+  } catch (err) {
+    return NextResponse.json({ error: err instanceof Error ? err.message : 'Serverconfiguratie ontbreekt' }, { status: 500 });
+  }
 
   const body = await request.json();
   const { id, pipeline_status, ai_notes, name, email, company, archived_at } = body;
