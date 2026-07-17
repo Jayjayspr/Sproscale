@@ -70,10 +70,10 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
               <Link
                 key={branch.slug}
                 href={`/diensten/${serviceSlug}/${branch.slug}`}
-                className="flex items-center justify-between gap-2 bg-white rounded-xl border border-stone-200 px-4 py-3 text-sm font-semibold text-stone-700 hover:text-stone-900 hover:border-stone-300 hover:shadow-sm transition-all group"
+                className="flex items-center justify-between gap-2 bg-white rounded-xl border border-stone-200 px-4 py-3 text-sm font-semibold text-stone-700 hover:text-white hover:border-transparent hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
               >
                 {t(`megaMenu.branches.${branch.translationKey}.label`)}
-                <ArrowRight className="w-3.5 h-3.5 text-stone-300 group-hover:text-stone-900 group-hover:translate-x-0.5 transition-all shrink-0" />
+                <ArrowRight className="w-3.5 h-3.5 text-stone-300 group-hover:text-white group-hover:translate-x-0.5 transition-all shrink-0" />
               </Link>
             ))}
           </div>

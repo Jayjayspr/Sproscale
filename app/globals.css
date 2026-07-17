@@ -4,9 +4,9 @@
   /* Homepage dark/hero palette */
   --color-ink: #08080b;
   --color-ink-soft: #0f0f14;
-  --color-glow-from: #7c3aed;
-  --color-glow-via: #6d5ff5;
-  --color-glow-to: #3b82f6;
+  --color-glow-from: #b45309;
+  --color-glow-via: #d97706;
+  --color-glow-to: #f59e0b;
 
   /* Display font for the homepage's new typography system */
   --font-display: var(--font-geist), var(--font-sans);
