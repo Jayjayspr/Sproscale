@@ -5,7 +5,8 @@ export const dynamic = 'force-dynamic';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabase';
-import { Loader2, ShieldAlert, LogOut } from 'lucide-react';
+import Link from 'next/link';
+import { Loader2, ShieldAlert, LogOut, LayoutGrid } from 'lucide-react';
 
 interface Lead {
   id: string;
@@ -79,7 +80,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900 py-12 px-4 sm:px-6 lg:px-8 font-sans z-50 relative">
+    <div className="min-h-screen bg-stone-50 text-stone-900 pt-32 pb-12 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 pb-6 border-b border-stone-200 gap-4">
           <div>
@@ -91,7 +92,14 @@ export default function AdminPage() {
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.3)]"></span>
               Live Verbinding
             </div>
-            <button 
+            <Link
+              href="/admin/crm"
+              className="px-5 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 bg-white border border-stone-200 text-stone-700 hover:bg-stone-100 shadow-sm"
+            >
+              <LayoutGrid className="w-4 h-4" />
+              CRM
+            </Link>
+            <button
               onClick={async () => {
                 await supabase.auth.signOut();
                 router.replace('/login');

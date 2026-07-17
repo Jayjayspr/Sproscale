@@ -72,12 +72,21 @@ export default function SproscaleLandingPage() {
     naam: '',
     email: '',
     bedrijf: '',
-    uitdaging: ''
+    uitdaging: '',
+    website: '', // honeypot — onzichtbaar voor mensen, vangt geautomatiseerde form-fillers (crawlers, visual-test tools)
   });
   const router = useRouter();
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot: alleen bots/crawlers vullen dit onzichtbare veld in.
+    // Doe alsof het gelukt is zonder iets op te slaan of te versturen.
+    if (formData.website) {
+      setIsFormSubmitted(true);
+      return;
+    }
+
     setIsFormLoading(true);
 
     try {
@@ -454,6 +463,18 @@ export default function SproscaleLandingPage() {
 
             {!isFormSubmitted ? (
               <form onSubmit={handleFormSubmit} className="space-y-4 md:space-y-6">
+                {/* Honeypot: display:none zorgt dat Playwright-achtige tools (die .fill() vereist zichtbaarheid)
+                    dit veld niet kunnen invullen, terwijl echte gebruikers het nooit zien. */}
+                <input
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={e => setFormData({ ...formData, website: e.target.value })}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-stone-700 flex items-center gap-2">

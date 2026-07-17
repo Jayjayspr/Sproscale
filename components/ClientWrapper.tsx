@@ -8,15 +8,15 @@ import ChatWidget from './ChatWidget';
 
 export default function ClientWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAuthPage = pathname === '/login' || pathname === '/admin';
+  const isAdminArea = pathname === '/login' || pathname.startsWith('/admin');
 
   return (
     <>
       <Header />
       {children}
-      {!isAuthPage && <Footer />}
-      <CookieBanner />
-      <ChatWidget />
+      <Footer />
+      {!isAdminArea && <CookieBanner />}
+      {!isAdminArea && <ChatWidget />}
     </>
   );
 }
