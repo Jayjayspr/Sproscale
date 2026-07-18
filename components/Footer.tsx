@@ -9,6 +9,7 @@ const navLinks = [
   { id: 'overOns', href: '/over-ons' },
   { id: 'insights', href: '/insights' },
   { id: 'diensten', href: '/#diensten' },
+  { id: 'garantie', href: '/garantie' },
 ];
 
 const legalLinks = [

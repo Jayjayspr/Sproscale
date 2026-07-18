@@ -9,6 +9,7 @@ export const translations = {
       contact: 'Contact',
       home: 'Home',
       insights: 'Insights',
+      garantie: 'Garantie',
       toggleMenu: 'Menu openen of sluiten',
     },
     megaMenu: {
@@ -261,6 +262,97 @@ export const translations = {
         vastePrijs: { title: 'Vaste prijs vooraf', desc: 'Geen verborgen kosten of verrassingen achteraf. De prijs die we afspreken, is de prijs die u betaalt.' },
         live6Weken: { title: 'Live binnen 6 weken', desc: 'Loopt de oplevering door onze schuld uit? Dan krijgt u de eerste maand gratis.' },
         eigendom: { title: 'Altijd uw eigendom', desc: 'Alle websites, AI-tools en marketingaccounts blijven volledig eigendom van uw organisatie.' },
+      },
+    },
+    garantiePage: {
+      metaTitle: 'Onze Garantie - Zekerheid in Online Groei',
+      metaDescription: 'Vaste prijs vooraf, live binnen 6 weken of de eerste maand gratis, en volledig eigendom van alles wat we bouwen. Ontdek de Sproscale Garantie.',
+      badge: 'De Sproscale Garantie',
+      h1: 'De Sproscale Garantie: Uw Groei, Onze Verantwoordelijkheid',
+      lead: 'Groeien met een extern bureau voelt vaak als een gok — vage beloftes, verborgen kosten, eindeloze deadlines. Bij Sproscale draaien we dat om: onze garanties zijn geen marketingtaal, maar concrete afspraken waar u ons op mag afrekenen.',
+      promisesHeading: 'Onze beloftes',
+      promisesIntro: 'Drie harde toezeggingen, zonder kleine lettertjes.',
+      promises: {
+        vastePrijs: {
+          title: 'Vaste prijs vooraf',
+          text: 'Geen verborgen kosten, geen "meerwerk" dat achteraf op uw bordje belandt. De prijs die we samen afspreken tijdens de kennismaking, is de prijs die op de factuur staat — punt uit. U weet vooraf exact waar u aan toe bent, zodat u zonder financiële verrassingen kunt budgetteren.',
+        },
+        speedGarantie: {
+          title: 'Live binnen 6 weken — of de eerste maand is gratis',
+          text: 'Trajecten die eindeloos uitlopen kosten u omzet. Daarom garanderen we een livegang binnen 6 weken na de start van het project. Loopt de oplevering door onze schuld uit? Dan krijgt u de eerste maand volledig gratis — geen discussie, geen kleine lettertjes. Dat is onze Speed-Garantie.',
+        },
+        eigendom: {
+          title: 'Volledig eigendom',
+          text: 'Alles wat wij voor u bouwen — de website, de AI-tools, de marketingaccounts — is en blijft 100% eigendom van uw organisatie. Geen lock-in, geen maandelijkse "huur" van uw eigen systemen. Stopt u ooit met Sproscale? Dan neemt u gewoon alles mee.',
+        },
+      },
+      whatIfHeading: 'Wat als het tegenzit?',
+      whatIfText: 'Geen enkel bureau is onfeilbaar — het verschil zit in wat er gebeurt als iets misgaat. Loopt de oplevering door onze schuld uit, dan grijpt de Speed-Garantie automatisch in. Bent u niet tevreden over de richting, dan sturen we bij zonder extra kosten binnen de afgesproken scope. En omdat alles in uw eigendom is, zit u nooit vast — u behoudt altijd de controle, wat er ook gebeurt.',
+      transparencyHeading: 'Transparantie in prijs en proces',
+      transparencyText: 'Voordat we beginnen, weet u precies: wat het kost, wanneer het klaar is, en wie waarvoor verantwoordelijk is. Geen traject start zonder een helder voorstel op papier. Tijdens het project houden we u actief op de hoogte — geen radiostilte, geen verrassingen bij de eindfactuur.',
+      faqHeading: 'Veelgestelde vragen over onze garantie',
+      faq: [
+        {
+          q: 'Wat gebeurt er als de oplevering later komt dan 6 weken?',
+          a: 'Als de vertraging aan onze kant ligt, krijgt u automatisch de eerste maand gratis — dat is onze Speed-Garantie. Vertraging door aanlevering van content of feedback aan uw kant valt hierbuiten, maar we communiceren dit altijd vooraf transparant.',
+        },
+        {
+          q: 'Zijn er echt geen verborgen kosten?',
+          a: 'Nee. De prijs die we afspreken tijdens de kennismaking is de prijs op de factuur. Extra wensen buiten de afgesproken scope bespreken we altijd vooraf, zodat er nooit een verrassing op de eindafrekening staat.',
+        },
+        {
+          q: 'Wat gebeurt er met mijn website of AI-tools als ik stop met Sproscale?',
+          a: 'Alles blijft van u. Website, broncode, AI-automatiseringen en marketingaccounts zijn en blijven eigendom van uw organisatie — u kunt op elk moment zelfstandig verder, met of zonder ons.',
+        },
+        {
+          q: 'Geldt de garantie voor elk type project?',
+          a: 'Onze drie kerngaranties — vaste prijs, 6-wekentermijn en volledig eigendom — gelden voor alle standaardtrajecten. Bij maatwerk of enterprise-projecten stemmen we de voorwaarden specifiek op uw situatie af tijdens de kennismaking.',
+        },
+      ],
+      ctaHeading: 'Klaar om zonder risico te groeien?',
+      ctaBody: 'Plan een vrijblijvende kennismaking en ontdek wat onze garanties voor u kunnen betekenen.',
+      ctaButton: 'Plan een kennismaking',
+    },
+    faqPage: {
+      metaTitle: 'Veelgestelde Vragen',
+      metaDescription: 'Heb je vragen over AI-automatisering, web development of leadgeneratie? Sproscale geeft antwoord op de meest gestelde vragen over digitale groei.',
+      badge: 'Veelgestelde Vragen',
+      h1: 'Veelgestelde vragen over AI-gedreven groei & digitale transformatie',
+      lead: 'Alle antwoorden op de vragen die B2B-ondernemers ons het vaakst stellen — over traject, techniek en investering. Staat uw vraag er niet bij? We denken graag direct met u mee.',
+      tocHeading: 'Snel naar',
+      ctaText: 'Nog vragen?',
+      ctaLinkText: 'Plan een kennismaking',
+      categories: {
+        traject: {
+          label: 'Traject & Werkwijze',
+          items: [
+            { q: 'Hoe snel kunnen we resultaat verwachten?', a: 'Afhankelijk van de gekozen strategie zien we vaak de eerste verschuivingen in data binnen 4 tot 6 weken. Voor volledige schaalbaarheid en stabiele lead-flows rekenen we doorgaans op een traject van 3 maanden.' },
+            { q: 'Hebben jullie ervaring in mijn specifieke sector?', a: 'Hoewel we in diverse markten actief zijn, is onze methodiek sector-onafhankelijk. We focussen op de psychologie van de koper en de techniek, wat universeel werkt voor B2B-groei.' },
+            { q: 'Hoe ziet het traject er concreet uit, van eerste gesprek tot livegang?', a: 'We starten met een vrijblijvende kennismaking waarin we uw doelen en uitdagingen in kaart brengen. Daarna volgt een helder voorstel met vaste prijs en planning, waarna we binnen 6 weken live gaan — inclusief tussentijdse check-ins, zodat u nooit voor verrassingen komt te staan.' },
+            { q: 'Wat wordt er van mij als klant verwacht tijdens het traject?', a: 'Vooral snelle feedback en de aanlevering van content zoals foto\'s, teksten of toegang tot bestaande systemen. Hoe sneller u reageert, hoe sneller wij kunnen schakelen — de rest van het zware werk ligt bij ons.' },
+            { q: 'Kan ik tussentijds bijsturen als de richting niet meer klopt?', a: 'Zeker. We werken in korte cycli met regelmatige check-ins, zodat bijsturen altijd mogelijk is zonder het hele traject overhoop te gooien. Binnen de afgesproken scope kost dat u niets extra.' },
+          ],
+        },
+        techniek: {
+          label: 'Techniek & AI-oplossingen',
+          items: [
+            { q: 'Waarom zou ik kiezen voor AI-automatisering boven een standaard marketingbureau?', a: 'Een traditioneel marketingbureau levert vooral capaciteit — meer mensen, meer uren. Sproscale levert systemen: AI die 24/7 doorwerkt, sneller schaalt dan een team dat u moet aannemen, en beslissingen baseert op data in plaats van onderbuikgevoel. Het resultaat is structureel lagere kosten per lead en groei die niet stopt zodra de retainer op is.' },
+            { q: 'Leveren jullie ook standalone AI-diensten?', a: 'Ja, wij bouwen ook specifieke AI-automatiseringen of chatbots voor bedrijven die hun huidige website willen behouden maar wel hun processen willen versnellen.' },
+            { q: 'Op welke technologie bouwen jullie, en waarom is dat beter dan WordPress?', a: 'We bouwen op Next.js, hetzelfde technisch fundament als platforms zoals Airbnb. Waar de gemiddelde WordPress-site in Nederland zo\'n 4 seconden laadt, laadt een Next.js-site op Vercel doorgaans binnen 1 seconde — en 53% van de mobiele bezoekers haakt af bij een laadtijd boven de 3 seconden.' },
+            { q: 'Is een AI-chatbot ook geschikt voor mijn specifieke branche?', a: 'In vrijwel elke branche waar klanten vragen stellen voordat ze een aanvraag doen, bespaart een goed ingerichte chatbot tijd en vangt hij leads op die anders \'s avonds of in het weekend verloren zouden gaan. We stemmen de content en toon altijd af op uw vakgebied.' },
+            { q: 'Blijven mijn systemen up-to-date, of moet ik daar zelf achteraan?', a: 'Wij monitoren snelheid, vindbaarheid en werking actief na livegang. Updates en optimalisaties zijn onderdeel van de samenwerking, niet iets waar u zelf achteraan hoeft.' },
+          ],
+        },
+        investering: {
+          label: 'Investering & ROI',
+          items: [
+            { q: 'Wat is de gemiddelde investering voor een traject?', a: 'Onze trajecten zijn maatwerk en variëren per bedrijfsbehoefte. We werken met een instapmodel voor MKB tot uitgebreide enterprise-oplossingen. Tijdens een strategiegesprek geven we een exacte indicatie.' },
+            { q: 'Blijven de systemen ons eigendom?', a: 'Zeker. Alle websites, AI-tools en marketingaccounts die we voor u opzetten, blijven volledig eigendom van uw organisatie. Wij zijn slechts de architecten en beheerders.' },
+            { q: 'Wanneer verdien ik de investering terug?', a: 'Dat verschilt per traject, maar klanten zien doorgaans binnen 2 tot 4 maanden een meetbare daling in kosten per lead of stijging in conversie. Omdat u alles in eigendom heeft, blijft die winst ook na afronding van het project bij u.' },
+            { q: 'Wat kost het als ik na de livegang nog aanpassingen wil?', a: 'Kleine aanpassingen binnen de afgesproken scope zijn inbegrepen. Grotere uitbreidingen bespreken we altijd vooraf met een helder voorstel — nooit een verrassing op de factuur.' },
+            { q: 'Hoe meten jullie of een traject daadwerkelijk resultaat oplevert?', a: 'We richten conversietracking en CRM-koppelingen in vanaf dag één, zodat we niet op aannames maar op data sturen. U ziet exact welk kanaal en welke pagina daadwerkelijk klanten opleveren.' },
+          ],
+        },
       },
     },
     faq: {
@@ -846,6 +938,7 @@ export const translations = {
       contact: 'Contact',
       home: 'Home',
       insights: 'Insights',
+      garantie: 'Guarantee',
       toggleMenu: 'Toggle menu',
     },
     megaMenu: {
@@ -1098,6 +1191,97 @@ export const translations = {
         vastePrijs: { title: 'Fixed price upfront', desc: 'No hidden costs or surprises afterwards. The price we agree on is the price you pay.' },
         live6Weken: { title: 'Live within 6 weeks', desc: "If delivery is delayed on our end, you get the first month free." },
         eigendom: { title: 'Always your property', desc: 'All websites, AI tools and marketing accounts remain fully owned by your organization.' },
+      },
+    },
+    garantiePage: {
+      metaTitle: 'Our Guarantee - Certainty in Online Growth',
+      metaDescription: 'Fixed price upfront, live within 6 weeks or your first month free, and full ownership of everything we build. Discover the Sproscale Guarantee.',
+      badge: 'The Sproscale Guarantee',
+      h1: 'The Sproscale Guarantee: Your Growth, Our Responsibility',
+      lead: "Growing with an external agency often feels like a gamble — vague promises, hidden costs, endless deadlines. At Sproscale, we flip that around: our guarantees aren't marketing language, they're concrete commitments you can hold us to.",
+      promisesHeading: 'Our promises',
+      promisesIntro: 'Three hard commitments, no fine print.',
+      promises: {
+        vastePrijs: {
+          title: 'Fixed price upfront',
+          text: "No hidden costs, no \"extra work\" that lands on your plate afterwards. The price we agree on during the intro call is the price on the invoice — full stop. You know exactly where you stand upfront, so you can budget without financial surprises.",
+        },
+        speedGarantie: {
+          title: 'Live within 6 weeks — or your first month is free',
+          text: "Projects that drag on endlessly cost you revenue. That's why we guarantee going live within 6 weeks of project start. If delivery is delayed on our end, you get the first month completely free — no discussion, no fine print. That's our Speed Guarantee.",
+        },
+        eigendom: {
+          title: 'Full ownership',
+          text: "Everything we build for you — the website, the AI tools, the marketing accounts — is and remains 100% owned by your organization. No lock-in, no monthly \"rent\" on your own systems. If you ever stop working with Sproscale, you simply take everything with you.",
+        },
+      },
+      whatIfHeading: 'What if things go wrong?',
+      whatIfText: "No agency is infallible — the difference lies in what happens when something does go wrong. If delivery is delayed on our end, the Speed Guarantee kicks in automatically. Not happy with the direction? We adjust course at no extra cost within the agreed scope. And because everything belongs to you, you're never stuck — you always stay in control, no matter what happens.",
+      transparencyHeading: 'Transparency in price and process',
+      transparencyText: "Before we start, you know exactly: what it costs, when it's done, and who's responsible for what. No project starts without a clear proposal on paper. Throughout the project, we keep you actively informed — no radio silence, no surprises on the final invoice.",
+      faqHeading: 'Frequently asked questions about our guarantee',
+      faq: [
+        {
+          q: 'What happens if delivery takes longer than 6 weeks?',
+          a: "If the delay is on our end, you automatically get the first month free — that's our Speed Guarantee. Delays caused by content delivery or feedback on your end fall outside this, but we always communicate this transparently in advance.",
+        },
+        {
+          q: 'Are there really no hidden costs?',
+          a: "No. The price we agree on during the intro call is the price on the invoice. Extra requests outside the agreed scope are always discussed beforehand, so there's never a surprise on the final bill.",
+        },
+        {
+          q: 'What happens to my website or AI tools if I stop working with Sproscale?',
+          a: "Everything stays yours. Website, source code, AI automations and marketing accounts are and remain owned by your organization — you can continue independently at any time, with or without us.",
+        },
+        {
+          q: 'Does the guarantee apply to every type of project?',
+          a: 'Our three core guarantees — fixed price, 6-week timeline, and full ownership — apply to all standard projects. For custom or enterprise projects, we align the terms specifically to your situation during the intro call.',
+        },
+      ],
+      ctaHeading: 'Ready to grow without risk?',
+      ctaBody: 'Book a free, no-obligation call and discover what our guarantees can mean for you.',
+      ctaButton: 'Book an intro call',
+    },
+    faqPage: {
+      metaTitle: 'Frequently Asked Questions',
+      metaDescription: 'Questions about AI automation, web development or lead generation? Sproscale answers the most common questions about digital growth.',
+      badge: 'Frequently Asked Questions',
+      h1: 'Frequently asked questions about AI-driven growth & digital transformation',
+      lead: "All the answers to the questions B2B business owners ask us most — about the process, the technology, and the investment. Don't see your question? We're happy to think it through with you directly.",
+      tocHeading: 'Jump to',
+      ctaText: 'Still have questions?',
+      ctaLinkText: 'Book an intro call',
+      categories: {
+        traject: {
+          label: 'Process & Approach',
+          items: [
+            { q: 'How quickly can we expect results?', a: 'Depending on the chosen strategy, we often see the first shifts in data within 4 to 6 weeks. For full scalability and stable lead flows, we typically plan for a 3-month engagement.' },
+            { q: 'Do you have experience in my specific industry?', a: 'While we work across diverse markets, our methodology is industry-independent. We focus on buyer psychology and technology, which works universally for B2B growth.' },
+            { q: 'What does the process actually look like, from first conversation to launch?', a: "We start with a free intro call to map out your goals and challenges. That's followed by a clear proposal with a fixed price and timeline, after which we go live within 6 weeks — including check-ins along the way, so you're never caught off guard." },
+            { q: 'What is expected of me as a client during the project?', a: "Mainly fast feedback and delivery of content like photos, copy, or access to existing systems. The faster you respond, the faster we can move — the heavy lifting is on us." },
+            { q: 'Can I adjust course midway if the direction no longer feels right?', a: 'Absolutely. We work in short cycles with regular check-ins, so adjusting course is always possible without upending the whole project. Within the agreed scope, that costs you nothing extra.' },
+          ],
+        },
+        techniek: {
+          label: 'Technology & AI Solutions',
+          items: [
+            { q: 'Why would I choose AI automation over a standard marketing agency?', a: "A traditional marketing agency mainly delivers capacity — more people, more hours. Sproscale delivers systems: AI that works 24/7, scales faster than a team you'd have to hire, and bases decisions on data instead of gut feeling. The result is structurally lower cost per lead and growth that doesn't stop the moment the retainer ends." },
+            { q: 'Do you also offer standalone AI services?', a: 'Yes, we also build specific AI automations or chatbots for businesses that want to keep their current website but still speed up their processes.' },
+            { q: 'What technology do you build on, and why is that better than WordPress?', a: "We build on Next.js, the same technical foundation used by platforms like Airbnb. Where the average WordPress site loads in around 4 seconds, a Next.js site on Vercel typically loads in under 1 second — and 53% of mobile visitors abandon a page that takes longer than 3 seconds to load." },
+            { q: 'Is an AI chatbot suitable for my specific industry?', a: "In virtually any industry where customers ask questions before making an inquiry, a well-configured chatbot saves time and captures leads that would otherwise be lost in the evening or on weekends. We always tailor the content and tone to your field." },
+            { q: 'Do my systems stay up to date, or is that on me?', a: 'We actively monitor speed, visibility, and functionality after launch. Updates and optimizations are part of the collaboration, not something you need to chase yourself.' },
+          ],
+        },
+        investering: {
+          label: 'Investment & ROI',
+          items: [
+            { q: 'What is the average investment for a project?', a: 'Our projects are custom and vary by business need. We work with an entry-level model for SMEs up to extensive enterprise solutions. During a strategy call, we give you an exact estimate.' },
+            { q: 'Do the systems remain our property?', a: 'Absolutely. All websites, AI tools, and marketing accounts we set up for you remain fully owned by your organization. We are simply the architects and administrators.' },
+            { q: 'When do I earn back the investment?', a: "That varies per project, but clients typically see a measurable drop in cost per lead or rise in conversion within 2 to 4 months. Because you own everything, that value stays with you even after the project wraps up." },
+            { q: 'What does it cost if I want changes after launch?', a: 'Small adjustments within the agreed scope are included. Larger extensions are always discussed beforehand with a clear proposal — never a surprise on the invoice.' },
+            { q: 'How do you measure whether a project actually delivers results?', a: "We set up conversion tracking and CRM integration from day one, so we steer on data instead of assumptions. You see exactly which channel and which page actually generate customers." },
+          ],
+        },
       },
     },
     faq: {

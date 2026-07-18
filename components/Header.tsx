@@ -29,7 +29,7 @@ export default function Header() {
 
   const navLinks = [
     { name: t('nav.overOns'), href: '/over-ons' },
-    { name: t('nav.faq'), href: '/#faq' },
+    { name: t('nav.faq'), href: '/faq' },
     { name: t('nav.contact'), href: '/contact' },
   ];
 
