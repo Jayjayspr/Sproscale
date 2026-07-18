@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useLanguage } from '../../lib/i18n/LanguageContext';
 
 const insightsConfig = [
+  { slug: 'seoVoorMkb', href: '/insights/seo-voor-mkb', image: '/images/insights/seo-voor-mkb.svg', unoptimized: true },
   { slug: 'dataGedrevenOndernemen', href: '/insights/data-gedreven-ondernemen-2026', image: '/images/insights/data-gedreven-ondernemen-2026.svg', unoptimized: true },
   { slug: 'lokaleSeoHoveniers', href: '/insights/lokale-seo-voor-hoveniers', image: '/images/insights/lokale-seo-hoveniers.svg', unoptimized: true },
   { slug: 'aiAutomatisering', href: '/insights/ai-automatisering', image: '/images/insights/ai-automatisering-growth.webp' },

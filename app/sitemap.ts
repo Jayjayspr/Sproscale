@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/insights/wordpress-vs-vercel`,       lastModified: new Date('2026-05-04'), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/insights/lokale-seo-voor-hoveniers`, lastModified: new Date('2026-07-15'), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/insights/data-gedreven-ondernemen-2026`, lastModified: new Date('2026-07-17'), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/insights/seo-voor-mkb`,              lastModified: new Date('2026-07-18'), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/privacy`,                            lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${baseUrl}/algemene-voorwaarden`,               lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ]

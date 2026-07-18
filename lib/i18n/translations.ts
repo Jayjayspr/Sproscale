@@ -437,6 +437,12 @@ export const translations = {
           date: '17 Juli 2026',
           alt: 'Illustratie van datagedreven marketingbeslissingen en GA4-inzichten',
         },
+        seoVoorMkb: {
+          title: 'Waarom de Beste Website ter Wereld Waardeloos Is zonder SEO',
+          excerpt: 'Duizenden euro\'s geïnvesteerd in een prachtige website, maar nul aanvragen? Ontdek waarom online vindbaarheid het verschil maakt tussen een mooie etalage en een winkel vol klanten.',
+          date: '18 Juli 2026',
+          alt: 'Illustratie van een website die onvindbaar blijft zonder SEO voor MKB',
+        },
         lokaleSeoHoveniers: {
           title: 'Lokale SEO voor Hoveniers: Zo Vinden Klanten Je Eindelijk Terug',
           excerpt: 'Een prachtige tuin aanleggen is niet genoeg als niemand je website vindt. Ontdek hoe lokale SEO voor hoveniers zorgt voor structureel meer aanvragen uit je eigen regio.',
@@ -476,6 +482,40 @@ export const translations = {
       },
     },
     insightsArticles: {
+      seoVoorMkb: {
+        badgeLabel: 'Insights • SEO & Vindbaarheid',
+        meta: '18 Juli 2026 · 6 min leestijd',
+        lead: 'Je hebt duizenden euro\'s geïnvesteerd in een strakke, professionele website. En toch komt er niks binnen — nul aanvragen, nul telefoontjes. Het probleem is bijna nooit de website zelf. Het is dat niemand hem kan vinden.',
+        introPre: 'Stel je voor: je opent de mooiste winkel van de stad. Vloer van marmer, verlichting op punt, de etalage adembenemend. Maar je zet hem niet aan de hoofdstraat — je verstopt hem in ',
+        introHighlight: 'een donker steegje, drie straten van waar iedereen loopt',
+        introPost: '. Hoe goed je winkel ook is, er komt niemand binnen. Dat is precies wat er gebeurt met de meeste websites van MKB-bedrijven en vakmensen: de site is vaak prima, soms zelfs indrukwekkend — maar zonder SEO voor MKB staat hij in een donker steegje van het internet, terwijl de concurrent gewoon op de hoofdstraat staat.',
+        sections: {
+          probleem: {
+            heading: 'SEO is geen technisch trucje — het is je virtuele verkoper',
+            p1: 'SEO klinkt voor veel ondernemers als iets vaags en technisch: code, algoritmes, dingen voor specialisten. Maar in de kern is het doodsimpel. SEO is digitale verkoopbaarheid.',
+            p2: 'Zie het zo: een goede SEO-strategie is een virtuele verkoper die 24 uur per dag, 7 dagen per week paraat staat. Hij vraagt nooit om pauze, wordt nooit ziek, en brengt precies de klanten naar je toe die al op zoek zijn naar wat jij aanbiedt. Geen koude acquisitie, geen flyers die in de prullenbak belanden — alleen mensen die op het moment dat ze zoeken, jou vinden. Zonder die verkoper sta je erbij en kijk je toe hoe de opdrachten naar de concurrent gaan die wél bovenaan staat, ook als jouw vakmanschap beter is.',
+          },
+          oplossing: {
+            heading: 'De Sproscale-aanpak: geen losse zoekwoorden, maar een autoriteitsstructuur',
+            p1: 'De meeste bureaus gooien wat zoekwoorden in een tekst en noemen dat SEO. Bij Sproscale werkt dat anders. Wij bouwen geen losse pagina\'s, maar een autoriteitsstructuur: hubpagina\'s per dienst, met daaronder specifieke pagina\'s per branche.',
+            p2Pre: 'Concreet betekent dat: in plaats van één vage pagina over ',
+            p2LinkWebsite: 'websites laten bouwen',
+            p2Mid: ', bouwen we een hoofdpagina per dienst met daaronder een pagina specifiek voor hoveniers, een voor tegelzetters, een voor dakdekkers — noem maar op. Diezelfde structuur passen we toe op ',
+            p2LinkSeo: 'SEO-optimalisatie',
+            p2Post: ': niet één generiek verhaal, maar per branche een aanpak die aansluit op hoe die klant daadwerkelijk zoekt.',
+            p3: 'Waarom dat werkt? Omdat Google — en vooral de klant — feilloos aanvoelt of een pagina écht over zijn situatie gaat, of dat het een verhaal is dat voor iedereen geldt. Iemand die zoekt op "website laten maken voor tegelzetters" wil niet lezen over hoveniers. Hij wil zien dat jij precies snapt wat er speelt in zíjn vak. Die herkenning is wat van een bezoeker een klant maakt.',
+          },
+        },
+        features: {
+          autoriteit: { title: 'Autoriteitsstructuur', text: 'Hubpagina\'s per dienst, met specifieke pagina\'s per branche — geen losse zoekwoorden.' },
+          intentie: { title: 'Zoekintentie', text: 'Content die aansluit op wat iemand écht zoekt, niet een generiek verhaal voor iedereen.' },
+          rendement: { title: 'Blijvend rendement', text: 'In tegenstelling tot advertenties stopt het effect niet zodra het budget op is.' },
+        },
+        quote: 'Een website zonder SEO is een winkel in een donker steegje — hoe mooi de etalage ook is, niemand loopt er per ongeluk binnen.',
+        closingHeading: 'SEO is geen kostenpost, maar een investering',
+        closingText: 'Een website zonder SEO is als een winkel zonder duidelijke ingang: mooi om naar te kijken, moeilijk om binnen te komen. Online vindbaarheid is niet iets wat je er "ooit nog wel bij doet" — het is het verschil tussen een website die je trots op de borrel laat zien, en een website die daadwerkelijk klanten oplevert. SEO is geen kostenpost. Het is een investering in de groei van je bedrijf, die — in tegenstelling tot een advertentiebudget — blijft renderen lang nadat je \'m hebt gedaan.',
+        cta: { heading: 'Wil je weten hoe jouw bedrijf beter vindbaar wordt?', body: 'Plan een gratis strategiegesprek en ontdek precies waar jouw website nu kansen laat liggen.', button: 'Plan een gratis strategiegesprek' },
+      },
       dataGedrevenOndernemen: {
         badgeLabel: 'Insights • Data & Marketing',
         meta: '17 Juli 2026 · 7 min leestijd',
@@ -1366,6 +1406,12 @@ export const translations = {
           date: 'July 17, 2026',
           alt: 'Illustration of data-driven marketing decisions and GA4 insights',
         },
+        seoVoorMkb: {
+          title: 'Why the Best Website in the World Is Worthless Without SEO',
+          excerpt: "Invested thousands in a beautiful website, but zero inquiries? Discover why online visibility is the difference between a nice storefront and a shop full of customers.",
+          date: 'July 18, 2026',
+          alt: 'Illustration of a website that stays undiscoverable without SEO for SMEs',
+        },
         lokaleSeoHoveniers: {
           title: 'Local SEO for Landscapers: How Customers Finally Find You',
           excerpt: "Building a beautiful garden isn't enough if nobody finds your website. Discover how local SEO gets landscaping businesses structurally more inquiries from their own region.",
@@ -1405,6 +1451,40 @@ export const translations = {
       },
     },
     insightsArticles: {
+      seoVoorMkb: {
+        badgeLabel: 'Insights • SEO & Visibility',
+        meta: 'July 18, 2026 · 6 min read',
+        lead: "You've invested thousands of euros in a sleek, professional website. And yet nothing comes in — zero inquiries, zero phone calls. The problem is almost never the website itself. It's that nobody can find it.",
+        introPre: 'Imagine: you open the most beautiful shop in town. Marble floors, perfect lighting, a breathtaking storefront. But you don\'t put it on the main street — you tuck it away in ',
+        introHighlight: 'a dark alley, three streets from where everyone walks',
+        introPost: ". No matter how good your shop is, nobody walks in. That's exactly what happens to most SME and trade-business websites: the site itself is often fine, sometimes even impressive — but without SEO for SMEs, it sits in a dark alley of the internet, while the competitor stands right on the main street.",
+        sections: {
+          probleem: {
+            heading: "SEO isn't a technical trick — it's your virtual salesperson",
+            p1: 'To many business owners, SEO sounds vague and technical: code, algorithms, things for specialists. But at its core, it\'s dead simple. SEO is digital sellability.',
+            p2: "Think of it this way: a good SEO strategy is a virtual salesperson standing by 24 hours a day, 7 days a week. It never asks for a break, never calls in sick, and brings you exactly the customers already looking for what you offer. No cold calling, no flyers ending up in the bin — just people who find you the moment they search. Without that salesperson, you watch the jobs go to the competitor who does rank at the top, even when your craftsmanship is better.",
+          },
+          oplossing: {
+            heading: 'The Sproscale approach: not scattered keywords, but an authority structure',
+            p1: "Most agencies throw a few keywords into some copy and call it SEO. At Sproscale, it works differently. We don't build isolated pages — we build an authority structure: hub pages per service, with specific pages underneath for each industry.",
+            p2Pre: 'Concretely, that means: instead of one vague page about ',
+            p2LinkWebsite: 'getting a website built',
+            p2Mid: ', we build a main page per service with a page underneath specifically for landscapers, one for tilers, one for roofers — you name it. We apply that same structure to ',
+            p2LinkSeo: 'SEO optimization',
+            p2Post: ': not one generic story, but an approach per industry that matches how that customer actually searches.',
+            p3: 'Why does that work? Because Google — and especially the customer — can tell instantly whether a page is really about their situation, or whether it\'s a story that applies to everyone. Someone searching for "website for tilers" doesn\'t want to read about landscapers. They want to see that you understand exactly what\'s going on in their trade. That recognition is what turns a visitor into a customer.',
+          },
+        },
+        features: {
+          autoriteit: { title: 'Authority structure', text: 'Hub pages per service, with specific pages per industry — not scattered keywords.' },
+          intentie: { title: 'Search intent', text: 'Content that matches what someone actually searches for, not one generic story for everyone.' },
+          rendement: { title: 'Lasting returns', text: "Unlike ads, the effect doesn't stop the moment the budget runs out." },
+        },
+        quote: "A website without SEO is a shop in a dark alley — no matter how beautiful the storefront, nobody wanders in by accident.",
+        closingHeading: "SEO isn't a cost — it's an investment",
+        closingText: 'A website without SEO is like a shop with no clear entrance: nice to look at, hard to get into. Online visibility isn\'t something you "get around to eventually" — it\'s the difference between a website you proudly show off at drinks, and one that actually brings in customers. SEO is not a cost. It\'s an investment in your business\'s growth, one that — unlike an ad budget — keeps paying off long after you\'ve made it.',
+        cta: { heading: 'Want to know how your business becomes more visible?', body: 'Book a free strategy call and discover exactly where your website is currently leaving opportunities on the table.', button: 'Book a free strategy call' },
+      },
       dataGedrevenOndernemen: {
         badgeLabel: 'Insights • Data & Marketing',
         meta: 'July 17, 2026 · 7 min read',
