@@ -79,12 +79,12 @@ export default function AboutPage() {
             <div className="p-8 pb-0 md:p-12 lg:p-16 flex items-start h-full">
               <div className="relative">
                 <Image
-                  src="/jaysprock.jpg"
+                  src="/jay_sprock.png"
                   alt={t('overOnsPage.founderImageAlt')}
                   width={400}
                   height={400}
                   priority={true}
-                  className="rounded-full aspect-square object-cover shadow-md transform -translate-y-2 w-32 h-32 md:w-48 md:h-48"
+                  className="rounded-full aspect-square object-cover object-[50%_12%] shadow-md transform -translate-y-2 w-32 h-32 md:w-48 md:h-48"
                   referrerPolicy="no-referrer"
                 />
               </div>
