@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 '@type': 'OfferCatalog',
                 name: 'Sproscale Diensten',
                 itemListElement: [
-                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Bouwen', description: 'Snelle websites op maat vanaf €999' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Bouwen', description: 'Snelle websites op maat vanaf €999 eenmalig, plus €150/mnd hosting en onderhoud' } },
                   { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Optimalisatie', description: 'Lokale SEO en Google Bedrijfsprofiel vanaf €399/mnd' } },
                   { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Meta & Google Ads', description: 'Lead generatie via betaalde advertenties vanaf €499/mnd' } },
                   { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Chatbot & Automatisering', description: 'Custom AI chatbots en workflow automatisering vanaf €249' } },

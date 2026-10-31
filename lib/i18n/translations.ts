@@ -368,7 +368,8 @@ export const translations = {
       eyebrow: 'Vragen',
       heading: 'Veelgestelde Vragen.',
       items: [
-        { q: 'Wat kost een website bij Sproscale?', a: 'Een website start vanaf € 999, SEO-optimalisatie vanaf € 399 per maand. Na de kennismaking krijgt u een vaste prijs vooraf, zonder verborgen kosten.' },
+        { q: 'Wat kost een website bij Sproscale?', a: 'Een website kost eenmalig vanaf € 999, plus € 150 per maand voor hosting en onderhoud. SEO-optimalisatie start vanaf € 399 per maand. Na de kennismaking krijgt u een vaste prijs vooraf, zonder verborgen kosten.' },
+        { q: 'Wat zit er in de € 150 per maand?', a: 'Snelle hosting, een SSL-certificaat, technisch onderhoud en updates, en support als er iets is. U hoeft zelf niets te regelen: uw website blijft snel, veilig en online.' },
         { q: 'Hoe snel staat mijn website live?', a: 'Binnen 6 weken. Loopt de oplevering door onze schuld uit, dan krijgt u de eerste maand gratis.' },
         { q: 'Wanneer zie ik resultaat in Google?', a: 'De eerste verschuivingen ziet u meestal na 4 tot 6 weken. Voor stabiele posities en een vaste stroom aanvragen rekenen we doorgaans op ongeveer 3 maanden.' },
         { q: 'Ik heb al een website. Kunnen jullie alleen de SEO doen?', a: 'Ja. We kijken eerst of uw huidige website technisch goed genoeg is om hoog te scoren in Google. Is dat niet zo, dan zeggen we dat eerlijk voordat u ergens aan begint.' },
@@ -921,6 +922,7 @@ export const translations = {
           desc: 'Een snelle website op maat die bezoekers omzet in aanvragen. Geen standaard sjabloon, geen trage plugins.',
           bullets: ['Laadt binnen een seconde, ook op mobiel', 'Ontworpen om aanvragen op te leveren', 'Binnen 6 weken live, vaste prijs'],
           price: 'Vanaf € 999',
+          priceNote: '+ € 150 /mnd hosting & onderhoud',
         },
         seoOptimalisatie: {
           title: 'SEO Optimalisatie',
@@ -1370,7 +1372,8 @@ export const translations = {
       eyebrow: 'Questions',
       heading: 'Frequently Asked Questions.',
       items: [
-        { q: 'What does a website from Sproscale cost?', a: 'Websites start from € 999, SEO optimization from € 399 per month. After the intro call you get a fixed price upfront, with no hidden costs.' },
+        { q: 'What does a website from Sproscale cost?', a: 'A website starts from a one-time € 999, plus € 150 per month for hosting and maintenance. SEO optimization starts from € 399 per month. After the intro call you get a fixed price upfront, with no hidden costs.' },
+        { q: 'What is included in the € 150 per month?', a: "Fast hosting, an SSL certificate, technical maintenance and updates, and support when you need it. You don't have to arrange anything yourself: your website stays fast, secure and online." },
         { q: 'How quickly will my website be live?', a: 'Within 6 weeks. If delivery runs late through our fault, you get the first month free.' },
         { q: 'When will I see results in Google?', a: 'You usually see the first movement after 4 to 6 weeks. For stable rankings and a steady stream of inquiries, we typically plan for about 3 months.' },
         { q: 'I already have a website. Can you do just the SEO?', a: "Yes. We first check whether your current website is technically good enough to rank well in Google. If it isn't, we'll tell you honestly before you commit to anything." },
@@ -1923,6 +1926,7 @@ export const translations = {
           desc: 'A fast, custom website that turns visitors into inquiries. No generic template, no slow plugins.',
           bullets: ['Loads within a second, on mobile too', 'Designed to generate inquiries', 'Live within 6 weeks, fixed price'],
           price: 'From € 999',
+          priceNote: '+ € 150 /mo hosting & maintenance',
         },
         seoOptimalisatie: {
           title: 'SEO Optimization',

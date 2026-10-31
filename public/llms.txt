@@ -6,7 +6,7 @@ Sproscale richt zich op bedrijven die hun acquisitie, website en interne process
 
 ## Diensten
 
-- **Website Bouwen** — high-end Next.js websites, vanaf €999. Conversie-gericht design, razendsnelle laadtijden.
+- **Website Bouwen** — high-end Next.js websites, vanaf €999 eenmalig plus €150/maand voor hosting en onderhoud. Conversie-gericht design, razendsnelle laadtijden.
 - **Meta & Google Ads** — leadgeneratie via betaalde advertenties, vanaf €499/maand.
 - **AI Chatbot & Automatisering** — custom AI-chatbots en workflow-automatisering, vanaf €249.
 - **Consultancy** — strategisch advies voor schaalbare groei, prijs op aanvraag.

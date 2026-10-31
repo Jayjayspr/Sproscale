@@ -251,7 +251,12 @@ export default function SproscaleLandingPage() {
                   ))}
                 </ul>
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-stone-100">
-                  <span className="font-display text-xl md:text-2xl font-medium text-stone-900">{t(`services.items.${service.id}.price`)}</span>
+                  <div className="flex flex-col">
+                    <span className="font-display text-xl md:text-2xl font-medium text-stone-900">{t(`services.items.${service.id}.price`)}</span>
+                    {tRaw<string | undefined>(`services.items.${service.id}.priceNote`) && (
+                      <span className="text-xs text-stone-500 mt-1">{tRaw<string>(`services.items.${service.id}.priceNote`)}</span>
+                    )}
+                  </div>
                   <div className="flex items-center gap-4">
                     <Link href={`/diensten/${service.hubSlug}`} className="text-sm font-semibold text-stone-500 hover:text-stone-900 transition-colors">
                       {t('services.moreLabel')}

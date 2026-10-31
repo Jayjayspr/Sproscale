@@ -52,7 +52,7 @@ const SPROSCALE_CONTEXT: { keywords: string[]; answer: string }[] = [
   {
     keywords: ['kosten website', 'prijs website', 'wat kost een website', 'hoeveel kost een website', 'website bouwen kosten', 'website laten maken'],
     answer:
-      'Een high-end website bij Sproscale begint bij **€ 999**.\n\n• Gebouwd met **Next.js** — razendsnel en schaalbaar.\n• Op maat ontworpen, gericht op conversie.\n• Inclusief mobiele optimalisatie.\n\nZal ik een afspraak voor je inplannen om de details te bespreken?',
+      'Een high-end website bij Sproscale begint bij **€ 999** eenmalig, plus **€ 150 /mnd** voor hosting en onderhoud.\n\n• Gebouwd met **Next.js** — razendsnel en schaalbaar.\n• Op maat ontworpen, gericht op conversie.\n• Inclusief mobiele optimalisatie.\n\nZal ik een afspraak voor je inplannen om de details te bespreken?',
   },
 
   // --- Marketing / Ads kosten ---
@@ -80,14 +80,14 @@ const SPROSCALE_CONTEXT: { keywords: string[]; answer: string }[] = [
   {
     keywords: ['prijs', 'kosten', 'wat kost', 'hoeveel', 'offerte', 'tarief', 'tarieven', 'investering', 'budget'],
     answer:
-      'Onze diensten en tarieven:\n\n• **Web Design** — High-end Next.js websites. Vanaf **€ 999**.\n• **Marketing** — Meta & Google Ads beheer. Vanaf **€ 499 /mnd**.\n• **AI Automations** — Custom chatbots & workflow automatisering. Vanaf **€ 249**.\n• **Consultancy** — Strategisch advies voor schalen. **Op aanvraag** (eerste gesprek gratis).\n\nZal ik een afspraak voor je inplannen om de details te bespreken?',
+      'Onze diensten en tarieven:\n\n• **Web Design** — High-end Next.js websites. Vanaf **€ 999** + **€ 150 /mnd** hosting & onderhoud.\n• **Marketing** — Meta & Google Ads beheer. Vanaf **€ 499 /mnd**.\n• **AI Automations** — Custom chatbots & workflow automatisering. Vanaf **€ 249**.\n• **Consultancy** — Strategisch advies voor schalen. **Op aanvraag** (eerste gesprek gratis).\n\nZal ik een afspraak voor je inplannen om de details te bespreken?',
   },
 
   // --- Specifieke diensten ---
   {
     keywords: ['website', 'next.js', 'webdesign', 'webdevelopment', 'web', 'landingspagina', 'landing page'],
     answer:
-      'Onze websites worden gebouwd met **Next.js** — snel, schaalbaar en modern. We ontwerpen op maat, gericht op conversie en merkuitstraling.\n\nBeginprijs: **€ 999**. Vul het contactformulier in voor een vrijblijvend gesprek.',
+      'Onze websites worden gebouwd met **Next.js** — snel, schaalbaar en modern. We ontwerpen op maat, gericht op conversie en merkuitstraling.\n\nBeginprijs: **€ 999** eenmalig + **€ 150 /mnd** hosting & onderhoud. Vul het contactformulier in voor een vrijblijvend gesprek.',
   },
   {
     keywords: ['onboarding', 'klantinstroom', 'automatisering', 'automatiseren', 'systeem', 'workflow'],
