@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import CookieBanner from './CookieBanner';
 import ChatWidget from './ChatWidget';
+import MobileCallBar from './MobileCallBar';
 
 export default function ClientWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -17,6 +18,7 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
       <Footer />
       {!isAdminArea && <CookieBanner />}
       {!isAdminArea && <ChatWidget />}
+      {!isAdminArea && <MobileCallBar />}
     </>
   );
 }

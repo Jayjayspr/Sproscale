@@ -150,12 +150,12 @@ export default function GuaranteeContent() {
         </div>
       </section>
 
-      {/* Sticky CTA bar */}
+      {/* Sticky CTA bar (alleen desktop; op mobiel staat de algemene MobileCallBar onderin) */}
       <motion.div
         initial={false}
         animate={showStickyCta ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
         transition={{ duration: 0.25 }}
-        className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] pointer-events-none"
+        className="hidden lg:block fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] pointer-events-none"
         style={{ pointerEvents: showStickyCta ? 'auto' : 'none' }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
