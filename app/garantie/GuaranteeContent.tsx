@@ -34,7 +34,7 @@ export default function GuaranteeContent() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-100 border border-stone-200 text-stone-600 text-xs font-bold uppercase tracking-widest mb-8">
             {t('garantiePage.badge')}
@@ -50,7 +50,7 @@ export default function GuaranteeContent() {
 
       {/* Onze beloftes */}
       <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-medium text-stone-900 tracking-tight mb-4">
               {t('garantiePage.promisesHeading')}
@@ -78,11 +78,11 @@ export default function GuaranteeContent() {
 
       {/* Wat als het tegenzit? */}
       <section className="py-16 md:py-20 bg-white border-y border-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl md:text-4xl font-medium text-stone-900 tracking-tight mb-6">
             {t('garantiePage.whatIfHeading')}
           </h2>
-          <p className="text-stone-600 leading-relaxed font-light text-lg max-w-3xl">
+          <p className="text-stone-600 leading-relaxed font-light text-lg">
             {t('garantiePage.whatIfText')}
           </p>
         </div>
@@ -90,11 +90,11 @@ export default function GuaranteeContent() {
 
       {/* Transparantie */}
       <section className="py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl md:text-4xl font-medium text-stone-900 tracking-tight mb-6">
             {t('garantiePage.transparencyHeading')}
           </h2>
-          <p className="text-stone-600 leading-relaxed font-light text-lg max-w-3xl">
+          <p className="text-stone-600 leading-relaxed font-light text-lg">
             {t('garantiePage.transparencyText')}
           </p>
         </div>
@@ -102,7 +102,7 @@ export default function GuaranteeContent() {
 
       {/* FAQ */}
       <section className="py-16 md:py-20 bg-white border-t border-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl md:text-4xl font-medium text-stone-900 tracking-tight mb-10 text-center">
             {t('garantiePage.faqHeading')}
           </h2>
@@ -129,7 +129,7 @@ export default function GuaranteeContent() {
 
       {/* Slot-CTA */}
       <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-stone-900 p-10 md:p-16 rounded-[2.5rem] text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20" />
@@ -158,7 +158,7 @@ export default function GuaranteeContent() {
         className="hidden lg:block fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] pointer-events-none"
         style={{ pointerEvents: showStickyCta ? 'auto' : 'none' }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
           <p className="hidden sm:block text-sm font-semibold text-stone-900 truncate">{t('garantiePage.h1')}</p>
           <Link
             href="/afspraak"
