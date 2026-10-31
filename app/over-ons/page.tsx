@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-stone-50 pt-32 pb-16 font-sans text-stone-900">
       {/* Page Hero (The Mission) */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <motion.div {...fadeInUp}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-stone-900 mb-6">
             {t('overOnsPage.heroTitleLine1')} <br className="hidden md:block" />
@@ -39,10 +39,10 @@ export default function AboutPage() {
       </section>
 
       {/* The "Why" (Grijze Sectie) */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div {...fadeInUp} className="bg-stone-100 rounded-3xl p-8 md:p-12 text-center border border-stone-200">
           <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mb-6">{t('overOnsPage.gapHeading')}</h2>
-          <p className="text-stone-600 leading-relaxed text-base md:text-lg font-light">
+          <p className="text-stone-600 leading-relaxed text-base md:text-lg font-light max-w-3xl mx-auto">
             {t('overOnsPage.gapBody')}
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Card */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div {...fadeInUp} className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-4">{t('overOnsPage.ctaHeading')}</h2>
           <p className="text-stone-600 font-light mb-8 max-w-2xl mx-auto">

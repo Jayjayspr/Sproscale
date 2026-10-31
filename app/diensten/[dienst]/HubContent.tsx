@@ -16,8 +16,8 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
 
   return (
     <main className="min-h-screen bg-stone-50 pt-32 pb-24 font-sans text-stone-900">
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-16">
+      <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="mb-16 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] tracking-tight text-stone-900 mb-8">
             {t(`${h}.h1`)}
           </h1>
@@ -26,7 +26,7 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
           </p>
         </header>
 
-        <div className="prose prose-stone prose-lg max-w-none">
+        <div className="prose prose-stone prose-lg max-w-3xl">
           <p className="text-lg text-stone-700 leading-relaxed mb-8">
             {t(`${h}.introPre`)}<strong>{t(`${h}.introHighlight`)}</strong>{t(`${h}.introPost`)}
           </p>
@@ -64,8 +64,8 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
         {/* Silo: links naar alle niche-pagina's voor deze dienst */}
         <section className="mt-16 pt-16 border-t border-stone-200">
           <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mb-3 tracking-tight">{t(`${h}.siloHeading`)}</h2>
-          <p className="text-stone-600 leading-relaxed mb-8 font-light">{t(`${h}.siloIntro`)}</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <p className="text-stone-600 leading-relaxed mb-8 font-light max-w-3xl">{t(`${h}.siloIntro`)}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {branches.map((branch) => (
               <Link
                 key={branch.slug}
@@ -79,7 +79,7 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
           </div>
         </section>
 
-        <div className="mt-16">
+        <div className="mt-16 max-w-3xl">
           <ServiceLeadForm serviceSlug={serviceSlug} serviceLabel={serviceLabel} />
         </div>
 

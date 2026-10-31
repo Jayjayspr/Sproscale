@@ -26,7 +26,7 @@ export default function FaqContent() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-100 border border-stone-200 text-stone-600 text-xs font-bold uppercase tracking-widest mb-8">
             {t('faqPage.badge')}
@@ -42,7 +42,7 @@ export default function FaqContent() {
 
       {/* Table of Contents */}
       <section className="py-10 bg-white border-b border-stone-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-4">{t('faqPage.tocHeading')}</p>
           <nav className="flex flex-wrap gap-3">
             {categoryConfig.map((cat) => (
@@ -68,7 +68,7 @@ export default function FaqContent() {
             id={cat.id}
             className={`py-16 md:py-20 scroll-mt-24 ${catIndex % 2 === 1 ? 'bg-white border-y border-stone-100' : ''}`}
           >
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="font-display text-3xl md:text-4xl font-medium text-stone-900 tracking-tight mb-10">
                 {t(`faqPage.categories.${cat.id}.label`)}
               </h2>
@@ -112,7 +112,7 @@ export default function FaqContent() {
 
       {/* Slot-CTA */}
       <section className="py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-stone-900 p-10 md:p-16 rounded-[2.5rem] text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20" />

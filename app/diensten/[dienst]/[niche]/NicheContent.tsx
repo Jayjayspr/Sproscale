@@ -38,7 +38,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
 
   return (
     <main className="min-h-screen bg-stone-50 pt-32 pb-24 font-sans text-stone-900">
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href={`/diensten/${serviceSlug}`}
           className="inline-flex items-center gap-2 text-stone-400 hover:text-stone-900 transition-colors mb-12 text-sm font-medium group"
@@ -47,7 +47,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
           {fillTemplate(t('nichePages.backToHub'), vars)}
         </Link>
 
-        <header className="mb-16">
+        <header className="mb-16 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-600 text-xs font-bold uppercase tracking-widest mb-8">
             {fillTemplate(t('nichePages.badgeTemplate'), vars)}
           </div>
@@ -59,7 +59,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
           </p>
         </header>
 
-        <div className="prose prose-stone prose-lg max-w-none">
+        <div className="prose prose-stone prose-lg max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{problemHeading}</h2>
           <p className="text-stone-700 leading-relaxed mb-8">{problemText}</p>
 
@@ -127,7 +127,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
           </ol>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 max-w-3xl">
           <ServiceLeadForm serviceSlug={serviceSlug} serviceLabel={serviceLabel} nicheSlug={nicheSlug} nicheLabel={branchLabel} />
         </div>
 
