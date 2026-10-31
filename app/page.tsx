@@ -151,9 +151,9 @@ export default function SproscaleLandingPage() {
             <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('usps.eyebrow')}</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {uspConfig.map((usp) => (
-              <div key={usp.id}>
+              <div key={usp.id} className="rounded-3xl border border-stone-200 bg-white p-6 md:p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-glow-from to-glow-to flex items-center justify-center mb-5 shadow-md shadow-glow-from/20">
                   <usp.icon className="w-6 h-6 text-white" />
                 </div>
