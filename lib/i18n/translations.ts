@@ -257,6 +257,8 @@ export const translations = {
       ctaPrimary: 'Plan een vrijblijvend gesprek',
       ctaSecondary: 'Bekijk wat het kost',
       trust: ['Vaste prijs vanaf € 999', 'Live binnen 6 weken', 'Altijd uw eigendom'],
+      founderRole: 'Oprichter · bouwt uw website zelf',
+      imageAlt: 'Jay Sprock, oprichter van Sproscale',
     },
     languageSelector: {
       nl: 'Nederlands',
@@ -1257,6 +1259,8 @@ export const translations = {
       ctaPrimary: 'Book a no-obligation call',
       ctaSecondary: 'See pricing',
       trust: ['Fixed price from € 999', 'Live within 6 weeks', 'Always yours'],
+      founderRole: 'Founder · builds your website personally',
+      imageAlt: 'Jay Sprock, founder of Sproscale',
     },
     languageSelector: {
       nl: 'Nederlands',
