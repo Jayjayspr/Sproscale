@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Globe, Search, Megaphone, Bot, Star, ChevronDown, Loader2, Database, ShieldCheck, Zap, Wallet, Clock, Lock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Globe, Search, Megaphone, Bot, Star, ChevronDown, Loader2, Wallet, Clock, Lock } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../lib/supabase';
 import HeroSection from '../components/hero/HeroSection';
+import InsightCard from '../components/insights/InsightCard';
+import { insightsConfig } from '../lib/insights';
 import { useLanguage } from '../lib/i18n/LanguageContext';
 
 const techStack = ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Resend', 'Vercel'];
@@ -25,12 +27,6 @@ const serviceConfig = [
   { id: 'googleMetaAds', icon: Megaphone, hubSlug: 'google-meta-ads' },
   { id: 'aiAutomations', icon: Bot, hubSlug: 'ai-automations' },
   { id: 'reviewBeheer', icon: Star, hubSlug: 'review-beheer' },
-];
-
-const supabaseFeatureConfig = [
-  { id: 'realtimeSync', icon: Database },
-  { id: 'secureBackend', icon: ShieldCheck },
-  { id: 'seamlessIntegration', icon: Zap },
 ];
 
 const processConfig = [
@@ -239,44 +235,6 @@ export default function SproscaleLandingPage() {
         </motion.div>
       </section>
 
-      {/* Supabase Integratie */}
-      <section id="supabase" className="py-20 md:py-32 bg-stone-50">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        >
-          <div className="bg-white rounded-3xl border border-stone-200 shadow-xl p-6 md:p-16">
-            <div className="text-left mb-12 md:mb-16 max-w-3xl">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-[1px] bg-stone-900"></div>
-                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('supabase.eyebrow')}</span>
-              </div>
-              <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-6 tracking-tight">
-                {t('supabase.heading')}
-              </h2>
-              <p className="text-base md:text-xl text-stone-600 font-light leading-relaxed">
-                {t('supabase.subheading')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-              {supabaseFeatureConfig.map((feature) => (
-                <div key={feature.id}>
-                  <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center mb-5">
-                    <feature.icon className="w-6 h-6 text-stone-900" />
-                  </div>
-                  <h3 className="font-display text-lg font-medium text-stone-900 mb-2">{t(`supabase.items.${feature.id}.title`)}</h3>
-                  <p className="text-sm text-stone-600 font-light leading-relaxed">{t(`supabase.items.${feature.id}.desc`)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
       {/* Hoe het werkt (Process) / Over ons */}
       <section id="over-ons" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-ink text-stone-300">
         <motion.div
@@ -319,7 +277,7 @@ export default function SproscaleLandingPage() {
       </section>
 
       {/* Reviews (Social Proof) */}
-      <section id="over-ons" className="py-20 md:py-32 bg-stone-50">
+      <section id="reviews" className="py-20 md:py-32 bg-stone-50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -442,6 +400,41 @@ export default function SproscaleLandingPage() {
                     {faq.a}
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Insights teaser — de 3 nieuwste artikelen uit lib/insights.ts */}
+      <section id="insights" className="py-20 md:py-32 bg-white">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+            <div className="text-left max-w-2xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-[1px] bg-stone-900"></div>
+                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('homeInsights.eyebrow')}</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-6 tracking-tight">
+                {t('homeInsights.heading')}
+              </h2>
+              <p className="text-base md:text-xl text-stone-600 font-light leading-relaxed">{t('homeInsights.subheading')}</p>
+            </div>
+            <Link href="/insights" className="inline-flex items-center gap-1.5 self-start md:self-auto shrink-0 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
+              {t('homeInsights.viewAll')} <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {insightsConfig.slice(0, 3).map((article, i) => (
+              <div key={article.slug} className={i === 2 ? 'h-full md:hidden lg:block' : 'h-full'}>
+                <InsightCard article={article} />
               </div>
             ))}
           </div>

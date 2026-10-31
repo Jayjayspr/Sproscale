@@ -872,7 +872,7 @@ export const translations = {
       heading: 'Gebouwd op',
     },
     painPoints: {
-      eyebrow: 'Herken je dit?',
+      eyebrow: 'Herkent u dit?',
       heading: 'U bent expert in uw vak. Groei is een ander vak.',
       items: {
         followUp: 'Leads komen binnen, maar niemand volgt ze snel genoeg op.',
@@ -918,24 +918,14 @@ export const translations = {
         },
       },
     },
-    supabase: {
-      eyebrow: 'Supabase Integratie',
-      heading: 'Krachtige data-infrastructuur, standaard inbegrepen.',
-      subheading: 'Elke oplossing die wij bouwen draait op een moderne, schaalbare backend met Supabase — zodat uw data altijd actueel, veilig en direct beschikbaar is.',
-      items: {
-        realtimeSync: { title: 'Realtime Data Synchronisatie', desc: 'Wijzigingen zijn direct zichtbaar in uw dashboards en applicaties, zonder vertraging.' },
-        secureBackend: { title: 'Veilige, Schaalbare Backend', desc: 'Row-level security en encryptie zorgen dat uw bedrijfsgegevens te allen tijde beschermd zijn.' },
-        seamlessIntegration: { title: 'Naadloze Integratie', desc: "Koppelt moeiteloos met uw bestaande systemen, CRM's en workflows." },
-      },
-    },
     process: {
       eyebrow: 'Hoe het werkt',
       heading: 'Van strategie tot implementatie.',
-      subheading: 'Een no-nonsense aanpak waarbij we jouw de technische executie volledig uit handen nemen.',
+      subheading: 'Een no-nonsense aanpak waarbij wij u de technische uitvoering volledig uit handen nemen.',
       items: {
-        analysis: { title: 'Analyse & Strategie', desc: 'We brengen in kaart waar de bottlenecks in je huidige proces zitten en welke systemen (ads, web, AI) de grootste impact maken.' },
+        analysis: { title: 'Analyse & Strategie', desc: 'We brengen in kaart waar de bottlenecks in uw huidige proces zitten en welke systemen (ads, web, AI) de grootste impact maken.' },
         buildIntegration: { title: 'Bouw & Integratie', desc: 'We ontwikkelen de website, configureren de AI-systemen en zetten de campagnes op. Alles getest en naadloos verbonden.' },
-        optimization: { title: 'Optimalisatie & Groei', desc: 'Na de lancering sturen we op keiharde data. We schalen wat werkt, tweaken de AI en zorgen for een continue stroom aan leads.' },
+        optimization: { title: 'Optimalisatie & Groei', desc: 'Na de lancering sturen we op keiharde data. We schalen wat werkt, tweaken de AI en zorgen voor een continue stroom aan leads.' },
       },
     },
     reviews: {
@@ -947,6 +937,12 @@ export const translations = {
         innovate: { role: 'Marketing Director', quote: 'De leadgeneratie systemen van SPROSCALE hebben onze sales cycle met weken verkort. Top kwaliteit leads.' },
         datasync: { role: 'Founder', quote: 'Eindelijk een bureau dat snapt dat een website moet verkopen. De technische optimalisatie is ongekend.' },
       },
+    },
+    homeInsights: {
+      eyebrow: 'Insights',
+      heading: 'Nieuwste inzichten.',
+      subheading: 'Praktische artikelen over websites, vindbaarheid en automatisering — geschreven voor ondernemers, niet voor developers.',
+      viewAll: 'Bekijk alle artikelen',
     },
     contactForm: {
       heading: 'Klaar om te schalen?',
@@ -1887,16 +1883,6 @@ export const translations = {
         },
       },
     },
-    supabase: {
-      eyebrow: 'Supabase Integration',
-      heading: 'Powerful data infrastructure, included by default.',
-      subheading: 'Every solution we build runs on a modern, scalable Supabase backend — so your data is always current, secure and instantly available.',
-      items: {
-        realtimeSync: { title: 'Realtime Data Sync', desc: 'Changes are instantly visible in your dashboards and applications, without delay.' },
-        secureBackend: { title: 'Secure, Scalable Backend', desc: 'Row-level security and encryption keep your business data protected at all times.' },
-        seamlessIntegration: { title: 'Seamless Integration', desc: 'Connects effortlessly with your existing systems, CRMs and workflows.' },
-      },
-    },
     process: {
       eyebrow: 'How it works',
       heading: 'From strategy to implementation.',
@@ -1916,6 +1902,12 @@ export const translations = {
         innovate: { role: 'Marketing Director', quote: "SPROSCALE's lead generation systems cut our sales cycle by weeks. Top quality leads." },
         datasync: { role: 'Founder', quote: 'Finally an agency that gets that a website needs to sell. The technical optimization is unmatched.' },
       },
+    },
+    homeInsights: {
+      eyebrow: 'Insights',
+      heading: 'Latest insights.',
+      subheading: 'Practical articles on websites, search visibility and automation — written for business owners, not developers.',
+      viewAll: 'View all articles',
     },
     contactForm: {
       heading: 'Ready to scale?',
