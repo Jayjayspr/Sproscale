@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Globe, Search, Megaphone, Bot, Star, ChevronDown, Loader2, Wallet, Clock, Lock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Mail, User, Building, MessageSquare, Globe, Search, Megaphone, Bot, Star, ChevronDown, Loader2, Wallet, Clock, Lock, HardHat, Layers, BellRing } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -12,7 +12,12 @@ import { insightsConfig } from '../lib/insights';
 import { branches } from '../lib/navigation';
 import { useLanguage } from '../lib/i18n/LanguageContext';
 
-const techStack = ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Resend', 'Vercel'];
+// Drie kern-USP's direct onder de hero. Tekst via t(`usps.items.${id}.*`).
+const uspConfig = [
+  { id: 'specialist', icon: HardHat },
+  { id: 'oneHand', icon: Layers },
+  { id: 'noMissed', icon: BellRing },
+];
 
 const painPointConfig = [
   { id: 'notFound', n: '01' },
@@ -132,29 +137,41 @@ export default function SproscaleLandingPage() {
     <main className="min-h-screen">
       <HeroSection />
 
-      {/* Tech stack showcase */}
-      <section className="py-8 md:py-10 bg-white border-b border-stone-100 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
-          <span className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase">{t('techStack.heading')}</span>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className="relative w-full overflow-hidden"
-            style={{
-              maskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
-            }}
-          >
-            {/* Elke item draagt zijn eigen pr-16 (i.p.v. gap) zodat beide helften
-                exact even breed zijn en de -50% loop naadloos blijft. 4x herhaald
-                zodat de track ook op brede containers nooit leeg loopt. */}
-            <div className="flex w-max items-center whitespace-nowrap animate-marquee">
-              {[...techStack, ...techStack, ...techStack, ...techStack].map((tech, i) => (
-                <span key={i} className="pr-16 text-sm font-medium text-stone-500">{tech}</span>
-              ))}
-            </div>
+      {/* Kern-USP's: waarom Sproscale */}
+      <section className="py-16 md:py-20 bg-white border-b border-stone-100">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <div className="flex items-center gap-4 mb-10 md:mb-12">
+            <div className="w-12 h-[1px] bg-stone-900"></div>
+            <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('usps.eyebrow')}</span>
           </div>
-        </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
+            {uspConfig.map((usp) => (
+              <div key={usp.id}>
+                <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-glow-from to-glow-to flex items-center justify-center mb-5 shadow-md shadow-glow-from/20">
+                  <usp.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-display text-xl md:text-2xl font-medium text-stone-900 mb-3 tracking-tight">{t(`usps.items.${usp.id}.title`)}</h3>
+                <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">{t(`usps.items.${usp.id}.desc`)}</p>
+              </div>
+            ))}
+          </div>
+
+          <dl className="mt-12 md:mt-14 pt-8 border-t border-stone-100 grid grid-cols-3 gap-4">
+            {tRaw<{ value: string; label: string }[]>('usps.stats').map((stat) => (
+              <div key={stat.label} className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3">
+                <dt className="font-display text-2xl md:text-3xl font-medium text-stone-900 tracking-tight order-1">{stat.value}</dt>
+                <dd className="text-xs md:text-sm text-stone-500 order-2">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </motion.div>
       </section>
 
       {/* Herken je dit? (pain points) */}

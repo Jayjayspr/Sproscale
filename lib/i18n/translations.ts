@@ -883,8 +883,18 @@ export const translations = {
         body: 'Heeft u vragen over deze algemene voorwaarden? Neem dan contact op via de contactgegevens op onze website of stuur een e-mail naar info@sproscale.com.',
       },
     },
-    techStack: {
-      heading: 'Gebouwd op',
+    usps: {
+      eyebrow: 'Waarom Sproscale',
+      items: {
+        specialist: { title: 'Specialist in vakbedrijven', desc: 'Wij bouwen alleen voor vakbedrijven. We weten hoe klanten in uw regio zoeken naar een dakdekker, hovenier of installateur, en wat ze willen zien voordat ze bellen.' },
+        oneHand: { title: 'Website én Google in één hand', desc: 'Geen websitebouwer en SEO-bureau die naar elkaar wijzen. Wij zijn verantwoordelijk voor het geheel: gevonden worden én aanvragen krijgen.' },
+        noMissed: { title: 'Geen aanvraag meer gemist', desc: 'Elke aanvraag krijgt direct een automatische reactie en u krijgt meteen een melding. Ook als u op de bouwplaats staat.' },
+      },
+      stats: [
+        { value: '95+', label: 'PageSpeed-score' },
+        { value: '< 1 sec', label: 'laadtijd op mobiel' },
+        { value: '24 uur', label: 'reactietijd' },
+      ],
     },
     painPoints: {
       eyebrow: 'Herkent u dit?',
@@ -1873,8 +1883,18 @@ export const translations = {
         body: 'Do you have questions about these terms and conditions? Please contact us via the contact details on our website or send an email to info@sproscale.com.',
       },
     },
-    techStack: {
-      heading: 'Built on',
+    usps: {
+      eyebrow: 'Why Sproscale',
+      items: {
+        specialist: { title: 'Trade business specialists', desc: 'We only build for trade businesses. We know how customers in your area search for a roofer, gardener or installer, and what they want to see before they call.' },
+        oneHand: { title: 'Website and Google in one hand', desc: 'No web builder and SEO agency pointing at each other. We are responsible for the whole: getting found and getting inquiries.' },
+        noMissed: { title: 'Never miss an inquiry again', desc: "Every inquiry gets an instant automatic reply and you get notified right away. Even when you're on site." },
+      },
+      stats: [
+        { value: '95+', label: 'PageSpeed score' },
+        { value: '< 1 sec', label: 'load time on mobile' },
+        { value: '24 hours', label: 'response time' },
+      ],
     },
     painPoints: {
       eyebrow: 'Sound familiar?',
