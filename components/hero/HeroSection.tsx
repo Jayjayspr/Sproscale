@@ -1,13 +1,13 @@
 "use client";
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { motion } from 'motion/react';
 import MeshGradientBackground from './MeshGradientBackground';
 import { useLanguage } from '../../lib/i18n/LanguageContext';
 
 export default function HeroSection() {
-  const { t } = useLanguage();
+  const { t, tRaw } = useLanguage();
 
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-violet-50 via-blue-50 to-white pt-44 pb-24 md:pt-56 md:pb-40 min-h-[90vh] flex flex-col items-center text-center">
@@ -54,6 +54,15 @@ export default function HeroSection() {
             {t('hero.ctaSecondary')}
           </a>
         </div>
+
+        <ul className="mt-8 md:mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
+          {tRaw<string[]>('hero.trust').map((item) => (
+            <li key={item} className="inline-flex items-center gap-1.5">
+              <Check className="w-4 h-4 text-glow-to" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </motion.div>
     </section>
   );

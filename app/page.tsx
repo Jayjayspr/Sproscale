@@ -9,18 +9,21 @@ import { supabase } from '../lib/supabase';
 import HeroSection from '../components/hero/HeroSection';
 import InsightCard from '../components/insights/InsightCard';
 import { insightsConfig } from '../lib/insights';
+import { branches } from '../lib/navigation';
 import { useLanguage } from '../lib/i18n/LanguageContext';
 
 const techStack = ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Resend', 'Vercel'];
 
 const painPointConfig = [
-  { id: 'followUp', n: '01' },
-  { id: 'lowInquiries', n: '02' },
-  { id: 'noTimeForGrowth', n: '03' },
+  { id: 'notFound', n: '01' },
+  { id: 'noInquiries', n: '02' },
+  { id: 'slowSite', n: '03' },
 ];
 
 // Zelfde 5 diensten en volgorde als het mega-menu (lib/navigation.ts) —
 // bewust identiek gehouden zodat header en homepage niet uit elkaar lopen.
+// De eerste twee (website + SEO) zijn de kerndiensten en krijgen grote kaarten;
+// de rest wordt compact getoond als aanvulling.
 const serviceConfig = [
   { id: 'websiteBouwen', icon: Globe, hubSlug: 'website-bouwen' },
   { id: 'seoOptimalisatie', icon: Search, hubSlug: 'seo-optimalisatie' },
@@ -29,10 +32,15 @@ const serviceConfig = [
   { id: 'reviewBeheer', icon: Star, hubSlug: 'review-beheer' },
 ];
 
+const PRIMARY_SERVICE_COUNT = 2;
+const primaryServices = serviceConfig.slice(0, PRIMARY_SERVICE_COUNT);
+const extraServices = serviceConfig.slice(PRIMARY_SERVICE_COUNT);
+
 const processConfig = [
-  { id: 'analysis' },
-  { id: 'buildIntegration' },
-  { id: 'optimization' },
+  { id: 'intake' },
+  { id: 'build' },
+  { id: 'launch' },
+  { id: 'growth' },
 ];
 
 const reviewConfig = [
@@ -179,7 +187,7 @@ export default function SproscaleLandingPage() {
         </motion.div>
       </section>
 
-      {/* Our Specialty (Four Pillars) */}
+      {/* Diensten: website + SEO als kern, de rest als aanvulling */}
       <section id="diensten" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-white">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -193,38 +201,45 @@ export default function SproscaleLandingPage() {
               <div className="w-12 h-[1px] bg-stone-900"></div>
               <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('services.eyebrow')}</span>
             </div>
-            <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight">
+            <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight max-w-4xl">
               {t('services.heading')}
             </h2>
             <p className="text-base md:text-xl text-stone-600 max-w-3xl font-light leading-relaxed">{t('services.subheading')}</p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            {serviceConfig.map((service) => (
-              <div key={service.id} className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
+          {/* Kerndiensten */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {primaryServices.map((service) => (
+              <div key={service.id} className="bg-white rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 flex flex-col">
+                <div className="flex items-start justify-between mb-8">
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                     <service.icon className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <Link href={`/diensten/${service.hubSlug}`} className="group/title inline-block w-fit mb-4">
-                    <h3 className="font-display text-2xl md:text-3xl font-medium text-stone-900 group-hover/title:text-stone-600 transition-colors">
-                      {t(`services.items.${service.id}.title`)}
-                    </h3>
-                  </Link>
-                  <p className="text-sm md:text-base text-stone-600 leading-relaxed mb-8 font-light">
-                    {t(`services.items.${service.id}.desc`)}
-                  </p>
-                  <ul className="space-y-4 mb-8">
-                    {tRaw<string[]>(`services.items.${service.id}.bullets`).map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-stone-700">
-                        <CheckCircle2 className="w-5 h-5 text-stone-400" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto flex items-center justify-between">
-                    <span className="inline-block bg-stone-100 text-stone-500 text-xs font-medium px-3 py-1.5 rounded-full">{t(`services.items.${service.id}.price`)}</span>
-                    <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-900 border border-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to hover:border-transparent hover:text-white transition-all duration-300">
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-500 border border-stone-200 rounded-full px-3 py-1.5">{t('services.primaryBadge')}</span>
+                </div>
+                <Link href={`/diensten/${service.hubSlug}`} className="group/title inline-block w-fit mb-4">
+                  <h3 className="font-display text-3xl md:text-4xl font-medium text-stone-900 group-hover/title:text-stone-600 transition-colors">
+                    {t(`services.items.${service.id}.title`)}
+                  </h3>
+                </Link>
+                <p className="text-base md:text-lg text-stone-600 leading-relaxed mb-8 font-light">
+                  {t(`services.items.${service.id}.desc`)}
+                </p>
+                <ul className="space-y-4 mb-10">
+                  {tRaw<string[]>(`services.items.${service.id}.bullets`).map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-stone-700">
+                      <CheckCircle2 className="w-5 h-5 text-stone-400 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-stone-100">
+                  <span className="font-display text-xl md:text-2xl font-medium text-stone-900">{t(`services.items.${service.id}.price`)}</span>
+                  <div className="flex items-center gap-4">
+                    <Link href={`/diensten/${service.hubSlug}`} className="text-sm font-semibold text-stone-500 hover:text-stone-900 transition-colors">
+                      {t('services.moreLabel')}
+                    </Link>
+                    <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-stone-900 px-4 py-2 rounded-xl hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to transition-all duration-300">
                       {t('services.ctaLabel')} <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -232,11 +247,37 @@ export default function SproscaleLandingPage() {
               </div>
             ))}
           </div>
+
+          {/* Aanvullende diensten */}
+          <div className="mt-16 md:mt-20">
+            <h3 className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase mb-6">{t('services.extraHeading')}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              {extraServices.map((service) => (
+                <Link
+                  key={service.id}
+                  href={`/diensten/${service.hubSlug}`}
+                  className="group bg-stone-50 rounded-2xl p-6 border border-stone-200 flex flex-col hover:bg-white hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                      <service.icon className="w-5 h-5 text-stone-900" />
+                    </div>
+                    <h4 className="font-display text-lg font-medium text-stone-900">{t(`services.items.${service.id}.title`)}</h4>
+                  </div>
+                  <p className="text-sm text-stone-600 font-light leading-relaxed mb-5">{t(`services.items.${service.id}.desc`)}</p>
+                  <div className="mt-auto flex items-center justify-between">
+                    <span className="text-xs font-medium text-stone-500">{t(`services.items.${service.id}.price`)}</span>
+                    <ArrowRight className="w-4 h-4 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </section>
 
-      {/* Hoe het werkt (Process) / Over ons */}
-      <section id="over-ons" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-ink text-stone-300">
+      {/* Wat u kunt verwachten (tijdlijn) */}
+      <section id="werkwijze" className="pt-28 pb-20 md:pt-48 md:pb-32 bg-ink text-stone-300">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -261,17 +302,58 @@ export default function SproscaleLandingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
             {processConfig.map((step) => (
-              <div key={step.id} className="relative">
-                <div className="border-t border-stone-800 pt-8">
-                  <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">{t(`process.items.${step.id}.title`)}</h3>
-                  <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
-                    {t(`process.items.${step.id}.desc`)}
-                  </p>
-                </div>
-              </div>
+              <li key={step.id} className="border-t border-stone-800 pt-8">
+                <span className="block text-sm font-semibold bg-linear-to-r from-glow-from to-glow-to bg-clip-text text-transparent mb-3">{t(`process.items.${step.id}.when`)}</span>
+                <h3 className="text-xs font-bold tracking-[0.15em] text-white uppercase mb-4">{t(`process.items.${step.id}.title`)}</h3>
+                <p className="text-stone-400 font-light leading-relaxed text-sm md:text-base">
+                  {t(`process.items.${step.id}.desc`)}
+                </p>
+              </li>
             ))}
+          </ol>
+        </motion.div>
+      </section>
+
+      {/* Voor wie: branches uit lib/navigation.ts, linken naar de website-bouwen nichepagina's */}
+      <section id="branches" className="py-20 md:py-32 bg-white">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <div className="text-left mb-12 md:mb-16 max-w-2xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-[1px] bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('homeBranches.eyebrow')}</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-6 tracking-tight">
+              {t('homeBranches.heading')}
+            </h2>
+            <p className="text-base md:text-xl text-stone-600 font-light leading-relaxed">{t('homeBranches.subheading')}</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
+            {branches.map((branch) => (
+              <Link
+                key={branch.slug}
+                href={`/diensten/website-bouwen/${branch.slug}`}
+                className="group flex items-center justify-between gap-3 rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 hover:bg-white hover:shadow-lg transition-all duration-300"
+              >
+                <span className="font-medium text-stone-900">{t(`megaMenu.branches.${branch.translationKey}.label`)}</span>
+                <ArrowRight className="w-4 h-4 shrink-0 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all" />
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              className="group flex items-center justify-between gap-3 rounded-2xl bg-stone-900 px-5 py-4 text-white hover:bg-linear-to-r hover:from-glow-from hover:to-glow-to transition-all duration-300"
+            >
+              <span className="font-medium">{t('homeBranches.otherLabel')}</span>
+              <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </motion.div>
       </section>
