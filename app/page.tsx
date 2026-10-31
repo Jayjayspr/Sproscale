@@ -133,17 +133,22 @@ export default function SproscaleLandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
           <span className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase">{t('techStack.heading')}</span>
         </div>
-        <div
-          className="relative w-full overflow-hidden flex justify-center"
-          style={{
-            maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
-          }}
-        >
-          <div className="flex w-max items-center gap-16 whitespace-nowrap animate-marquee">
-            {[...techStack, ...techStack].map((tech, i) => (
-              <span key={i} className="text-sm font-medium text-stone-500">{tech}</span>
-            ))}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
+            }}
+          >
+            {/* Elke item draagt zijn eigen pr-16 (i.p.v. gap) zodat beide helften
+                exact even breed zijn en de -50% loop naadloos blijft. 4x herhaald
+                zodat de track ook op brede containers nooit leeg loopt. */}
+            <div className="flex w-max items-center whitespace-nowrap animate-marquee">
+              {[...techStack, ...techStack, ...techStack, ...techStack].map((tech, i) => (
+                <span key={i} className="pr-16 text-sm font-medium text-stone-500">{tech}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -401,7 +406,7 @@ export default function SproscaleLandingPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
           <div className="text-center mb-12 md:mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -453,7 +458,7 @@ export default function SproscaleLandingPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         >
           <div className="bg-white rounded-3xl p-6 md:p-12 border border-stone-200 shadow-xl relative overflow-hidden">
 
