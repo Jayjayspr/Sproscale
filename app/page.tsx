@@ -77,6 +77,8 @@ export default function SproscaleLandingPage() {
     })),
   };
 
+  const uspStats = tRaw<{ value: string; label: string }[]>('usps.stats');
+
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isFormLoading, setIsFormLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -146,32 +148,50 @@ export default function SproscaleLandingPage() {
           transition={{ duration: 0.6 }}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          <div className="flex items-center gap-4 mb-10 md:mb-12">
+          <div className="flex items-center gap-4 mb-8 md:mb-10">
             <div className="w-12 h-[1px] bg-stone-900"></div>
             <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('usps.eyebrow')}</span>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
-            {uspConfig.map((usp) => (
-              <div key={usp.id}>
-                <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-glow-from to-glow-to flex items-center justify-center mb-5 shadow-md shadow-glow-from/20">
-                  <usp.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="font-display text-xl md:text-2xl font-medium text-stone-900 mb-3 tracking-tight">{t(`usps.items.${usp.id}.title`)}</h3>
-                <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">{t(`usps.items.${usp.id}.desc`)}</p>
-              </div>
-            ))}
-          </div>
-
-          <dl className="mt-12 md:mt-14 pt-8 border-t border-stone-100 grid grid-cols-3 gap-4">
-            {tRaw<{ value: string; label: string }[]>('usps.stats').map((stat) => (
-              <div key={stat.label} className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3">
-                <dt className="font-display text-2xl md:text-3xl font-medium text-stone-900 tracking-tight order-1">{stat.value}</dt>
-                <dd className="text-xs md:text-sm text-stone-500 order-2">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
         </motion.div>
+
+        {/* Doorlopende slider: USP-kaarten afgewisseld met bewijs-cijfers. De set wordt
+            2x gerenderd zodat -50% naadloos terugloopt; pauzeert bij hover. */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="usp-marquee relative overflow-hidden"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+            }}
+          >
+            <div className="usp-marquee-track flex w-max">
+              {[0, 1].map((copy) => (
+                <div key={copy} className="flex items-stretch gap-6 pr-6" aria-hidden={copy === 1 ? true : undefined}>
+                  {uspConfig.map((usp, i) => {
+                    const stat = uspStats[i];
+                    return (
+                      <React.Fragment key={usp.id}>
+                        <div className="w-[300px] md:w-[360px] shrink-0 rounded-3xl border border-stone-200 bg-stone-50 p-6 md:p-8">
+                          <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-glow-from to-glow-to flex items-center justify-center mb-5 shadow-md shadow-glow-from/20">
+                            <usp.icon className="w-6 h-6 text-white" />
+                          </div>
+                          <h3 className="font-display text-xl md:text-2xl font-medium text-stone-900 mb-3 tracking-tight">{t(`usps.items.${usp.id}.title`)}</h3>
+                          <p className="text-sm md:text-base text-stone-600 font-light leading-relaxed">{t(`usps.items.${usp.id}.desc`)}</p>
+                        </div>
+                        {stat && (
+                          <div className="w-[200px] md:w-[240px] shrink-0 rounded-3xl bg-stone-900 p-6 md:p-8 flex flex-col justify-end">
+                            <span className="font-display text-4xl md:text-5xl font-medium tracking-tight bg-linear-to-r from-glow-from to-glow-to bg-clip-text text-transparent">{stat.value}</span>
+                            <span className="mt-2 text-sm text-stone-400">{stat.label}</span>
+                          </div>
+                        )}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Herken je dit? (pain points) */}

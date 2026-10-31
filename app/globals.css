@@ -107,3 +107,26 @@
   .mesh-blob { animation: none !important; }
   .mesh-parallax { transform: none !important; }
 }
+
+/* USP-slider: de track bevat de set 2x, dus -50% loopt naadloos terug.
+   Pauzeert bij hover/focus zodat de tekst rustig te lezen is. */
+@keyframes usp-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.usp-marquee-track {
+  animation: usp-marquee 45s linear infinite;
+}
+
+.usp-marquee:hover .usp-marquee-track,
+.usp-marquee:focus-within .usp-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Zonder animatie: handmatig horizontaal scrollen, zonder de dubbele set. */
+@media (prefers-reduced-motion: reduce) {
+  .usp-marquee { overflow-x: auto; }
+  .usp-marquee-track { animation: none; }
+  .usp-marquee-track > [aria-hidden="true"] { display: none; }
+}
