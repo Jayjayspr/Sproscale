@@ -82,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               address: { '@type': 'PostalAddress', addressLocality: 'Geldrop', addressRegion: 'Noord-Brabant', addressCountry: 'NL' },
               geo: { '@type': 'GeoCoordinates', latitude: 51.4231, longitude: 5.5583 },
               priceRange: '€€',
+              identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: '87585553' },
               contactPoint: { '@type': 'ContactPoint', telephone: '+31-6-58761348', email: 'info@sproscale.com', contactType: 'customer service', availableLanguage: 'Dutch' },
               sameAs: ['https://www.linkedin.com/company/sproscale', 'https://www.instagram.com/sproscale'],
               areaServed: [

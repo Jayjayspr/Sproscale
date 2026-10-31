@@ -158,6 +158,7 @@ export default function Footer() {
         <div className="pt-8 pb-28 lg:pb-10 border-t border-stone-800 flex flex-col md:flex-row justify-between gap-4 text-xs text-stone-500">
           <div className="flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-2">
             <p>© {new Date().getFullYear()} {t('footer.copyrightText')}</p>
+            <p>KvK {contactInfo.kvk}</p>
             <p>{t('footer.areaServed')}</p>
           </div>
           <nav className="flex gap-6">
