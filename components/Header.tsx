@@ -60,12 +60,13 @@ export default function Header() {
       </div>
 
       {/* Hoofdbalk: transparant bovenaan, zwevende afgeronde balk na scrollen */}
-      <div className={`transition-all duration-300 ${isScrolled ? 'px-3 sm:px-4 pt-3' : ''}`}>
+      {/* Zelfde breedte als de paginacontainers: max-w-7xl met px-4 sm:px-6 lg:px-8 */}
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? 'pt-3' : ''}`}>
         <div
-          className={`max-w-7xl mx-auto flex justify-between items-center transition-all duration-300 border ${
+          className={`flex justify-between items-center transition-all duration-300 border ${
             isScrolled
               ? 'h-16 px-4 sm:px-6 rounded-2xl bg-white/85 backdrop-blur-md border-stone-200 shadow-lg shadow-stone-900/5'
-              : 'h-20 px-4 sm:px-6 lg:px-8 border-transparent'
+              : 'h-20 px-0 border-transparent'
           }`}
         >
           <Link href="/" className="flex items-center gap-2 group shrink-0">
