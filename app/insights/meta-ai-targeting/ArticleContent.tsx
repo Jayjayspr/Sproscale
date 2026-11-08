@@ -82,7 +82,7 @@ export default function ArticleContent() {
             {featureConfig.map((item) => (
               <div key={item.id} className="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm">
                 <div className="w-9 h-9 bg-stone-100 rounded-xl flex items-center justify-center mb-3 text-stone-600">{item.icon}</div>
-                <h4 className="font-semibold text-stone-900 text-sm mb-1">{t(`insightsArticles.metaAiTargeting.features.${item.id}.title`)}</h4>
+                <h3 className="font-semibold text-stone-900 text-sm mb-1">{t(`insightsArticles.metaAiTargeting.features.${item.id}.title`)}</h3>
                 <p className="text-stone-500 text-xs font-light leading-relaxed">{t(`insightsArticles.metaAiTargeting.features.${item.id}.text`)}</p>
               </div>
             ))}

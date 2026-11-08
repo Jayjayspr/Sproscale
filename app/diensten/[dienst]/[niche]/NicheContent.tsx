@@ -70,7 +70,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
                 <div className="w-9 h-9 bg-stone-100 rounded-xl flex items-center justify-center mb-3 text-stone-600">
                   <Sparkles className="w-4 h-4" />
                 </div>
-                <h4 className="font-semibold text-stone-900 text-sm mb-1">{t(`${h}.features.${id}.title`)}</h4>
+                <h3 className="font-semibold text-stone-900 text-sm mb-1">{t(`${h}.features.${id}.title`)}</h3>
                 <p className="text-stone-500 text-xs font-light leading-relaxed">{t(`${h}.features.${id}.text`)}</p>
               </div>
             ))}
@@ -89,7 +89,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
                         {c.result_stat}
                       </div>
                     )}
-                    <h4 className="font-bold text-stone-900 mb-2">{c.title}</h4>
+                    <h3 className="font-bold text-stone-900 mb-2">{c.title}</h3>
                     <p className="text-stone-600 text-sm font-light leading-relaxed">{c.description}</p>
                   </div>
                 ))}
