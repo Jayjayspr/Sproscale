@@ -28,7 +28,7 @@ export default function AboutPage() {
       {/* Page Hero (The Mission) */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <motion.div {...fadeInUp}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-stone-900 mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight text-stone-900 mb-6">
             {t('overOnsPage.heroTitleLine1')} <br className="hidden md:block" />
             <span className="text-stone-500 italic">{t('overOnsPage.heroTitleHighlight')}</span>
           </h1>
@@ -41,7 +41,7 @@ export default function AboutPage() {
       {/* The "Why" (Grijze Sectie) */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div {...fadeInUp} className="bg-stone-100 rounded-3xl p-8 md:p-12 text-center border border-stone-200">
-          <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mb-6">{t('overOnsPage.gapHeading')}</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 tracking-tight mb-6">{t('overOnsPage.gapHeading')}</h2>
           <p className="text-stone-600 leading-relaxed text-base md:text-lg font-light">
             {t('overOnsPage.gapBody')}
           </p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
       {/* Core Expertise (Bento Grid) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <motion.div {...fadeInUp} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif text-stone-900 mb-4">{t('overOnsPage.expertiseHeadingPre')} <span className="text-stone-500 italic">{t('overOnsPage.expertiseHeadingHighlight')}</span></h2>
+          <h2 className="text-3xl md:text-5xl font-display font-medium text-stone-900 tracking-tight mb-4">{t('overOnsPage.expertiseHeadingPre')} <span className="text-stone-500 italic">{t('overOnsPage.expertiseHeadingHighlight')}</span></h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-stone-900 transition-colors duration-500">
                   <item.icon className="w-7 h-7 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
-                <h3 className="text-xl font-serif text-stone-900 mb-3">{t(`overOnsPage.expertise.${item.id}.title`)}</h3>
+                <h3 className="text-xl font-display font-medium text-stone-900 tracking-tight mb-3">{t(`overOnsPage.expertise.${item.id}.title`)}</h3>
                 <p className="text-stone-600 font-light leading-relaxed">
                   {t(`overOnsPage.expertise.${item.id}.desc`)}
                 </p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
             {/* Content Area */}
             <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-6 mt-4 md:mt-0">{t('overOnsPage.founderHeading')}</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-medium text-stone-900 tracking-tight mb-6 mt-4 md:mt-0">{t('overOnsPage.founderHeading')}</h2>
               <div className="space-y-6">
                 <p className="text-stone-600 font-light leading-relaxed">
                   {t('overOnsPage.founderQuote1')}
@@ -113,7 +113,7 @@ export default function AboutPage() {
       {/* CTA Card */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div {...fadeInUp} className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-4">{t('overOnsPage.ctaHeading')}</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-medium text-stone-900 tracking-tight mb-4">{t('overOnsPage.ctaHeading')}</h2>
           <p className="text-stone-600 font-light mb-8 max-w-2xl mx-auto">
             {t('overOnsPage.ctaBody')}
           </p>

@@ -40,7 +40,7 @@ export default function AfspraakPage() {
 
         <div className="bg-white rounded-[2rem] p-6 md:p-12 border border-stone-200 shadow-xl relative overflow-hidden transition-all duration-500 min-h-[750px] flex flex-col items-center">
           <div className="text-center mb-6 w-full">
-            <h1 className="text-3xl md:text-5xl font-serif text-stone-900 tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-display font-medium text-stone-900 tracking-tight">
               {t('afspraak.heading')}
             </h1>
           </div>

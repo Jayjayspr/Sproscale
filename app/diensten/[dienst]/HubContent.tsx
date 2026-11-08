@@ -18,7 +18,7 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
     <main className="min-h-screen bg-stone-50 pt-32 pb-24 font-sans text-stone-900">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] tracking-tight text-stone-900 mb-8">
+          <h1 className="text-4xl md:text-6xl font-display font-medium leading-[1.1] tracking-tight text-stone-900 mb-8">
             {t(`${h}.h1`)}
           </h1>
           <p className="text-xl md:text-2xl text-stone-600 leading-relaxed font-light italic border-l-2 border-stone-200 pl-6">
@@ -31,11 +31,11 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
             {t(`${h}.introPre`)}<strong>{t(`${h}.introHighlight`)}</strong>{t(`${h}.introPost`)}
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.sections.probleem.heading`)}</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.sections.probleem.heading`)}</h2>
           <p className="text-stone-700 leading-relaxed mb-8">{t(`${h}.sections.probleem.p1`)}</p>
           <p className="text-stone-700 leading-relaxed mb-8">{t(`${h}.sections.probleem.p2`)}</p>
 
-          <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.sections.oplossing.heading`)}</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.sections.oplossing.heading`)}</h2>
           <p className="text-stone-700 leading-relaxed mb-8">{t(`${h}.sections.oplossing.p1`)}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
@@ -50,7 +50,7 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
             ))}
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.stepsHeading`)}</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.stepsHeading`)}</h2>
           <p className="text-stone-700 leading-relaxed mb-6">{t(`${h}.stepsIntro`)}</p>
           <ol className="list-decimal list-inside space-y-4 text-stone-700 mb-12">
             {['a', 'b', 'c'].map((id) => (
@@ -63,7 +63,7 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
 
         {/* Silo: links naar alle niche-pagina's voor deze dienst */}
         <section className="mt-16 pt-16 border-t border-stone-200">
-          <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mb-3 tracking-tight">{t(`${h}.siloHeading`)}</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mb-3 tracking-tight">{t(`${h}.siloHeading`)}</h2>
           <p className="text-stone-600 leading-relaxed mb-8 font-light">{t(`${h}.siloIntro`)}</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {branches.map((branch) => (
@@ -88,7 +88,7 @@ export default function HubContent({ serviceSlug }: { serviceSlug: string }) {
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-serif text-white mb-4 tracking-tight leading-tight">{t(`${h}.cta.heading`)}</h3>
+              <h3 className="text-3xl md:text-4xl font-display font-medium text-white mb-4 tracking-tight leading-tight">{t(`${h}.cta.heading`)}</h3>
               <p className="mb-10 text-stone-400 font-light text-lg max-w-lg mx-auto">{t(`${h}.cta.body`)}</p>
               <Link
                 href="/afspraak"

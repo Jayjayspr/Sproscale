@@ -51,7 +51,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-600 text-xs font-bold uppercase tracking-widest mb-8">
             {fillTemplate(t('nichePages.badgeTemplate'), vars)}
           </div>
-          <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] tracking-tight text-stone-900 mb-8">
+          <h1 className="text-4xl md:text-6xl font-display font-medium leading-[1.1] tracking-tight text-stone-900 mb-8">
             {title}
           </h1>
           <p className="text-xl md:text-2xl text-stone-600 leading-relaxed font-light italic border-l-2 border-stone-200 pl-6">
@@ -60,7 +60,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
         </header>
 
         <div className="prose prose-stone prose-lg max-w-none">
-          <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{problemHeading}</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mt-12 mb-6 tracking-tight">{problemHeading}</h2>
           <p className="text-stone-700 leading-relaxed mb-8">{problemText}</p>
 
           {/* Features: overgeërfd van de hub-dienst */}
@@ -79,7 +79,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
           {/* Cases: uit de database, alleen tonen als er content is */}
           {cases.length > 0 && (
             <>
-              <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{t('nichePages.casesHeading')}</h2>
+              <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mt-12 mb-6 tracking-tight">{t('nichePages.casesHeading')}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
                 {cases.map((c) => (
                   <div key={c.id} className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
@@ -100,7 +100,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
           {/* Reviews: uit de database, alleen tonen als er content is */}
           {reviews.length > 0 && (
             <>
-              <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{t('nichePages.reviewsHeading')}</h2>
+              <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mt-12 mb-6 tracking-tight">{t('nichePages.reviewsHeading')}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
                 {reviews.map((r) => (
                   <div key={r.id} className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
@@ -117,7 +117,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
             </>
           )}
 
-          <h2 className="text-2xl md:text-3xl font-serif text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.stepsHeading`)}</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-stone-900 mt-12 mb-6 tracking-tight">{t(`${h}.stepsHeading`)}</h2>
           <ol className="list-decimal list-inside space-y-4 text-stone-700 mb-12">
             {['a', 'b', 'c'].map((id) => (
               <li key={id} className="text-base font-light">
@@ -136,7 +136,7 @@ export default function NicheContent({ serviceSlug, nicheSlug, override, reviews
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-serif text-white mb-4 tracking-tight leading-tight">{t(`${h}.cta.heading`)}</h3>
+              <h3 className="text-3xl md:text-4xl font-display font-medium text-white mb-4 tracking-tight leading-tight">{t(`${h}.cta.heading`)}</h3>
               <p className="mb-10 text-stone-400 font-light text-lg max-w-lg mx-auto">{ctaBody}</p>
               <Link
                 href="/afspraak"

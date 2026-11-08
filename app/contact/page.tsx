@@ -69,7 +69,7 @@ export default function ContactPage() {
               <div className="w-12 h-px bg-stone-900"></div>
               <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('contactPage.eyebrow')}</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-serif text-stone-900 mb-8 tracking-tight leading-[1.1]">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-medium text-stone-900 mb-8 tracking-tight leading-[1.1]">
               {t('contactPage.headingLine1')} <br />
               <span className="text-stone-500 italic">{t('contactPage.headingHighlight')}</span>
             </h1>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 <div className="w-20 h-20 bg-stone-900 rounded-full flex items-center justify-center mb-6">
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-3xl font-serif text-stone-900 mb-4">{t('contactPage.thanksHeading')}</h3>
+                <h3 className="text-3xl font-display font-medium text-stone-900 tracking-tight mb-4">{t('contactPage.thanksHeading')}</h3>
                 <p className="text-stone-600 mb-8 max-w-xs mx-auto">{t('contactPage.thanksBody')}</p>
                 <button
                   onClick={() => setIsFormSubmitted(false)}
@@ -130,7 +130,7 @@ export default function ContactPage() {
               </motion.div>
             ) : (
               <>
-                <h3 className="text-3xl font-serif text-stone-900 mb-8">{t('contactPage.formHeading')}</h3>
+                <h3 className="text-3xl font-display font-medium text-stone-900 tracking-tight mb-8">{t('contactPage.formHeading')}</h3>
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">

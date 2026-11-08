@@ -69,7 +69,7 @@ export default function ServiceLeadForm({ serviceSlug, serviceLabel, nicheSlug, 
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm space-y-4">
-      <h3 className="text-lg font-bold text-stone-950 tracking-tight mb-2">{t('nichePages.formHeading')}</h3>
+      <h3 className="font-display text-lg font-medium text-stone-900 tracking-tight mb-2">{t('nichePages.formHeading')}</h3>
 
       {/* Verborgen herkomstvelden */}
       <input type="hidden" name="source_service" value={serviceSlug} />
