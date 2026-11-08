@@ -43,7 +43,7 @@ export default function FaqContent() {
       {/* Table of Contents */}
       <section className="py-10 bg-white border-b border-stone-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-4">{t('faqPage.tocHeading')}</p>
+          <p className="text-[10px] font-bold uppercase tracking-eyebrow text-stone-400 mb-4">{t('faqPage.tocHeading')}</p>
           <nav className="flex flex-wrap gap-3">
             {categoryConfig.map((cat) => (
               <a
@@ -113,7 +113,7 @@ export default function FaqContent() {
       {/* Slot-CTA */}
       <section className="py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-stone-900 p-10 md:p-16 rounded-[2.5rem] text-center relative overflow-hidden">
+          <div className="bg-stone-900 p-10 md:p-16 rounded-5xl text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20" />
             <div className="relative z-10">

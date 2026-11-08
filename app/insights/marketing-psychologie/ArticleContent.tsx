@@ -96,7 +96,7 @@ export default function ArticleContent() {
 
         {/* CTA Card - Minimalist DARK layout */}
         <section className="mt-24 pt-16 border-t border-stone-100">
-          <div className="bg-stone-900 p-12 md:p-16 rounded-[2.5rem] text-center relative overflow-hidden shadow-2xl">
+          <div className="bg-stone-900 p-12 md:p-16 rounded-5xl text-center relative overflow-hidden shadow-2xl">
             {/* Background design elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-32 -mt-32"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-30 -ml-32 -mb-32"></div>

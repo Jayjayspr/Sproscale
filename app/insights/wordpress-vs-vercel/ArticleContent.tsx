@@ -92,7 +92,7 @@ export default function ArticleContent() {
           <div className="my-16 p-8 md:p-10 bg-stone-900 rounded-3xl text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-stone-800 rounded-full blur-[60px] opacity-60 -mr-10 -mt-10" />
             <div className="relative z-10">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mb-4">{t('insightsArticles.wordpressVsVercel.perspective.label')}</p>
+              <p className="text-xs font-bold uppercase tracking-eyebrow text-stone-400 mb-4">{t('insightsArticles.wordpressVsVercel.perspective.label')}</p>
               <h3 className="text-2xl font-serif text-white mb-4 leading-tight">{t('insightsArticles.wordpressVsVercel.perspective.heading')}</h3>
               <p className="text-stone-300 font-light leading-relaxed mb-6">
                 {t('insightsArticles.wordpressVsVercel.perspective.p1')}
@@ -128,7 +128,7 @@ export default function ArticleContent() {
 
         {/* CTA */}
         <section className="mt-24 pt-16 border-t border-stone-200">
-          <div className="bg-stone-900 p-8 md:p-12 rounded-[2.5rem] text-center relative overflow-hidden group">
+          <div className="bg-stone-900 p-8 md:p-12 rounded-5xl text-center relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="relative z-10">

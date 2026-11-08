@@ -30,7 +30,7 @@ const socialLinks = [
 // Pagina's die zelf al een contactformulier hebben: daar geen dubbele CTA in de footer.
 const PAGES_WITH_OWN_CTA = ['/', '/contact', '/afspraak'];
 
-const headingClass = 'text-white font-bold text-xs uppercase tracking-[0.2em] mb-6';
+const headingClass = 'text-white font-bold text-xs uppercase tracking-eyebrow mb-6';
 const linkClass = 'text-stone-400 hover:text-white transition-colors font-light text-sm';
 
 export default function Footer() {
@@ -39,7 +39,7 @@ export default function Footer() {
   const showCta = !PAGES_WITH_OWN_CTA.includes(pathname);
 
   return (
-    <footer className="bg-[#111111] text-stone-400 border-t border-stone-900">
+    <footer className="bg-charcoal text-stone-400 border-t border-stone-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA-blok */}
         {showCta && (

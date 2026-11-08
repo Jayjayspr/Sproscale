@@ -7,6 +7,12 @@
   --color-glow-from: #b45309;
   --color-glow-via: #d97706;
   --color-glow-to: #f59e0b;
+  /* Footer / dark panel background */
+  --color-charcoal: #111111;
+
+  /* Shared design tokens (were repeated as arbitrary values per page) */
+  --tracking-eyebrow: 0.2em; /* uppercase section eyebrows/labels */
+  --radius-5xl: 2.5rem;      /* large dark CTA blocks */
 
   /* Display font for the homepage's new typography system */
   --font-display: var(--font-geist), var(--font-sans);

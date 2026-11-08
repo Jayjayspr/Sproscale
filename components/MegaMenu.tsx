@@ -83,7 +83,7 @@ export default function MegaMenu() {
         <div className="grid grid-cols-[220px_1fr]">
           {/* Diensten: primaire ingang */}
           <div className="bg-stone-50 border-r border-stone-200 p-4">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-3 px-2">
+            <p className="text-[10px] font-bold uppercase tracking-eyebrow text-stone-400 mb-3 px-2">
               {t('megaMenu.dienstenLabel')}
             </p>
             <ul>
@@ -110,7 +110,7 @@ export default function MegaMenu() {
 
           {/* Branches: onderverdeling/filter van de actieve dienst */}
           <div className="p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-4">
+            <p className="text-[10px] font-bold uppercase tracking-eyebrow text-stone-400 mb-4">
               {t('megaMenu.branchesLabel')}
             </p>
             {services.map((service) => (

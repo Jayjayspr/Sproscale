@@ -130,7 +130,7 @@ export default function GuaranteeContent() {
       {/* Slot-CTA */}
       <section className="py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-stone-900 p-10 md:p-16 rounded-[2.5rem] text-center relative overflow-hidden">
+          <div className="bg-stone-900 p-10 md:p-16 rounded-5xl text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20" />
             <div className="relative z-10">

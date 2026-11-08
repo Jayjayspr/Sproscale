@@ -66,8 +66,8 @@ export default function ContactPage() {
           {/* Linker Kolom: Contact Informatie */}
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('contactPage.eyebrow')}</span>
+              <div className="w-12 h-px bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('contactPage.eyebrow')}</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-serif text-stone-900 mb-8 tracking-tight leading-[1.1]">
               {t('contactPage.headingLine1')} <br />

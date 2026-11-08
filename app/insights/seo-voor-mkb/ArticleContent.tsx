@@ -116,7 +116,7 @@ export default function ArticleContent() {
 
         {/* CTA */}
         <section className="mt-24 pt-16 border-t border-stone-200">
-          <div className="bg-stone-900 p-8 md:p-12 rounded-[2.5rem] text-center relative overflow-hidden group">
+          <div className="bg-stone-900 p-8 md:p-12 rounded-5xl text-center relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-20 -mt-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -ml-20 -mb-20 transition-transform group-hover:scale-125 duration-1000" />
             <div className="relative z-10">

@@ -45,7 +45,7 @@ export default function LoginPage() {
       >
         <div className="flex flex-col items-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-stone-950 uppercase mb-6">Sproscale</h1>
-          <div className="w-12 h-[1px] bg-stone-300 mb-4"></div>
+          <div className="w-12 h-px bg-stone-300 mb-4"></div>
           <p className="text-stone-500 font-bold tracking-widest text-xs uppercase">Beheer Login</p>
         </div>
 

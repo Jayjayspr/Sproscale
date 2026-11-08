@@ -179,7 +179,7 @@ export default function OnboardingPage() {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-2xl relative z-10"
       >
-        <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-stone-200 relative overflow-hidden">
+        <div className="bg-white rounded-5xl p-8 md:p-12 shadow-2xl border border-stone-200 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-stone-900/10 via-stone-900 to-stone-900/10"></div>
 
           <div className="text-center mb-10 mt-4">
@@ -280,7 +280,7 @@ export default function OnboardingPage() {
                   className="space-y-6"
                 >
                   <h3 className="text-lg font-serif italic text-stone-800 border-l-2 border-stone-900 pl-4 mb-6">Stap 3: Marketing & AI Koppeling</h3>
-                  <div className="bg-[#111111] text-white p-6 rounded-2xl shadow-inner relative overflow-hidden">
+                  <div className="bg-charcoal text-white p-6 rounded-2xl shadow-inner relative overflow-hidden">
                     <div className="flex items-center gap-3 mb-4">
                       <Target className="w-5 h-5" />
                       <h4 className="text-sm font-bold uppercase tracking-widest">Meta Business Suite</h4>

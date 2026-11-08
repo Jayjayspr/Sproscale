@@ -148,7 +148,7 @@ export default function Header() {
             className="lg:hidden bg-stone-50 border-b border-stone-200 overflow-hidden absolute top-full left-0 w-full z-40 shadow-xl max-h-[calc(100vh-6rem)] overflow-y-auto"
           >
             <div className="flex flex-col px-4 py-8 gap-1">
-              <p className="px-2 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-1">
+              <p className="px-2 text-[10px] font-bold uppercase tracking-eyebrow text-stone-400 mb-1">
                 {t('nav.diensten')}
               </p>
               {/* Genest accordion: elke dienst klapt open naar zijn branches (filter/onderverdeling) */}

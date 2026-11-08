@@ -22,8 +22,8 @@ export default function InsightsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <motion.div {...fadeInUp} className="max-w-3xl">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-[1px] bg-stone-900"></div>
-            <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('insightsIndex.eyebrow')}</span>
+            <div className="w-12 h-px bg-stone-900"></div>
+            <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('insightsIndex.eyebrow')}</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.05] tracking-tight text-stone-900 mb-8">
             {t('insightsIndex.headingPre')} <span className="text-stone-400 italic">{t('insightsIndex.headingHighlight')}</span>

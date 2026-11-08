@@ -80,7 +80,7 @@ export default function HeroSection() {
           className="lg:col-span-5 relative w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none"
         >
           {/* Zachte merkgloed achter de foto */}
-          <div className="absolute -inset-6 rounded-[2.5rem] bg-linear-to-br from-glow-from/25 to-glow-to/25 blur-3xl" aria-hidden="true" />
+          <div className="absolute -inset-6 rounded-5xl bg-linear-to-br from-glow-from/25 to-glow-to/25 blur-3xl" aria-hidden="true" />
 
           <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/60 shadow-2xl shadow-stone-900/10 bg-stone-200">
             <Image

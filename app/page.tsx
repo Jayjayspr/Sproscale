@@ -147,8 +147,8 @@ export default function SproscaleLandingPage() {
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
           <div className="flex items-center gap-4 mb-10 md:mb-12">
-            <div className="w-12 h-[1px] bg-stone-900"></div>
-            <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('usps.eyebrow')}</span>
+            <div className="w-12 h-px bg-stone-900"></div>
+            <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('usps.eyebrow')}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -185,8 +185,8 @@ export default function SproscaleLandingPage() {
         >
           <div className="text-left mb-12 md:mb-16 max-w-2xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('painPoints.eyebrow')}</span>
+              <div className="w-12 h-px bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('painPoints.eyebrow')}</span>
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 tracking-tight">
               {t('painPoints.heading')}
@@ -215,8 +215,8 @@ export default function SproscaleLandingPage() {
         >
           <div className="text-left mb-16 md:mb-20">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('services.eyebrow')}</span>
+              <div className="w-12 h-px bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('services.eyebrow')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight max-w-4xl">
               {t('services.heading')}
@@ -232,7 +232,7 @@ export default function SproscaleLandingPage() {
                   <div className="w-14 h-14 md:w-16 md:h-16 bg-stone-100 rounded-2xl flex items-center justify-center group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                     <service.icon className="w-7 h-7 md:w-8 md:h-8 text-stone-900 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-500 border border-stone-200 rounded-full px-3 py-1.5">{t('services.primaryBadge')}</span>
+                  <span className="text-[10px] font-bold tracking-eyebrow uppercase text-stone-500 border border-stone-200 rounded-full px-3 py-1.5">{t('services.primaryBadge')}</span>
                 </div>
                 <Link href={`/diensten/${service.hubSlug}`} className="group/title inline-block w-fit mb-4">
                   <h3 className="font-display text-3xl md:text-4xl font-medium text-stone-900 group-hover/title:text-stone-600 transition-colors">
@@ -272,7 +272,7 @@ export default function SproscaleLandingPage() {
 
           {/* Aanvullende diensten */}
           <div className="mt-16 md:mt-20">
-            <h3 className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase mb-6">{t('services.extraHeading')}</h3>
+            <h3 className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase mb-6">{t('services.extraHeading')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {extraServices.map((service) => (
                 <Link
@@ -310,8 +310,8 @@ export default function SproscaleLandingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
             <div className="text-left">
               <div className="flex items-center gap-4 mb-6 md:mb-8">
-                <div className="w-12 h-[1px] bg-stone-600"></div>
-                <span className="text-xs font-bold tracking-[0.2em] text-stone-400 uppercase">{t('process.eyebrow')}</span>
+                <div className="w-12 h-px bg-stone-600"></div>
+                <span className="text-xs font-bold tracking-eyebrow text-stone-400 uppercase">{t('process.eyebrow')}</span>
               </div>
               <h2 className="font-display text-4xl md:text-6xl font-medium text-white leading-tight tracking-tight">
                 {t('process.heading')}
@@ -349,8 +349,8 @@ export default function SproscaleLandingPage() {
         >
           <div className="text-left mb-12 md:mb-16 max-w-2xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('homeBranches.eyebrow')}</span>
+              <div className="w-12 h-px bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('homeBranches.eyebrow')}</span>
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-6 tracking-tight">
               {t('homeBranches.heading')}
@@ -391,8 +391,8 @@ export default function SproscaleLandingPage() {
         >
           <div className="text-left mb-12 md:mb-16">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('reviews.eyebrow')}</span>
+              <div className="w-12 h-px bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('reviews.eyebrow')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl font-medium text-stone-900 mb-6 md:mb-8 tracking-tight">
               {t('reviews.heading')}
@@ -439,8 +439,8 @@ export default function SproscaleLandingPage() {
         >
           <div className="text-left mb-12 md:mb-16 max-w-2xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-stone-900"></div>
-              <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('guarantees.eyebrow')}</span>
+              <div className="w-12 h-px bg-stone-900"></div>
+              <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('guarantees.eyebrow')}</span>
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 tracking-tight">
               {t('guarantees.heading')}
@@ -472,8 +472,8 @@ export default function SproscaleLandingPage() {
         >
           <div className="text-center mb-12 md:mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-8 h-[1px] bg-stone-600"></div>
-              <span className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase">{t('faq.eyebrow')}</span>
+              <div className="w-8 h-px bg-stone-600"></div>
+              <span className="text-[10px] font-bold tracking-eyebrow text-stone-400 uppercase">{t('faq.eyebrow')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-medium text-white tracking-tight">
               {t('faq.heading')}
@@ -522,8 +522,8 @@ export default function SproscaleLandingPage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
             <div className="text-left max-w-2xl">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-[1px] bg-stone-900"></div>
-                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('homeInsights.eyebrow')}</span>
+                <div className="w-12 h-px bg-stone-900"></div>
+                <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('homeInsights.eyebrow')}</span>
               </div>
               <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-6 tracking-tight">
                 {t('homeInsights.heading')}
@@ -561,8 +561,8 @@ export default function SproscaleLandingPage() {
 
             <div className="text-left mb-8 md:mb-10 mt-2 md:mt-4">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-[1px] bg-stone-900"></div>
-                <span className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">{t('nav.contact')}</span>
+                <div className="w-12 h-px bg-stone-900"></div>
+                <span className="text-xs font-bold tracking-eyebrow text-stone-500 uppercase">{t('nav.contact')}</span>
               </div>
               <h2 className="font-display text-3xl md:text-5xl font-medium text-stone-900 mb-4 md:mb-6 tracking-tight">
                 {t('contactForm.heading')}

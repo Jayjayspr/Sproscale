@@ -30,7 +30,7 @@ export default function InsightCard({ article }: { article: InsightConfig }) {
       </div>
 
       <div className="flex-grow">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-4 block">{t(`insightsIndex.articles.${article.slug}.date`)}</span>
+        <span className="text-[10px] font-bold uppercase tracking-eyebrow text-stone-400 mb-4 block">{t(`insightsIndex.articles.${article.slug}.date`)}</span>
         <h3 className="text-2xl font-serif text-stone-900 mb-4 leading-tight group-hover:text-stone-600 transition-colors">
           {t(`insightsIndex.articles.${article.slug}.title`)}
         </h3>
