@@ -60,7 +60,7 @@ export default function GuaranteeContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {promiseConfig.map((promise) => (
-              <div key={promise.id} className="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm">
+              <div key={promise.id} className="bg-white rounded-3xl p-6 md:p-8 border border-stone-200">
                 <div className="w-14 h-14 bg-stone-100 rounded-2xl flex items-center justify-center mb-6">
                   <promise.icon className="w-6 h-6 text-stone-900" />
                 </div>

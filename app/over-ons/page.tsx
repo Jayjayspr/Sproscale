@@ -56,9 +56,9 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {expertiseConfig.map((item, i) => (
-            <motion.div key={item.id} {...fadeInUp} transition={{ delay: 0.1 * (i + 1), duration: 0.7 }} className="bg-white rounded-3xl p-8 transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-2 group border border-stone-200 relative overflow-hidden">
+            <motion.div key={item.id} {...fadeInUp} transition={{ delay: 0.1 * (i + 1), duration: 0.7 }} className="bg-white rounded-3xl p-6 md:p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group border border-stone-200 relative overflow-hidden">
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-stone-900 transition-colors duration-500">
+                <div className="w-14 h-14 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-linear-to-br group-hover:from-glow-from group-hover:to-glow-to transition-colors duration-500">
                   <item.icon className="w-7 h-7 text-stone-900 group-hover:text-white transition-colors duration-500" />
                 </div>
                 <h3 className="text-xl font-display font-medium text-stone-900 tracking-tight mb-3">{t(`overOnsPage.expertise.${item.id}.title`)}</h3>
