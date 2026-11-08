@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function OnboardingThanksPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-ink text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
       {/* Background radial gradients to give "Anti Gravity" feel */}
       <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-stone-900/30 rounded-full blur-[150px] animate-pulse"></div>
       <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-white/5 rounded-full blur-[150px]"></div>

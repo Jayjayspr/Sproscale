@@ -26,7 +26,7 @@ export default function AfspraakPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-slate-50 flex flex-col items-center justify-center py-24 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-stone-50 flex flex-col items-center justify-center py-24 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

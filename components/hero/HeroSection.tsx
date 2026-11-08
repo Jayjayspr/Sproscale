@@ -32,17 +32,17 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="lg:col-span-7 flex flex-col items-start text-left"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm font-medium mb-8 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-sm font-medium mb-8 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-linear-to-r from-glow-from to-glow-to animate-pulse"></span>
             {t('hero.badge')}
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium text-gray-900 leading-[1.08] tracking-tight mb-6 md:mb-8">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium text-stone-900 leading-[1.08] tracking-tight mb-6 md:mb-8">
             {t('hero.titleLine1')} <br className="hidden md:block" />
             <span className="bg-linear-to-r from-glow-from to-glow-to bg-clip-text text-transparent">{t('hero.titleHighlight')}</span>.
           </h1>
 
-          <p className="text-base md:text-xl text-gray-600 mb-10 md:mb-12 max-w-xl leading-relaxed font-light">
+          <p className="text-base md:text-xl text-stone-600 mb-10 md:mb-12 max-w-xl leading-relaxed font-light">
             {t('hero.subtitle')}
           </p>
 
@@ -56,13 +56,13 @@ export default function HeroSection() {
             </Link>
             <a
               href="#diensten"
-              className="inline-flex justify-center items-center gap-2 bg-white hover:bg-gray-50 hover:scale-105 text-gray-900 border border-gray-200 font-medium px-6 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 text-base sm:text-lg"
+              className="inline-flex justify-center items-center gap-2 bg-white hover:bg-stone-50 hover:scale-105 text-stone-900 border border-stone-200 font-medium px-6 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 text-base sm:text-lg"
             >
               {t('hero.ctaSecondary')}
             </a>
           </div>
 
-          <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600">
+          <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-600">
             {tRaw<string[]>('hero.trust').map((item) => (
               <li key={item} className="inline-flex items-center gap-1.5">
                 <Check className="w-4 h-4 text-glow-to" />
