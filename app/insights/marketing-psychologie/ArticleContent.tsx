@@ -95,18 +95,18 @@ export default function ArticleContent() {
         </div>
 
         {/* CTA Card - Minimalist DARK layout */}
-        <section className="mt-24 pt-16 border-t border-stone-100">
-          <div className="bg-stone-900 p-12 md:p-16 rounded-5xl text-center relative overflow-hidden shadow-2xl">
+        <section className="mt-24 pt-16 border-t border-stone-200">
+          <div className="bg-stone-900 p-8 md:p-12 rounded-5xl text-center relative overflow-hidden">
             {/* Background design elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-50 -mr-32 -mt-32"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800 rounded-full blur-[80px] opacity-30 -ml-32 -mb-32"></div>
 
             <div className="relative z-10 max-w-xl mx-auto">
-              <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 tracking-tight leading-tight">{t('insightsArticles.marketingPsychologie.cta.heading')}</h3>
+              <h3 className="text-3xl md:text-4xl font-serif font-medium text-white mb-4 tracking-tight leading-tight">{t('insightsArticles.marketingPsychologie.cta.heading')}</h3>
               <p className="mb-10 text-stone-400 font-light text-lg">{t('insightsArticles.marketingPsychologie.cta.body')}</p>
               <Link
                 href="/afspraak"
-                className="inline-flex items-center gap-3 bg-white text-stone-900 px-10 py-5 rounded-full font-bold hover:bg-stone-50 hover:scale-105 transition-all duration-300 shadow-lg text-lg"
+                className="inline-flex items-center gap-3 bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 hover:scale-105 text-white px-10 py-5 rounded-full font-semibold transition-all duration-300 shadow-xl"
               >
                 {t('insightsArticles.marketingPsychologie.cta.button')}
                 <ArrowRight className="w-5 h-5 transition-transform" />

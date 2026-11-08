@@ -119,7 +119,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 hover:scale-105 text-white font-medium px-8 py-4 rounded-md transition-all duration-300 shadow-md text-lg group"
+            className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 hover:scale-105 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-glow-from/20 text-lg group"
           >
             {t('hero.ctaPrimary')}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -192,7 +192,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isFormLoading}
-                    className="w-full bg-stone-900 hover:bg-stone-800 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group text-lg mt-8 shadow-md disabled:bg-stone-300"
+                    className="w-full bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 disabled:opacity-50 disabled:hover:brightness-100 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group text-lg mt-8 shadow-md"
                   >
                     {isFormLoading ? (
                       <Loader2 className="w-5 h-5 animate-spin" />

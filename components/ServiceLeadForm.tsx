@@ -109,7 +109,7 @@ export default function ServiceLeadForm({ serviceSlug, serviceLabel, nicheSlug, 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-stone-950 hover:bg-stone-800 disabled:bg-stone-200 text-white font-bold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2"
+        className="w-full bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 disabled:opacity-50 disabled:hover:brightness-100 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2"
       >
         {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : (
           <>

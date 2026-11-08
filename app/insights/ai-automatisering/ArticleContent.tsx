@@ -94,7 +94,7 @@ export default function ArticleContent() {
               <p className="mb-10 text-stone-400 font-light text-lg max-w-lg mx-auto">{t('insightsArticles.aiAutomatisering.cta.body')}</p>
               <Link
                 href="/afspraak"
-                className="inline-flex items-center gap-3 bg-white text-stone-900 px-10 py-5 rounded-full font-semibold hover:bg-stone-50 hover:scale-105 transition-all duration-300 shadow-xl"
+                className="inline-flex items-center gap-3 bg-linear-to-r from-glow-from to-glow-to hover:brightness-110 hover:scale-105 text-white px-10 py-5 rounded-full font-semibold transition-all duration-300 shadow-xl"
               >
                 {t('insightsArticles.aiAutomatisering.cta.button')}
                 <ArrowRight className="w-5 h-5" />
